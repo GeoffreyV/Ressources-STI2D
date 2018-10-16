@@ -1,0 +1,47 @@
+%% Ça, ce sont les commandes publiques %%
+\newcommand{\RemplirTrou}{false}
+\newcommand{\TailleTrou}{\Large}
+\newcommand{\ColorTrou}{black}
+\newlength{\DeltaTrou}
+\setlength{\DeltaTrou}{0pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newsavebox{\totoTrou}
+\newsavebox{\tataTrou}
+\newlength{\longpointTrou}
+\newlength{\profondeurTrou}
+\newlength{\hauteurTrou}
+
+
+\newcommand{\trou}[2][\RemplirTrou]{%
+    \savebox{\tataTrou}{\hbox{\color{\ColorTrou}.}}%
+    \leavevmode%
+    \ifthenelse{\equal{#1}{false}}{%
+        \ifmmode%
+            \ifinner%
+                \savebox{\totoTrou}{\TailleTrou$#2$}%
+                \settodepth{\profondeurTrou}{\TailleTrou$#2$}%
+                \settoheight{\hauteurTrou}{\TailleTrou$#2$}%
+            \else%
+                \savebox{\totoTrou}{\TailleTrou$\displaystyle#2$}%
+                \settodepth{\profondeurTrou}{\TailleTrou$\displaystyle#2$}%
+                \settoheight{\hauteurTrou}{\TailleTrou$\displaystyle#2$}%
+            \fi%
+        \else%
+            \savebox{\totoTrou}{\TailleTrou#2}%
+                \settodepth{\profondeurTrou}{\TailleTrou#2}%
+                \settoheight{\hauteurTrou}{\TailleTrou#2}%
+        \fi%
+        \setlength{\longpointTrou}{0pt}%
+        \whiledo{\longpointTrou<\wd\totoTrou}{%
+            \hbox{%\TailleTrou%\rule{0pt}{\baselineskip}% <-- version d'origine
+                  \rule[-\profondeurTrou-\DeltaTrou]{0pt}{\profondeurTrou+\hauteurTrou+2\DeltaTrou}% <-- ma version
+                  \usebox{\tataTrou}%
+            }% fin de \hbox
+            \penalty0\advance\longpointTrou by\wd\tataTrou%
+        }% fin du whiledo
+    }% fin du then de ifthenelse
+    {%
+        {\textbf{\color{red}#2}}%
+    }% fin du else de ifthenelse
+}% fin de la définition de \trou
