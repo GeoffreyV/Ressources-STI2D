@@ -1,13 +1,15 @@
 \documentclass[10pt,fleqn]{article} % Default font size and left-justified equations
 \usepackage[%
-    pdftitle={SLCI : Transformée de Laplace},
-    pdfauthor={Xavier Pessoles}]{hyperref}
+    pdftitle={Titre de la séance},
+    pdfauthor={Geoffrey Vaquette}]{hyperref}
+
+\usepackage{siunitx}
 
 \input{Cours/style/new_style}
 \input{Cours/style/macros_SII}
 \input{Cours/style/preambule_trou.tex}
 
-\usepackage{siunitx}
+
 %\fichetrue
 \fichefalse
 
@@ -28,11 +30,11 @@
 \def\xxtete{Enseignement Technologique Transversal}
 
 \def\classe{1 STI2D}
-\def\xxnumpartie{Séquence 2}
-\def\xxpartie{Modélisation des énergies au sein d'un système}
+\def\xxnumpartie{Séq 02}
+\def\xxpartie{Titre de la séquence}
 
 \def\xxnumchapitre{Séance 2}
-\def\xxchapitre{\hspace{.12cm} Énergies, Puissances et rendement}
+\def\xxchapitre{\hspace{.12cm} Titre de la séance / du chapitre}
 
 \def\xxposongletx{2}
 \def\xxposonglettext{1.45}
@@ -65,206 +67,95 @@ Energies, Puissances et Rendement \xxactivite%
 %---------------------------------------------------------------------------
 
 \renewcommand{\RemplirTrou}{true}
+
+%---------------------------------------------------------------------------
 \begin{document}
 \chapterimage{png/Fond_solaire}
 \input{Cours/style/new_pagegarde}
 
 
-\section{Energie et puissance mécanique}
-Une énergie mécanique est homogène à (partage les même unités que) une Force (en Newton N) multipliée par une longueur (en mètre m).
-\subsection{Energie mécanique potentielle}
+\section{Une première section}
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse imperdiet, neque non mattis convallis, neque ante consectetur urna, eget aliquet magna purus in odio. Nulla tincidunt, purus sed finibus rutrum, urna elit facilisis ligula, lobortis lacinia erat libero sed nisl. Nam porta eget orci at varius. Sed iaculis ullamcorper urna, a porttitor lacus commodo sit amet. Nullam vestibulum odio at interdum tristique. Praesent et libero ipsum. Morbi pretium dapibus magna.
+\subsection{Une première sous-section}
+\subsubsection{Une première sous-sous-section}
+Donec nec aliquam est. Aenean scelerisque ac diam sed dapibus. In tincidunt a justo ac aliquam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis blandit urna in sodales dictum. Integer pulvinar magna a nulla elementum, in lacinia felis pellentesque. Maecenas dapibus sodales ligula, vel semper metus consectetur ac. Nullam porttitor convallis auctor. Sed pulvinar consectetur massa eu fringilla. In dolor enim, rutrum rhoncus malesuada non, dictum nec sapien.
+
+Mauris efficitur, lacus non fermentum hendrerit, erat nisl condimentum sapien, fringilla maximus elit quam et eros. Praesent vel sapien lectus. Phasellus rutrum et felis ac consectetur. Curabitur condimentum elit sit amet lacinia sagittis. Vestibulum non metus sollicitudin, ultricies neque et, dignissim leo. Pellentesque vestibulum quam eros, a pulvinar diam dictum interdum. Phasellus accumsan ornare mollis. Maecenas vehicula sed tortor sed scelerisque. In porta felis quis lacus tempor sollicitudin. Morbi ut arcu nec massa tempus eleifend a non lorem. Vestibulum ac ante erat. Nam sed metus sed turpis accumsan tincidunt ac in tortor. Nulla odio augue, auctor id interdum id, varius id nisi.
+
+\subsubsection{Une autre}
+Phasellus non erat vel felis accumsan tempor id quis felis. Nunc sodales orci in varius viverra. Aenean sagittis tempor lorem, eleifend luctus ipsum. Integer eros dolor, luctus ut feugiat et, eleifend ac sapien. Sed id congue enim. Vestibulum vel auctor magna, eu scelerisque metus. Sed efficitur mauris ligula, sit amet auctor arcu elementum ut. Integer suscipit porttitor egestas. Suspendisse laoreet dictum scelerisque. Sed odio ante, auctor id consequat venenatis, porta in odio. Nulla mattis dolor sem, et sagittis diam finibus et. Vivamus eget sollicitudin mauris. Nulla mollis fermentum porttitor. Cras tincidunt lacus at nisl dapibus, ut molestie nibh mattis. Sed sit amet nulla congue, feugiat mi at, blandit sem. 
+
+\subsubsectionautorefname{sous-sous-section  auteur bizarre}
+Phasellus vitae orci non nibh efficitur venenatis. Mauris in pulvinar libero. Nam tristique, elit quis faucibus auctor, lacus neque tempus tortor, mollis elementum neque purus ac ante. Vestibulum eget magna eget urna consequat aliquet. Proin tempor molestie ex vitae pharetra. Donec in nibh id dolor tempor tempor. Donec vitae varius ante. Phasellus eget elit convallis, laoreet lorem eu, tincidunt sapien. Vivamus pharetra sapien ac tellus molestie, id tempor nunc sagittis. Duis sollicitudin turpis mauris, et hendrerit eros scelerisque sit amet. Donec diam ligula, eleifend ut lacus non, tincidunt pellentesque tortor. Fusce sollicitudin nibh ligula, sed dapibus risus faucibus et. Phasellus ac ultrices lacus. Proin laoreet, nunc sit amet dapibus egestas, libero odio tristique tellus, et rhoncus ipsum ipsum accumsan felis. Mauris mattis dolor efficitur odio viverra, sit amet vestibulum lectus pellentesque. Proin quis diam sed augue ultrices efficitur sed eget nulla.
+
+Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut mi orci, eleifend vitae augue id, vehicula rutrum lacus. In in tellus id lectus maximus semper. Quisque commodo quam vel quam vulputate, a sodales dolor mattis. Praesent lacinia felis lorem, vel lacinia magna venenatis sit amet. Suspendisse quam nisi, tristique ac gravida blandit, vulputate vel tellus. Praesent porta augue commodo dui maximus placerat. Duis gravida eros non lacus sollicitudin lacinia. Duis eu quam a diam sodales rutrum. Quisque pharetra blandit nisi, quis rhoncus ex porttitor in. Nulla venenatis tortor diam, sed dictum augue condimentum eget. Etiam lacus justo, sodales faucibus dolor eu, volutpat aliquet mauris.
+\section{Test des différents environnements }
+\subsection{Une sous-section}
 \begin{defi}
-    Une masse \textbf{m} subissant une accélération \textbf{g} et pouvant réaliser un déplacement potentiel \textbf{H} dispose d'une énergie potentielle \trou{$E_p = P\times H,  E = m\times g\times H$, avec H en m, m en kg et g en $\text{kg}\text{m}\text{s}^{-2}$}. Il s'agit de l'énergie que peut acquérir la masse lors de sa chute. 
+Morbi lectus nisi, pretium nec ipsum eget, pellentesque tempus elit. Suspendisse id dolor risus. Suspendisse posuere mi ut ligula pellentesque, sit amet posuere orci feugiat. Integer augue eros, ullamcorper et commodo et, rutrum eu ipsum. Sed lectus tellus, euismod et nibh id, egestas gravida quam. Donec feugiat dui eleifend iaculis commodo. Nulla augue justo, ornare non nibh eget, ultricies volutpat massa. In gravida massa ac erat efficitur maximus. Donec vel tristique risus. Fusce ultricies augue in mollis blandit. Suspendisse eleifend nulla non ultrices pellentesque. Etiam justo nulla, ultricies sed blandit in, suscipit ac magna. Aenean malesuada vel diam id malesuada.
 \end{defi}
 
+\begin{definition}
+Proin tempor porta felis id mollis. Etiam a nunc tempor, placerat nulla a, convallis tortor. Donec faucibus ligula arcu, id volutpat ipsum dapibus vitae. Suspendisse potenti. Mauris mi lacus, pretium et cursus nec, euismod id quam. Fusce eleifend commodo orci, sed semper mauris pulvinar sit amet. Praesent nec efficitur erat, vitae tristique metus. Praesent felis erat, placerat id faucibus nec, mattis venenatis est. Nam sed diam at risus placerat convallis quis ut lorem. Praesent suscipit diam non arcu posuere, sit amet accumsan elit scelerisque. Sed venenatis metus sed felis ullamcorper tempor.
+\end{definition}
 
-Sur terre, la gravitation vaut $g = 9.81 m.s^{-2}$
+\begin{hypo}
+Donec volutpat augue nibh, ut auctor nunc tincidunt nec. Praesent vitae diam porttitor, lacinia mauris nec, dignissim tortor. Nunc suscipit ut felis ut mattis. Morbi eu dui nec nisi lacinia fringilla a et velit. Sed imperdiet risus sit amet nunc ultricies, quis vestibulum neque ornare. Quisque sed viverra quam. Mauris orci orci, semper ut cursus vel, efficitur malesuada lectus. Praesent pharetra posuere purus a vestibulum. Vestibulum eget imperdiet est. Nullam at diam non neque malesuada sodales vel a orci. Nulla tristique odio arcu, sit amet sollicitudin mi euismod sed. Praesent sit amet lobortis lectus, vitae auctor ante. Etiam posuere consequat diam eget fringilla. Donec sed nulla cursus, lobortis sem a, condimentum sapien.
+\end{hypo}
 
-\begin{exemple}
-    Un ascenseur, composé d'une cabine pesant \textbf{1000 kg} et accueillant 3 personnes pour une masse totale de \textbf{200 kg} se trouve au dernier étage, à une hauteur de \textbf{27m}. 
-Quelle est l'énergie récupérable lors de la descente de l'ascenseur ? (En joule et en kWh) 
+\begin{theorem}
+Nulla facilisi. Maecenas et hendrerit elit. Donec bibendum id arcu a congue. Aliquam varius a ipsum ac aliquet. Sed ac scelerisque sapien. Mauris molestie est eu purus ultrices varius. Maecenas tristique id erat id varius. Cras id purus vel lorem tincidunt consectetur. Sed id leo nisi. Sed a nisi ut ante aliquet sodales sed sed dolor.
 
-\afaire\trou{On calcule sa masse : $m = m1 + m2 = 1200 kg$. On calcule l'énergie potentielle : $E_p = mgH = 1200 \times 9.81\times 27 = 317.84 J $}
+Suspendisse nec pharetra nulla. Suspendisse tempus in diam ut suscipit. Duis quis elementum diam, ac fringilla dolor. Praesent nec nulla fringilla, mollis nulla sit amet, auctor nunc. Donec maximus molestie urna, sed scelerisque sem euismod eu. Suspendisse dui turpis, elementum vitae tortor a, aliquet pretium tellus. Mauris at vestibulum metus. Quisque non blandit ligula, sed dapibus tellus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin et sagittis libero.
+\end{theorem}
 
-\correction \textbf{Correction : } \trou{On calcule sa masse : $m = m1 + m2 = 1200 kg$. On calcule l'énergie potentielle : $E_p = mgH = 1200 \times 9.81\times 27 = 317.84 J $}
-\end{exemple}
+\begin{resultat}
+Curabitur elit elit, suscipit bibendum efficitur et, semper eu felis. Cras sagittis ac quam sit amet cursus. Morbi tristique, ante vitae vehicula sagittis, nibh dui luctus augue, vitae ullamcorper dui nisi sed augue. Curabitur eros nulla, blandit ac aliquam nec, efficitur quis odio. Aenean vestibulum et felis ut pharetra. In sit amet vehicula neque. Duis massa metus, malesuada et iaculis in, mollis sit amet eros. Suspendisse feugiat ex nec vulputate finibus. Etiam nec purus congue leo semper ornare at eget purus. Sed vitae enim gravida libero varius imperdiet. Donec tincidunt velit eu nisl consequat efficitur. Fusce mollis arcu sem. Fusce leo dui, maximus a maximus vitae, commodo sit amet velit.
+\end{resultat}
 
+\begin{corollary}
+Aenean vehicula, orci ac tristique laoreet, est eros convallis ex, vitae ullamcorper sapien turpis eu magna. Aliquam nunc augue, tempus laoreet magna eu, sodales finibus justo. Aliquam vulputate varius pellentesque. Donec ac dictum nulla, nec egestas ante. Vivamus fermentum ante mauris, quis porttitor quam tempus id. Phasellus id semper libero, ut sollicitudin augue. Vestibulum dictum odio eget metus feugiat pretium. Etiam pretium, tortor at fermentum lobortis, magna enim elementum ligula, vel fringilla augue nunc eu elit. Etiam faucibus nec mauris bibendum tempus. Mauris convallis mi sit amet dolor tempus, id tincidunt nulla venenatis. Nunc ut nunc ultricies, accumsan felis ut, vulputate sem.
+\end{corollary}
 
-\subsection{Énergie mécanique cinétique}
-\subsubsection{Masse en translation}
-\begin{defi}
-  Une masse \textbf{m} se déplaçant dans un mouvement de \textbf{translation} à une vitesse \textbf{v} dispose d'une énergie cinétique \trou{$E_c = \frac{1}{2}m\times v^2$ avec m en kg et v en m/s}.   
-\end{defi}
-
-\begin{exemple}
-    Une voiture de 1.5 tonne est lancée à 50 km/h. Calculez son énergie cinétique. 
-
-\afaire \trou{On calule l'énergie cinétique : $E_c = \frac{1}{2} \times 1500 \times (50 000 \times 3600)^2 = 115 740 J = 115.7kJ $}
-
-\correction\trou{On calule l'énergie cinétique : $E_c = \frac{1}{2} \times 1500 \times (50 000 \times 3600)^2 = 115 740 J = 115.7kJ $}
-\end{exemple}
-
-
-\subsubsection{Masse en rotation}
-\begin{defi}
-  Une \textbf{masse ponctuelle} \textbf{m} en rotation à une distance $l$ autour d'un axe $\Delta$ à la vitesse angulaire $\Omega$ dispose d'une énergie cinétique \trou{$E_c = \frac{1}{2} m \times l^2 \times \omega^2$}
-\end{defi}
-
-
-\subsection{Puissance mécanique : }
-Puisque l'énergie mécanique est homogène à une force fois une longueur, la puissance mécanique est homogène à \trou{une force X une longueur / un temps (seconde) ou encore une force X une vitesse.}
-
-\begin{defi}
-  \paragraph{En translation : } Dans le cas de la translation, la puissance vaut : \trou{$P_{\text{meca}} = E/t = F\times L / t = F\times v$, en $W = Nms^-1$}
-\paragraph{En rotation : }En rotation, la puissance mécanique peut se calculer comme le produit du couple $C$ par la fréquence de rotation $\Omega$. 
-$P_{\text{meca}} = C \cdot \Omega$
-\end{defi}
-
-
-\subsection{Energie et puissance électrique en courant continu}
-\subsubsection{Energie électrique}
-\begin{defi}
-  L'énergie électrique se manifeste lors du déplacement de charges électriques (électrons ou ions). Ce déplacement est appelé \trou{courant électrique}, noté \trou{I} et exprimé en \trou{Ampère A}.
-
-Une charge électrique (quantité d'électricité) se mesure en coulomb (C), \textbf{1 C correspond à un courant de 1 Ampère pendant 1 seconde.}
-\end{defi}
-
-\begin{defi}
-  \paragraph{Energie électrique : } \trou{Une charge électrique $q$ soumise à une différence de potentiel $\Delta U$ dispose d'une énergie potentielle électrique $E_{elec} = q \Delta U$}
-\end{defi}
-
-
-\begin{exemple}
-    
-
-Un drône Parrot est équipé de 3 cellules au lithium délivrant chacune 334mA.h sous 11,1V. Déterminez l'énergie embarquée par ce drone en \textbf{kJ} puis en \textbf{W.h} lorsque la batterie est entièrement chargée. 
-
-\afaire \trou{Calcul de la charge : $Q=334\times 10^{-3} \times 3600 = 1202.4 C$ On en déduit alors l'énergie : $E_{elec} = 3\times Q\times \Delta U = 40040 J = 11.1 Wh$}
-
-\correction \trou{Calcul de la charge : $Q=334\times 10^{-3} \times 3600 = 1202.4 C$ On en déduit alors l'énergie : $E_{elec} = 3\times Q\times \Delta U = 40040 J = 11.1 Wh$}
-
-\end{exemple}
-
-\subsubsection{La puissance électrique d'un courant continu : }
-La puissance électrique est le produit du courant \textbf{$I$} et de la différence de potentiel $\Delta U$, notée \textbf{$U$}. 
-
-\begin{equation*}
-    P = U\times I
-\end{equation*}
-\pagebreak
-\section{La chaîne d'énergie}
-Un système est une entité qui utilise de l'énergie afin d'\textbf{agir} sur une \textbf{matière d'oeuvre}. Le cheminement de l'énergie entre sa source et son utilsation concrète peut être moélisée par une succession de blocs appelée \textbf{Chaîne d'énergie}.
+\begin{remark}
+Donec laoreet justo in ante faucibus cursus. Pellentesque mollis, dui a vestibulum vulputate, mauris felis efficitur nisi, eu vestibulum magna metus eu eros. Aliquam neque metus, ultrices quis venenatis eget, placerat ut libero. Aliquam cursus dictum ex, nec egestas velit porta ac. Vestibulum eu consectetur libero. Mauris quis lacus non mauris commodo bibendum. Vestibulum neque erat, consectetur eu neque nec, cursus semper massa. Donec leo odio, tempus ut mollis eget, rhoncus vitae est. In varius at dui lacinia malesuada. Fusce tristique ipsum est, sed condimentum tortor lobortis ac. Suspendisse dolor dolor, sollicitudin quis porta porttitor, ullamcorper id nulla. Ut elementum metus a auctor tempus. Pellentesque vehicula vitae risus consectetur ornare. Ut vestibulum semper est id aliquam. Pellentesque fringilla augue orci, nec lacinia enim dictum et.
+\end{remark}
 
 \begin{obj}
-  Afin de décrire le fonctionnement d'un système, la chaîne d'énergie est un outil adapté faisant apparaître les différents organes impliqués dans l'adaptation et l'utilisation de l'énergie.
+Phasellus dictum mauris eu orci accumsan, eget laoreet quam aliquet. Integer accumsan et ante a pretium. Suspendisse lacinia odio a rhoncus elementum. Vestibulum efficitur arcu nulla, vitae sagittis diam faucibus a. Nam orci nisi, posuere non nibh at, convallis vehicula lacus. Vivamus aliquet mattis ligula, at gravida nisi viverra quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum in dui vel augue eleifend elementum at at leo. Cras elementum est id libero volutpat sollicitudin ut et turpis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam iaculis at libero non accumsan. Sed eget ornare ex. Cras egestas erat ut odio maximus gravida. Phasellus quam massa, maximus id lorem eget, pharetra mollis orci. Aenean a massa vitae libero hendrerit porttitor vitae sit amet ex.
 \end{obj}
 
+\begin{exercise}
+Curabitur dictum lacus a purus ullamcorper, eu mollis metus lobortis. Morbi semper lectus massa, a tristique libero viverra finibus. Donec in velit bibendum, ultrices diam lacinia, iaculis risus. In aliquam turpis quis sem sodales ultrices. Fusce lectus nisl, gravida nec pulvinar facilisis, consequat at nunc. Nunc dui lectus, gravida et metus volutpat, convallis vulputate mi. In a ultricies nisl. Vivamus sit amet mauris sodales ex varius tincidunt. Sed ultrices rhoncus orci, at pellentesque turpis efficitur et. Nullam facilisis tortor in congue congue. Etiam quis mauris blandit eros efficitur porttitor ac in dui. Pellentesque suscipit, diam vitae congue fringilla, nulla neque ultricies magna, vitae accumsan ipsum lectus eu ligula. Maecenas egestas, lacus at pulvinar sodales, nulla dui tristique ipsum, id vehicula arcu metus eu felis.
 
-\begin{center}
-\vspace{0.3cm}
-    \includegraphics[width=0.8\textwidth]{images/Chainefonctionnelcomplete.png}
-    \vspace{0.3cm}
-\end{center}
+\begin{enumerate}
+    \item Si je pose une première question ? 
+\end{enumerate}
+\end{exercise}
 
-\begin{defi}
-La chaine d'énergie se décompose en différents blocs fonctionnels associés aux fonctions :
+\begin{corrige}
+Fusce rhoncus tincidunt nunc vel bibendum. Sed sagittis vestibulum orci, vel luctus nibh convallis eget. Cras volutpat faucibus nunc eget semper. Proin dictum metus eu sapien vehicula rutrum. Nam vulputate accumsan sapien, id hendrerit nisl tincidunt quis. Proin est nunc, faucibus sed ornare a, consectetur quis arcu. Curabitur condimentum convallis lobortis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus at neque aliquam, rhoncus lectus egestas, porta turpis. Nunc efficitur lacus magna, in vestibulum nulla laoreet quis. Fusce sit amet pellentesque enim. In ornare erat at neque condimentum, in pellentesque velit vestibulum. Quisque convallis efficitur elementum. Phasellus ac orci quis felis vestibulum posuere.
+\end{corrige}
 
-    \begin{description}
-  \item[Alimenter et stocker : ] \trou{Apporter au système l’énergie pour son fonctionnement}
-  \item[Distribuer : ] \trou{Répartir, réguler, commander, piloter la distribution de l’énergie au système}
-  \item[Convertir : ] \trou{Transformer l’énergie initiale en énergie utilisable (thermique, mécanique, …) par le système.}
-  \item[Transmettre : ] \trou{Transporter, l’énergie d’un endroit à un autre pour obtenir l’effet attendu (chaleur, lumière, …)}
-\end{description}
-\end{defi}
+\begin{warn}
+Quisque ut ullamcorper tortor. Aenean eros lectus, porta quis tortor vel, iaculis sollicitudin ligula. Curabitur feugiat ante at diam venenatis, sit amet porta elit pellentesque. In nec cursus augue, ut varius risus. Suspendisse a magna a elit vestibulum faucibus vel vel nisi. In pellentesque felis sit amet lorem blandit volutpat. Donec blandit nunc dolor, eget luctus odio finibus vel. Vivamus tempor mi at vulputate imperdiet.
+\end{warn}
 
-\subsection{Puissance}
-La puissance échangée entre deux composants ou sous-systèmes est le produit de deux types de grandeurs : 
-\begin{itemize}
-    \item Une grandeur d'effort \textit{e}
-    \item Une grandeur de flux \textit{f}
-\end{itemize}
-\begin{center}
-    \begin{tabular}{P{2cm}|P{4cm}|P{4cm}|P{2cm}|P{2cm}}
-    \textbf{Domaine d'activité} & \textbf{Grandeur de flux f} & \textbf{Grandeur d'effort e} & \textbf{Puissance $P=f\times e$} & Unité\\
-    \hline
-    Électrique & Intensité \textbf{I} en Ampère (A) & Tension \textbf{U} en Volts (V) & $P=U\times I$ & Watts (\si{W})\\
-    \hline
-    Mécanique (Translation) & \trou{Vitesse V en m/s} & \trou{Force F en Newtons (N)} & $P=F\times V$ & Watts (\si{W}) \\
-    \hline
-    Mécanique (Rotation) & \trou{Vitesse $\omega$ en m/s} & \trou{Couple C en Newton.mètre (Nm)} & $P=C\times \omega$ & Watts (\si{W}) \\
-    \hline
-    Hydraulique & Débit \textbf{Q} en \si{m^3/s} & Pression \textbf{p} en Pascals (\si{Pa}) & $P=Q\times p$ & Watts (\si{W})
-\end{tabular}
-\end{center}
-
-\pagebreak
-\section{Rendement d'un système}
-\subsection{Généralités}
-\begin{defi}
-    Pour un système réalisant une conversion d'énergie, le rendement est défini comme étant le rapport entre l'énergie recueillie en sortie et l'énergie fournie en entrée. 
-    
-    $$
-        \eta = \frac{E_{\text{sortie}}}{E_{\text{entrée}}}
-    $$
-\end{defi}
-
-Le rendement est défini comme une grandeur sans dimension qui caractérise l'efficacité d'une transformation. 
-À l'intérieur d'un mécanisme, certains facteurs liés à des phénomènes physiques transforment une partie de l'énergie en chaleur. Ces pertes sont généralement dues à :
-\begin{itemize}
-    \item La résistance au glissement, au roulement, pivotement dans les liaisons
-    \item La viscosité des fluides utilisés pour le transfert d'énergie ou pour la lubrification
-    \item La déformation des pièces
-\end{itemize}
-
-\begin{defi}
-    Le rendement est également défini comme le rapport entre la puissance utilisable en sortie et la puissance que le système a absorber en entrée. 
-    
-    $$\eta = \frac{P_{\text{sortie}}}{P_{\text{entrée}}} = \frac{P_{\text{utile}}}{P_{\text{absorbée}}} = \frac{E_{\text{sortie}}}{E_{\text{entrée}}}$$
-    
-\parcoeur Par définition, le rendement est \textbf{TOUJOURS INFERIEUR À 1}: 
-$$\eta \leq 1$$
-\end{defi}
-
-\begin{center}
-    \includegraphics[width=0.8\textwidth]{images/rendement.png}
-\end{center}
-
-\subsection{Rendement d'un système décomposable}
-Dans le cas d'un système décomposé en sous-systèmes, le rendement total correspond au produit des rendements de chacun des sous-systèmes : 
-\begin{center}
-    \includegraphics[width=0.8\textwidth]{images/rendement_multiple.png}
-\end{center}
+\begin{rem}
+Proin vitae tristique nulla. Nunc feugiat orci a velit consectetur, ac egestas ex commodo. In ipsum nisi, bibendum et molestie eget, semper vel elit. Nulla eleifend nec dolor a tempor. Ut at mauris et nulla feugiat sodales ut dapibus mauris. Vestibulum et porttitor ligula. Nulla ipsum ipsum, maximus vel fringilla in, dapibus id est.
+\end{rem}
 
 \begin{exemple}
-    $$\eta_{\text{global}} = \frac{P_{\text{sortie}}}{P_{\text{entrée}}} = \frac{P_{\text{sortie}}}{P_{\text{2}}} \frac{P_{\text{2}}}{P_{\text{1}}} \frac{P_{\text{1}}}{P_{\text{entrée}}} = \eta_3 \times \eta_2 \times \eta_1$$
+Aenean venenatis, metus imperdiet venenatis auctor, leo odio maximus velit, vel elementum sapien lectus vitae lacus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam tristique, leo ac suscipit rhoncus, magna velit rhoncus felis, eget ultrices odio mi non felis. Quisque sagittis iaculis sem, ut consequat magna condimentum eget. Ut blandit, ante sit amet egestas facilisis, eros eros mollis leo, eu euismod risus lectus nec nisl. Sed vitae nisi vitae eros consequat congue sed a tellus. Etiam justo enim, convallis ac rhoncus quis, lacinia id magna. Curabitur cursus ante ut quam tincidunt vulputate. Ut convallis non tellus eget ornare. Donec ut auctor velit, placerat sagittis neque. Sed iaculis risus vel gravida ullamcorper. Sed et tellus id justo placerat faucibus. Aliquam vitae elit fermentum, congue tortor vitae, rutrum nunc. 
 \end{exemple}
-    \begin{defi}
-     Dans le cas général d'un systèmes divisé en $n$ sous-systèmes :  
-       $$ \eta_{\text{global}} = \eta_1 \times \eta_2 \times \dots \eta_n $$
-    \end{defi}
 
-\subsection{Ordre de grandeur de quelques rendements}
-\subsubsection{Moteur thermique (à explosion) :}
-\begin{center}
-    \includegraphics[width=0.5\textwidth]{images/thermique.png}
-\end{center}
-
-\subsubsection{Moteur électrique :}
-\begin{center}
-    \includegraphics[width=0.5\textwidth]{images/eletrique.png}
-\end{center}
-
-\subsubsection{Roulement à billes :}
-\begin{center}
-    \includegraphics[width=0.5\textwidth]{images/roulement.png}
-\end{center}
-
-\subsubsection{Engrenages à denture droite :}
-\begin{center}
-    \includegraphics[width=0.5\textwidth]{images/engrenage.png}
-\end{center}
-
-
+\subsection{On teste des figures ?}
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{templates/images/thermique.png}
+    \caption{Figure avec sa légende}
+    \label{fig:my_label}
+\end{figure}
 
 
 \end{document}

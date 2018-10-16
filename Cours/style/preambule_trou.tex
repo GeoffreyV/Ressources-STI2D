@@ -2,6 +2,7 @@
 \newcommand{\RemplirTrou}{false}
 \newcommand{\TailleTrou}{\Large}
 \newcommand{\ColorTrou}{black}
+\newcommand{\ColorRempli}{blue}
 \newlength{\DeltaTrou}
 \setlength{\DeltaTrou}{0pt}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -42,6 +43,6 @@
         }% fin du whiledo
     }% fin du then de ifthenelse
     {%
-        {\textbf{\color{red}#2}}%
+        {\textbf{\color{\ColorRempli}#2}}%
     }% fin du else de ifthenelse
 }% fin de la définition de \trou
