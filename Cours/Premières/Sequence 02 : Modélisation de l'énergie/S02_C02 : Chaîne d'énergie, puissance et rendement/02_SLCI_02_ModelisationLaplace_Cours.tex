@@ -3,9 +3,9 @@
     pdftitle={SLCI : Transformée de Laplace},
     pdfauthor={Xavier Pessoles}]{hyperref}
 
-\input{style/new_style}
-\input{style/macros_SII}
-\input{Cours/style/preambule_trou.tex}
+\input{../../../style/new_style}
+\input{../../../style/macros_SII}
+\input{../../../style/preambule_trou.tex}
 
 \usepackage{siunitx}
 %\fichetrue
@@ -53,9 +53,9 @@
 
 \def\xxfigures{
 \begin{center}
-\includegraphics[height=4cm]{Cours/images/smartphone.png} \\
-\includegraphics[height=4cm]{Cours/images/petrole.png} \\
-\includegraphics[height=4cm]{Cours/images/gaz.png} \\
+\includegraphics[height=4cm]{images/smartphone.png} \\
+\includegraphics[height=4cm]{images/petrole.png} \\
+\includegraphics[height=4cm]{images/gaz.png} \\
 \end{center}
 }%figues de la page de garde
 \def\xxpied{%
@@ -67,140 +67,8 @@ Energies, Puissances et Rendement \xxactivite%
 \renewcommand{\RemplirTrou}{true}
 \begin{document}
 \chapterimage{png/Fond_solaire}
-\input{style/new_pagegarde}
+\input{../../../style/new_pagegarde}
 
-
-%\documentclass[11pt,oneside]{article}
-%\input{style/coursHeadings}
-%\input{style/programHeadings}
-%
-%
-%%Si le boolen xp est vrai : compilation pour xabi
-%%Sinon compilation Damien
-%\newboolean{xp}
-%\setboolean{xp}{true}
-%
-%\newboolean{prof}
-%\setboolean{prof}{true}
-%
-%\def\xxtitre{\ifthenelse{\boolean{xp}}{
-%CI 2 -- SLCI : Étude du comportement des Systèmes Linéaires Continus Invariants}{}}
-%
-%\def\xxsoustitre{\ifthenelse{\boolean{xp}}{
-%Chapitre 2 -- Modélisation des Systèmes Linéaires Continus Invariants -- Transformée de Laplace}{}}
-%
-%\def\xxauteur{\ifthenelse{\boolean{xp}}{
-%\noindent 2013 -- 2014 \\
-%Xavier \textsc{Pessoles}}{
-%Damien Iceta}}
-%
-%
-%\def\xxpied{\ifthenelse{\boolean{xp}}{
-%CI 2 : SLCI -- Cours \\
-%Ch 2 : Modélisation des SLCI -- \ifthenelse{\boolean{prof}}{P}{E}%
-%}{
-%TD -- CI 3 : Ingénierie numérique et simulation}}
-%
-%
-%
-%\ifthenelse{\boolean{xp}}{
-%\usepackage[%
-%    pdftitle={SLCI - Modélisation des SLCI},
-%    pdfauthor={Xavier Pessoles},
-%    colorlinks=true,
-%    linkcolor=blue,
-%    citecolor=magenta]{hyperref}}{
-%\usepackage[%
-%    pdftitle={OS et Environnement de développement},
-%    pdfauthor={Damien Iceta},
-%    colorlinks=true,
-%    linkcolor=blue,
-%    citecolor=magenta]{hyperref}}
-%
-%
-%
-%\usepackage{pifont}
-%\sloppy
-%\hyphenpenalty 10000
-%
-%\begin{document}
-%
-%
-%\input{style/entete1}
-%
-%\begin{center}
-% \huge\textsc{\xxtitre}
-%\end{center}
-%
-%\begin{center}
-% \LARGE\textsc{\xxsoustitre}
-%\end{center}
-%
-%
-%
-%
-%\vspace{.5cm}
-%
-%
-%\begin{center}
-%\begin{tabular}{ccccc}
-%\includegraphics[height=4cm]{images/frein.png} &&
-%\includegraphics[height=4cm]{images/tripteor.png} &&
-%\includegraphics[height=4cm]{images/pompe.png} \\
-%\textit{Asservissement du freinage} &&
-%\textit{Asservissement en } &&
-%\textit{Asservissement de } \\
-%\textit{d'un A 318} &&
-%\textit{vitesse et position} &&
-%\textit{la position du rotor} \\
-%&&
-%\textit{d'un centre d'usinage} &&
-%\textit{d'une pompe turbo moléculaire}
-%\end{tabular}
-%\end{center}
-%
-%
-%
-%
-%
-%\vspace{.2cm}
-%Il est possible prévoir le comportement de systèmes intégrant des technologies différentes. Par exemple, en mode automatique, le freinage d'un avion dépend de son accélération (technologie mécanique). L'envoi de l'ordre de freinage est piloté par une servo-valve électro-hydraulique (technologies électriques et hydrauliques).
-%
-%Il va donc falloir d'une part définir des outils mathématiques indépendant des différentes technologies pour décrire le fonctionnement des systèmes. D'autre part, ces modèles devront permettre de connaître les réponses du système en fonction de sollicitations diverses (échelons, rampes, sinusoïdes ...).
-%
-%
-%Classiquement, ces systèmes sont modélisables par des équations différentielles. Or, déterminer une solution analytique pour une équation différentielle n'est pas toujours aisé.
-%
-%\begin{obj}
-%\textsc{Problématiques :}
-%\begin{itemize}
-%\item Comment modéliser un système dont le fonctionnement fait appel à plusieurs champs de la physiques ?
-%\item Comment déterminer le comportement d'un système lorsque celui-ci est régit par une équation différentielle complexe ?
-%\end{itemize}
-%\end{obj}
-%
-%\begin{rem}
-%\textsc{Savoirs :}
-%\begin{itemize}
-%\item Mod-C2.1	Modélisation par équations différentielles.
-%\item Mod-C2.2	Représentation par fonction de transfert (formalisme de Laplace).
-%\end{itemize}
-%\end{rem}
-%
-%
-%
-%\setlength{\parskip}{0ex plus 0.2ex minus 0ex}
-% \renewcommand{\contentsname}{}
-% \renewcommand{\baselinestretch}{1}
-%
-%% \vspace{1cm}
-%\textit{Ce document est en évolution permanente. Merci de signaler toutes
-%erreurs ou coquilles.}
-%
-%\tableofcontents
-%
-% \renewcommand{\baselinestretch}{1.2}
-%\setlength{\parskip}{2ex plus 0.5ex minus 0.2ex}
 
 \section{Energie et puissance mécanique}
 Une énergie mécanique est homogène à (partage les même unités que) une Force (en Newton N) multipliée par une longueur (en mètre m).
@@ -210,7 +78,7 @@ Une énergie mécanique est homogène à (partage les même unités que) une For
 \end{defi}
 
 
-Sur terre, la gravitation vaut $g = 9.81 m.s^2$
+Sur terre, la gravitation vaut $g = 9.81 m.s^{-2}$
 
 \begin{exemple}
     Un ascenseur, composé d'une cabine pesant \textbf{1000 kg} et accueillant 3 personnes pour une masse totale de \textbf{200 kg} se trouve au dernier étage, à une hauteur de \textbf{27m}. 
@@ -222,10 +90,10 @@ Quelle est l'énergie récupérable lors de la descente de l'ascenseur ? (En jou
 \end{exemple}
 
 
-\subsection{Energie mécanique cinétique}
+\subsection{Énergie mécanique cinétique}
 \subsubsection{Masse en translation}
 \begin{defi}
-  Une masse \textbf{m} se déplacement dans un mouvement de \textbf{translation} à une vitesse \textbf{v} dispose d'une énergie cinétique \trou{$E_c = \frac{1}{2}m\times v^2$ avec m en kg et v en m/s}.   
+  Une masse \textbf{m} se déplaçant dans un mouvement de \textbf{translation} à une vitesse \textbf{v} dispose d'une énergie cinétique \trou{$E_c = \frac{1}{2}m\times v^2$ avec m en kg et v en m/s}.   
 \end{defi}
 
 \begin{exemple}
@@ -294,7 +162,7 @@ Un système est une entité qui utilise de l'énergie afin d'\textbf{agir} sur u
 
 \begin{center}
 \vspace{0.3cm}
-    \includegraphics[width=0.8\textwidth]{Cours/images/Chainefonctionnelcomplete.png}
+    \includegraphics[width=0.8\textwidth]{images/Chainefonctionnelcomplete.png}
     \vspace{0.3cm}
 \end{center}
 
@@ -358,13 +226,13 @@ $$\eta \leq 1$$
 \end{defi}
 
 \begin{center}
-    \includegraphics[width=0.8\textwidth]{Cours/images/rendement.png}
+    \includegraphics[width=0.8\textwidth]{images/rendement.png}
 \end{center}
 
 \subsection{Rendement d'un système décomposable}
 Dans le cas d'un système décomposé en sous-systèmes, le rendement total correspond au produit des rendements de chacun des sous-systèmes : 
 \begin{center}
-    \includegraphics[width=0.8\textwidth]{Cours/images/rendement_multiple.png}
+    \includegraphics[width=0.8\textwidth]{images/rendement_multiple.png}
 \end{center}
 
 \begin{exemple}
@@ -378,22 +246,22 @@ Dans le cas d'un système décomposé en sous-systèmes, le rendement total corr
 \subsection{Ordre de grandeur de quelques rendements}
 \subsubsection{Moteur thermique (à explosion) :}
 \begin{center}
-    \includegraphics[width=0.5\textwidth]{Cours/images/thermique.png}
+    \includegraphics[width=0.5\textwidth]{images/thermique.png}
 \end{center}
 
 \subsubsection{Moteur électrique :}
 \begin{center}
-    \includegraphics[width=0.5\textwidth]{Cours/images/eletrique.png}
+    \includegraphics[width=0.5\textwidth]{images/eletrique.png}
 \end{center}
 
 \subsubsection{Roulement à billes :}
 \begin{center}
-    \includegraphics[width=0.5\textwidth]{Cours/images/roulement.png}
+    \includegraphics[width=0.5\textwidth]{images/roulement.png}
 \end{center}
 
 \subsubsection{Engrenages à denture droite :}
 \begin{center}
-    \includegraphics[width=0.5\textwidth]{Cours/images/engrenage.png}
+    \includegraphics[width=0.5\textwidth]{images/engrenage.png}
 \end{center}
 
 
