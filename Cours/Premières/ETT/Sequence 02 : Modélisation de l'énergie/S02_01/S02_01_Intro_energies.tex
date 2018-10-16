@@ -1,0 +1,165 @@
+\documentclass[a4paper]{article}
+
+\usepackage{lmodern}
+\usepackage{geometry}
+\usepackage{calc}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb,mathrsfs}
+\usepackage{ifthen}
+
+\usepackage[francais]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+
+\usepackage{listings}
+\usepackage{color}
+
+
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\color{green}\ding{51}}%
+\newcommand{\xmark}{\color{red}\ding{55}}%
+\newcommand{\fmark}{\ding{229}}%
+\newcommand{\itemc}{\item[\cmark]}%
+\newcommand{\itemx}{\item[\xmark]}%
+\newcommand{\itemf}{\item[\fmark]}%
+
+\input{Cours/style/preambule_trou.tex}
+
+% Un peu de mise en page
+\setlength{\parindent}{0pt}
+\geometry{scale=0.8}
+%\renewcommand{\baselinestretch}{1.5} % <--- Si on changer la taille des interlignes
+
+
+%% Les commandes publiques de PreambuleTrou.tex
+
+%%---Commande 1
+\renewcommand{\RemplirTrou}{true}
+% Par défaut \RemplirTrou est déjà sur "false" donc cette ligne ne sert à rien.
+% Si on remplace le false par "true" (ou n'importe quoi qui n'est pas "true")
+% alors les trous seront remplacés par leur contenu. Ça permet de basculer
+% de la version "trouée" à la version "corrigée"
+
+%%---Commande 2
+\renewcommand{\TailleTrou}{\huge}
+% Par défaut \TailleTrou est déjà sur "\Large" donc cette ligne ne sert à rien.
+% Mais on peut remplacer "\Large" par "\normalsize", "\large", "\LARGE", "\huge"
+% ou "\Huge". Le trou aura la même taille que "son-contenu-caché-mis-en-taille-\TailleTrou".
+% La raison est, qu'en général, un élève écrit plus gros que n'écrit LaTeX.
+% Attention, cette taille n'intervient que lorsqu'il y un trou. Si \RemplirTrou est
+% sur "true" alors le contenu prend la taille du texte courant.
+
+%%---Commande 3
+\setlength{\DeltaTrou}{2pt}
+% Par défaut \DeltaTrou est déjà sur "0pt" donc cette ligne ne sert à rien.
+% Mais si on met "5pt" par exemple, ça augmente la *hauteur* des trous de
+% "5pt". C'est au cas où l'utilisateur ne trouve pas son bonheur avec \TailleTrou
+% et veuille ajuster la hauteur en valeur absolue. (La valeur peut être < 0).
+
+%%---Commande 4
+\renewcommand{\ColorTrou}{black}
+% Par défaut \ColorTrou est déjà sur "black" donc cette ligne ne sert à rien.
+% On peut même "gray", "green" etc. En revanche, cette couleur sera valable
+% aussi bien avec \RemplirTrou sur "false" que sur "true".
+
+% RQ : toutes ces commandes peuvent être modifiées en cours de route. Voir ci-dessous
+%      un exemple.
+
+
+\title{Energie et puissance -- Rappel sur les conversions d'unité}
+
+\author{Lycée Louis Armand -- G. Vaquette}
+
+\date{ETT -- 1 STI2D -- Octobre 2018}
+
+\newcommand{\parcoeur}{{\large\ding{164}} }
+\newcommand{\afaire}{{\large\ding{46}} }
+\newcommand{\correction}{{\large\ding{52}} }
+\begin{document}
+\maketitle
+
+%\begin{abstract}
+
+%\end{abstract}
+
+Légende : \begin{itemize}
+    \item[\afaire] A compléter seul, en classe
+    \item[\correction] Correction écrite en classe
+    \item[\parcoeur] A connaître ABSOLUMENT \textbf{par coeur} !
+\end{itemize}
+\section{Définitions}
+\subsection{Energie}
+\ding{46} Pour vous, qu'est ce que l'énergie ? 
+
+\trou{L'énergie est la capacité d'un système à modifier un état (mettre en mouvement, produire un rayonnement).}
+
+\textbf{Définition après restitution : }\trou{L'énergie est la capacité d'un système à modifier un état (mettre en mouvement, produire un rayonnement, de la chaleur). }
+
+\ding{46} A votre avis, peut-on créer de l'énergie ? Si oui, comment ? Sinon, expliquez.
+
+\trou{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sollicitudin finibus nulla. Sed interdum nisl aliquam nulla pharetra, utluctus metus accumsan. In tellus maurise}
+
+\textbf{Citation de Antoine de Lavoisier : }
+\trou{Rien ne se perd, rien ne se crée, tout se transforme.}
+
+\trou{Cela signifie que la quantité d'énergie dans l'univers est constante.}
+
+\paragraph{\parcoeur Notations et unités : }En physique, on note l'énergie \trou{E}, elle s'exprime en (son unité :) \trou{Joule}. 
+
+\paragraph{Autres unités : }
+\trou{E en calories : $ 1\text{cal} = 4.18\text{J}$}
+
+\trou{E en tonne équivalent pétrole : $ 1\text{tep} = 419\text{GJ}$}
+
+\trou{E en Watt Heure : $ 1\text{Wh} = 3600\text{J}$}
+
+
+
+\pagebreak
+%% ==== ==== La puissance ==== ==== %%
+\subsection{Puissance}
+\ding{46} Pour vous, qu'est ce qu'une puissance ? 
+
+\trou{La puissance, c'est de l'énergie par unité de temps. On peut aussi dire \textit{un débit d'énergie}}
+
+\paragraph{Définition après restitution : }
+\trou{La puissance, c'est de l'énergie par unité de temps. On peut aussi dire \textit{un débit d'énergie}.}
+\paragraph{Notations et unités : }En physique, on note la puissance \trou{P}, elle s'exprime en (son unité :) \trou{Watt (W)}. 
+
+\textbf{Exemple : }\trou{La puissance, c'est de l'énergie par unité de temps. On peut aussi dire \textit{un débit d'énergie}}
+
+\paragraph{\parcoeur}Equation liant l'énergie à la puissance : \begin{align}
+    P = \frac{E}{\Delta t} &\hspace{1cm} 
+    E=P\times \Delta t
+\end{align}
+
+\section{Rappel sur les conversion d'unités : }
+\pagebreak
+\section{Quelques exemples : }
+Imaginons une toute petite pile qui contiendrait 7 200 J. Si cette énergie est consommée en 1h par une toute petite ampoule. quelle était la puissance de cette ampoule ? \\
+\afaire \trou{L'élève travaille : La puissance et une énergie par unité de temps : $P = \frac{E}{\Delta t} = \frac{7200}{3600} = 2 W $}
+
+\correction \trou{La puissance et une énergie par unité de temps : $P = \frac{E}{\Delta t} = \frac{7200}{3600} = 2 W $}
+
+\paragraph{}
+Cette même pile (contenant 7 200 J) est maintenant consommée en 30 min par une autre ampoule. Quelle est la puissance de cette ampoule ? 
+
+\afaire \trou{L'élève travaille : La puissance et une énergie par unité de temps : $P = \frac{E}{\Delta t} = \frac{7200}{1800} = 4 W $}
+
+\correction \trou{$P = \frac{E}{\Delta t} = \frac{7200}{1800} = 4 W $ Cette lampe a donc une puissance de 4 W.}
+
+\paragraph{} Une machine à laver AAA a une puissance de 2.0 kW. Imaginons un foyer dans lequel elle est utilisée 3 fois par semaine pendant 1h30.  
+\begin{itemize}
+    \item Quelle énergie consomme cette machine pendant 1 utilisation de 1h30 ? En J, en Wh, en cal, en tep ? 
+    \item Quelle énergie consomme cette machine sur un mois ? 
+\end{itemize}
+
+\afaire \trou{L'élève travaille : La machine consomme 2000 x 1.5 x 3 x 4 = beaucoup. La machine consomme 2000 x 1.5 x 3 x 4 = beaucoup. La machine consomme 2000 x 1.5 x 3 x 4 = beaucoup. Et en joule ca donne :  Ha ouais quand même !!! Et voilà de la place supplémentaire pour l'élève oui }
+\vspace{1cm}
+
+\correction \trou{$E = {P}\times {\Delta t} = 2000 \times (1.5\times 3600) =  10.8MJ = 3000Wh$ 
+Sur un mois, cette machine consomme alors $E = 3\times 4 \times 3000 = 36 000 Wh$. \textit{Et voilà de la place supplémentaire pour l'élève qui a besoin de place pour écrire. Mais aussi pour aller à la ligne, etc.}}
+\end{document}
