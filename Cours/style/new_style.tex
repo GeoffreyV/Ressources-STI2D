@@ -6,6 +6,8 @@
 % CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+
 %----------------------------------------------------------------------------------------
 %	VARIOUS REQUIRED PACKAGES AND CONFIGURATIONS
 %----------------------------------------------------------------------------------------
@@ -35,6 +37,16 @@
 \usepackage{pifont} % Pour les dinglist
 \usepackage{multicol}
 
+
+\usepackage{exsheets}
+\SetupExSheets[question]{type=exam}
+\SetupExSheets{
+  counter-format = se.qu ,
+  counter-within = section
+}
+\ifprof
+\SetupExSheets[solution]{print=true,pre-hook=\begin{corrige},post-hook=\end{corrige},name=,no-skip-below,}
+\fi
 %----------------------------------------------------------------------------------------
 %	FONTS
 %----------------------------------------------------------------------------------------
@@ -46,6 +58,7 @@
 \usepackage{microtype} % Slightly tweak font spacing for aesthetics
 \usepackage[utf8]{inputenc} % Required for including letters with accents
 \usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+
 
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY AND INDEX
@@ -217,7 +230,12 @@
 \noindent\footnotesize{{\xxauteur}}
 \end{minipage}}}
 
-
+%%%%%%%%%%%%%%%%%
+% Pour les TDs : 
+%%%%%%%%%%%%%%%%%
+\usepackage{enumitem}
+\newlist{questions}{enumerate}{3}
+\setlist[questions]{label=\textbf{Question \arabic* :},before=\raggedright,labelindent=\parindent,leftmargin=*,font=\sffamily\bfseries\itshape}
 
 %----------------------------------------------------------------------------------------
 %	THEOREM STYLES
@@ -666,8 +684,4 @@ addtohook={%
 \makeatletter
 
 
-% Définition des booleéns
-\newif\iffiche
-\newif\ifprof
-\newif\iftd
-\newif\ifcours
+
