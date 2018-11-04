@@ -1,0 +1,44 @@
+\documentclass[addpoints, answers]{exam}
+\usepackage[utf8]{inputenc}
+\usepackage{siunitx}
+\begin{document}
+
+\begin{questions}
+\question Sachant que la masse volumique moyenne du pétrole est
+$\mu_p = \SI{0,8275}{kg/L}$, calculer le volume $V_p$ en litre de pétrole encore
+disponible.
+\begin{solution}
+On a une masse $m_p = \SI{164.4e3}{MT}$ de pétrole. Connaissant la masse volumique du pétrole, on peut déduire : $$ m_p = \mu_p \times V_p \Rightarrow V_p = \frac{m_p}{\mu_p} = \frac{\num{164.4e3}\num{e6}\num{e3}}{0.8275} = \SI{1.98e14}{L} $$
+\end{solution}
+\item Sachant que 1 baril de pétrole correspond à 159 litres ($V_{bl} = \SI{159}{L}$),
+calculer le nombre de barils de pétrole $N_p$ encore disponibles.
+\begin{solution}
+$$N_p = \frac{V_p}{V_{bl}} = \frac{\num{1,98e14}}{159} = \SI{1,24e12}{bl}$$
+Il reste \num{1,24e3} milliard de barils encore exploitables sur terre. 
+\end{solution}
+\item Sachant que la consommation actuelle de pétrole est d’environ
+80 Mbl/jour, calculer en combien de jour les réserves seront
+épuisées. En déduire dans combien d’année il n’y aura plus de
+pétrole au rythme actuel.
+\begin{solution}
+    Sachant que chaque jour on consomme \SI{80}{Mbl} et qu'il reste \SI{1,24e12}{bl} soit \SI{1,24e6}{Mbl}, on peut en déduire qu'à ce rythme, il restera du pétrole pour $$T = \frac{\num{1,24e6}}{\num{80}} = \SI{15550}{j} = \SI{43}{\text{années}}$$
+\end{solution}
+
+Une des sources d'énergie extérieures à la Terre et utilisable
+actuellement est le soleil. Le soleil rayonne par an une énergie de
+16.1015 kWh.
+
+\item Combien faudrait-il de baril de pétrole pour avoir une énergie
+équivalente. Comparer aux réserves restantes.
+\begin{solution}
+    Sachant que $\SI{1}{TEP} = \SI{11630}{kWh}$ correspond à l'énergie fournie par la combustion de 1 tonne de pétrole. Si on connaît la masse de pétrole, on pourra en déduire l'énergie encore exploitable.
+    Connaissant le volume d'un baril $V_{bl} = \SI{159}{L}$ ainsi que la masse volumique du pétrole $\mu$, on peut déduire la masse d'un baril : $m_{bl} = \mu V_{bl} = 0,8275 \times \num{159} =  \SI{131,57}{kg}$). 
+    
+    On peut alors en déduire l'énergie encore exploitable : 
+    $$E_p = \SI{131,57e-6}{TEP} = 11630\times \num{131,57e-6} = \SI{1,53}{kWh}$$
+    
+    Pour obtenir l'énergie équivalente au rayonnement du soleil, il faudrait donc : 
+    $$Nb_{eq bl} = \frac{E_{\text{elec}}}{E_{bl}} = \frac{\num{16e15}}{\num{1,53e3}} = \SI{1,06e13}{barils}$$
+\end{solution}
+\end{questions}
+\end{document}
