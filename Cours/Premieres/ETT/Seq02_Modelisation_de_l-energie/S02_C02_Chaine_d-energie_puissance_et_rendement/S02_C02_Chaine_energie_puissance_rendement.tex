@@ -1,21 +1,25 @@
 \documentclass[10pt,fleqn]{article} % Default font size and left-justified equations
+\usepackage{import}
 \usepackage[%
     pdftitle={SLCI : Transformée de Laplace},
     pdfauthor={Xavier Pessoles}]{hyperref}
-\input{Cours/style/preambule.tex}
+\subimport{../../../../style/}{preambule.tex}
 %\fichetrue
 \fichefalse
+
 \proftrue
 %\proffalse
+
 %\tdtrue
 \tdfalse
 \courstrue
 %\coursfalse
-\input{Cours/style/new_style}
-\input{Cours/style/macros_SII}
-\input{Cours/style/preambule_trou.tex}
+\subimport{../../../../style/}{new_style}
+\subimport{../../../../style/}{macros_SII}
+\subimport{../../../../style/}{preambule_trou.tex}
 
 \usepackage{siunitx}
+\sisetup{inter-unit-product = \ensuremath { { } \cdot { } } }
 % -------------------------------------
 % Déclaration des titres
 % -------------------------------------
@@ -24,7 +28,7 @@
 \def\xxtete{Enseignement Technologique Transversal}
 
 \def\classe{1 STI2D}
-\def\xxnumpartie{Séquence 2}
+\def\xxnumpartie{Séq 2}
 \def\xxpartie{Modélisation des énergies au sein d'un système}
 
 \def\xxnumchapitre{Séance 2}
@@ -50,8 +54,8 @@
 \def\xxfigures{
 \begin{center}
 \includegraphics[height=4cm]{images/smartphone.png} \\
-\includegraphics[height=4cm]{images/petrole.png} \\
-\includegraphics[height=4cm]{images/gaz.png} \\
+\includegraphics[width=0.7\textwidth]{images/petrole.png} \\
+\includegraphics[width=0.7\textwidth]{images/gaz.png} \\
 \end{center}
 }%figues de la page de garde
 \def\xxpied{%
@@ -63,14 +67,17 @@ Energies, Puissances et Rendement \xxactivite%
 \renewcommand{\RemplirTrou}{true}
 \begin{document}
 \chapterimage{png/Fond_solaire}
-\input{Cours/style/new_pagegarde}
+\subimport{../../../../style/}{new_pagegarde}
 
 
 \section{Energie et puissance mécanique}
 Une énergie mécanique est homogène à (partage les même unités que) une Force (en Newton N) multipliée par une longueur (en mètre m).
 \subsection{Energie mécanique potentielle}
 \begin{defi}
-    Une masse \textbf{m} subissant une accélération \textbf{g} et pouvant réaliser un déplacement potentiel \textbf{H} dispose d'une énergie potentielle \trou{$E_p = P\times H,  E = m\times g\times H$, avec H en m, m en kg et g en $\text{kg}\text{m}\text{s}^{-2}$}. Il s'agit de l'énergie que peut acquérir la masse lors de sa chute. 
+    Une masse \textbf{m} subissant une accélération \textbf{g} et pouvant réaliser un déplacement potentiel 
+    \textbf{H} dispose d'une énergie potentielle 
+    \trou{$E_p = P\times H,  E = m\times g\times H$, avec H en \si{m}, m en \si{kg} et g en \si{kg.m.s^{-2}}}. 
+    Il s'agit de l'énergie que peut acquérir la masse lors de sa chute. 
 \end{defi}
 
 
@@ -80,7 +87,7 @@ Sur terre, la gravitation vaut $g = 9.81 m.s^{-2}$
     Un ascenseur, composé d'une cabine pesant \textbf{1000 kg} et accueillant 3 personnes pour une masse totale de \textbf{200 kg} se trouve au dernier étage, à une hauteur de \textbf{27m}. 
 Quelle est l'énergie récupérable lors de la descente de l'ascenseur ? (En joule et en kWh) 
 
-\afaire\trou{On calcule sa masse : $m = m1 + m2 = 1200 kg$. On calcule l'énergie potentielle : $E_p = mgH = 1200 \times 9.81\times 27 = 317.84 J $}
+\afaire\trou{On calcule sa masse : $m = m1 + m2 = \SI{1200}{kg}$. On calcule l'énergie potentielle : $E_p = mgH = 1200 \times 9.81\times 27 = \SI{317,84}{J} $}
 
 \correction \textbf{Correction : } \trou{On calcule sa masse : $m = m1 + m2 = 1200 kg$. On calcule l'énergie potentielle : $E_p = mgH = 1200 \times 9.81\times 27 = 317.84 J $}
 \end{exemple}
@@ -116,7 +123,7 @@ Puisque l'énergie mécanique est homogène à une force fois une longueur, la p
 $P_{\text{meca}} = C \cdot \Omega$
 \end{defi}
 
-
+\pagebreak
 \subsection{Energie et puissance électrique en courant continu}
 \subsubsection{Energie électrique}
 \begin{defi}
@@ -149,7 +156,7 @@ La puissance électrique est le produit du courant \textbf{$I$} et de la différ
 \end{equation*}
 \pagebreak
 \section{La chaîne d'énergie}
-Un système est une entité qui utilise de l'énergie afin d'\textbf{agir} sur une \textbf{matière d'oeuvre}. Le cheminement de l'énergie entre sa source et son utilsation concrète peut être moélisée par une succession de blocs appelée \textbf{Chaîne d'énergie}.
+Un système est une entité qui utilise de l'énergie afin d'\textbf{agir} sur une \textbf{matière d'oeuvre}. Le cheminement de l'énergie entre sa source et son utilsation concrète peut être modélisée par une succession de blocs appelée \textbf{Chaîne d'énergie}.
 
 \begin{obj}
   Afin de décrire le fonctionnement d'un système, la chaîne d'énergie est un outil adapté faisant apparaître les différents organes impliqués dans l'adaptation et l'utilisation de l'énergie.
@@ -213,7 +220,7 @@ Le rendement est défini comme une grandeur sans dimension qui caractérise l'ef
 \end{itemize}
 
 \begin{defi}
-    Le rendement est également défini comme le rapport entre la puissance utilisable en sortie et la puissance que le système a absorber en entrée. 
+    Le rendement est également défini comme le rapport entre la puissance utilisable en sortie et la puissance que le système a absorbée en entrée. 
     
     $$\eta = \frac{P_{\text{sortie}}}{P_{\text{entrée}}} = \frac{P_{\text{utile}}}{P_{\text{absorbée}}} = \frac{E_{\text{sortie}}}{E_{\text{entrée}}}$$
     
