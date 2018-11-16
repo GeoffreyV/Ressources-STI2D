@@ -71,7 +71,8 @@ Energies, Puissances et Rendement \xxactivite%
 
 \begin{obj}
 Déterminer l’énergie et la puissance disponibles dans un système
-L’étude suivante concerne un BlackBerry Bold 9780 à travers laquelle vous serez amené à
+
+L’étude suivante concerne un BlackBerry Bold 9780 à travers laquelle vous serez amené à
  calculer l’énergie présente dans la batterie de ce téléphone ainsi que les puissances 
  nécessaires pour différentes utilisations de celui-ci.
  
@@ -80,7 +81,12 @@ Déterminer l’énergie et la puissance disponibles dans un système
 \subsection{Quelques données}
 Caractéristiques de la batterie :
 \begin{itemize}
- \item Technologie : Li-Ion (lithium-ion)\item Capacité : $ C = \SI{1500}{mAh} $\item Tension : $U=\SI{3.7}{V}$\item Autonomie en conversation : jusqu'à 6 heures\item Autonomie en veille : jusqu’à 528 heures\item Autonomie en lecture de musique : jusqu'à 36 heures
+ \item Technologie : Li-Ion (lithium-ion)
+\item Capacité : $ C = \SI{1500}{mAh} $
+\item Tension : $U=\SI{3.7}{V}$
+\item Autonomie en conversation : jusqu'à 6 heures
+\item Autonomie en veille : jusqu’à 528 heures
+\item Autonomie en lecture de musique : jusqu'à 36 heures
 \end{itemize}
 
 
@@ -96,7 +102,8 @@ Caractéristiques de la batterie :
 
 \begin{question}
   Calculer l’énergie électrique $\omega_\text{bat}$que contient la batterie.
-\end{question}\begin{solution}
+\end{question}
+\begin{solution}
   On connaît la tension de la batterie, ainsi que sa capacité. L'énergie 
   contenue dans la batterie est $$\omega_text{bat} = U\times C = 1.5\times 3.7 =\SI{5.5}{Wh} $$
 \end{solution}
@@ -106,8 +113,13 @@ Caractéristiques de la batterie :
   conversation, en veille et en lecture de musique. 
 \end{question}
 \begin{solution}
-$$P = \frac{\omega_text{bat}}{t}P_{\text{conv}} = \frac{5,55}{6} = \SI{0.925}{W}P_{\text{veille}} = \frac{5,55}{\num{528e-3}} = \SI{10.5}{mW}P_{\text{musique}} = \frac{5,55}{\num{36e-3}} = \SI{154.2}{mW}$$
-\end{solution}\begin{question}
+$$P = \frac{\omega_text{bat}}{t}
+P_{\text{conv}} = \frac{5,55}{6} = \SI{0.925}{W}
+P_{\text{veille}} = \frac{5,55}{\num{528e-3}} = \SI{10.5}{mW}
+P_{\text{musique}} = \frac{5,55}{\num{36e-3}} = \SI{154.2}{mW}$$
+\end{solution}
+
+\begin{question}
   En déduire le courant consommé en conversation, en veille et en lecture de musique.
 \end{question}
 \begin{solution}
@@ -117,11 +129,15 @@ $$P = \frac{\omega_text{bat}}{t}P_{\text{conv}} = \frac{5,55}{6} = \SI{0.925}{W
  I_{\text{conv}} = \frac{0,925}{3,27} = \SI{283}{mA}
   I_{\text{veille}} = \frac{10.5}{3,27} = \SI{3.21}{mA}
    I_{\text{musique}} = \frac{0.1542}{3,27} = \SI{47}{mA}$$
-\end{solution}\begin{question}
+\end{solution}
+
+\begin{question}
   En supposant qu’une charge complète de la batterie doit être effectuée tous les 6 jours, déterminer l’énergie électrique consommée en une année.
 \end{question}
 \begin{solution}
-  Tous les 6 jours, le Smartphone consomme une énergie de 5,55 Wh.Il faudra donc le recharger 61 fois en un an (nb = 365 / 6 = 61).Wannuelle = 61 x 5,55 = 335,5 Wh
+  Tous les 6 jours, le Smartphone consomme une énergie de 5,55 Wh.
+Il faudra donc le recharger 61 fois en un an (nb = 365 / 6 = 61).
+Wannuelle = 61 x 5,55 = 335,5 Wh
 \end{solution}
 
 Les questions précédentes utilisent des données d'un smartphone des années 2000. 
@@ -149,7 +165,8 @@ caractéristiques sont données ci-dessous.
 \begin{question}
   En supposant une recharge tous les 2 jours, estimez l'énergie consommée sur 
   une année. Concluez. 
-\end{question}\end{exercise}
+\end{question}
+\end{exercise}
 
 
 \end{document}

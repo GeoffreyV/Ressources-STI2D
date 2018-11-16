@@ -1,14 +1,13 @@
 \documentclass[10pt,fleqn]{article} % Default font size and left-justified equations
-\usepackage{import}
 \usepackage[%
     pdftitle={SLCI : Transformée de Laplace},
     pdfauthor={Xavier Pessoles}]{hyperref}
-\subimport{../../../../style/}{preambule}
+\input{Cours/style/preambule.tex}
 %\fichetrue
 \fichefalse
 
-\proftrue
-%\proffalse
+%\proftrue
+\proffalse
 
 \tdtrue
 %\tdfalse
@@ -16,9 +15,9 @@
 \courstrue
 %\coursfalse
 
-\subimport{../../../../style/}{new_style}
-\subimport{../../../../style/}{macros_SII}
-\subimport{../../../../style/}{preambule_trou}
+\input{Cours/style/new_style}
+\input{Cours/style/macros_SII}
+\input{Cours/style/preambule_trou.tex}
 
 \usepackage{siunitx}
 % -------------------------------------
@@ -68,6 +67,7 @@ Energies, Puissances et Rendement \xxactivite%
 \renewcommand{\RemplirTrou}{true}
 \begin{document}
 \chapterimage{png/Fond_solaire}
+%\input{Cours/style/new_pagegarde}
 
 \begin{obj}
 Analyser et comparer les apports d’énergies de différentes sources. 

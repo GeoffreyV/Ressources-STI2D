@@ -1,0 +1,106 @@
+\documentclass[10pt,fleqn]{article} % Default font size and left-justified equations
+\usepackage{import}
+\usepackage[%
+    pdftitle={Energie et puissance d'un smartphone},
+    pdfauthor={Geoffrey Vaquette}]{hyperref}
+\subimport{../../../../style/}{preambule}
+%\fichetrue
+\fichefalse
+
+\proftrue
+%\proffalse
+
+\tdtrue
+%\tdfalse
+
+\courstrue
+%\coursfalse
+
+\subimport{../../../../style/}{new_style}
+\subimport{../../../../style/}{macros_SII}
+\subimport{../../../../style/}{preambule_trou}
+
+\usepackage{siunitx}
+% -------------------------------------
+% Déclaration des titres
+% -------------------------------------
+
+\def\discipline{Enseignement \\Technologique \\ Transversal}
+\def\xxtete{Enseignement Technologique Transversal}
+
+\def\classe{1 STI2D}
+\def\xxnumpartie{Séquence 2}
+\def\xxpartie{Energie électrique et puissance d'un smartphone}
+
+\def\xxnumchapitre{Séance 3}
+\def\xxchapitre{\hspace{.12cm} Énergies, Puissances et rendement}
+
+\def\xxposongletx{2}
+\def\xxposonglettext{1.45}
+\def\xxposonglety{23}
+\def\xxonglet{Seq. 2 -- TD 3}
+
+\def\xxactivite{TD}
+\def\xxauteur{\textsl{Geoffrey Vaquette}}
+
+\def\xxcompetences{%
+\textsl{%
+\textbf{Savoirs et compétences :}
+\begin{itemize}[label=\ding{112},font=\color{ocre}]
+\item CO2.1	Identifier les flux et la forme de l'énergie, caractériser ses transformations et/ou modulations et estimer l'efficacité globale d'un système.
+\end{itemize}
+%
+}}
+
+\def\xxfigures{
+\begin{center}
+\includegraphics[height=4cm]{images/smartphone.png} \\
+\includegraphics[height=4cm]{images/petrole.png} \\
+\includegraphics[height=4cm]{images/gaz.png} \\
+\end{center}
+}%figues de la page de garde
+\def\xxpied{%
+Energies, Puissances et Rendement \xxactivite%
+}
+
+%---------------------------------------------------------------------------
+
+\renewcommand{\RemplirTrou}{true}
+\begin{document}
+\chapterimage{png/Fond_solaire}
+%\input{Cours/style/new_pagegarde}
+
+\begin{obj}
+Analyser et comparer les apports d’énergies de différentes sources. 
+
+À travers cette activité, vous serez amené à comparer une source
+d’énergie renouvelable et non renouvelable afin d’en faire ressortir les
+avantages et inconvénients de chacune.
+\end{obj}
+\section{Caractérisation d'un signal périodique}
+\begin{exercise}
+    Soit un signal rectangulaire ayant les caractéristiques suivantes : 
+        
+    \begin{itemize}
+        \item Fréquence $f = \SI{1}{kHz}$
+        \item Rapport cyclique $ = \SI{70}{\%}$
+        \item $U_{\text{max}} = \SI{8}{V}$
+        \item $U_{\text{min}} = \SI{-3}{V}$
+    \end{itemize}
+    
+    \begin{question}
+        Représentez le signal sous la forme d'un chronogramme.
+    \end{question}
+    \begin{question}
+        Calculez la valeur de la période.
+    \end{question}
+    \begin{question}
+        Déterminez la valeur de l'état haut $Th$
+    \end{question}
+    \begin{question}
+        Déterminez la valeur moyenne du signal.
+    \end{question}
+\end{exercise}
+
+
+\end{document}
