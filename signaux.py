@@ -1,0 +1,27 @@
+from scipy import signal
+import matplotlib.pyplot as plt
+import numpy as np
+t = np.linspace(0, 0.15, 500, endpoint=False)
+plt.plot(t, 3*signal.square(2*np.pi*t/0.03,0.2))
+plt.grid(which='both')
+plt.ylabel('U (V)')
+plt.xlabel('t (s)')
+ax = plt.gca()
+ax.set_xticks(np.arange(0,0.15,0.015))
+#plt.ylim(-2, 2)
+plt.figure()
+sig = 4*np.sin(2*np.pi*50*t)
+plt.plot(t, sig)
+plt.ylabel('U (V)')
+plt.xlabel('t (s)')
+plt.grid()
+
+plt.figure()
+triangle = signal.sawtooth(2*np.pi*t/0.05,0.5)
+plt.plot(t, triangle)
+ax = plt.gca()
+plt.ylabel('U (V)')
+plt.xlabel('t (s)')
+ax.set_xticks(np.arange(0,0.15,0.025))
+plt.grid()
+plt.show()

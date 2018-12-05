@@ -23,3 +23,13 @@
 *.synctex.gz
 #Ignoring Texnicle files : 
 *.texnicle
+#Ignoring DS_store
+*.DS_Store
+#Ignoring more files (Geoffrey)
+*.bcf
+*.run.xml
+*.ptc
+*.fdb_latexmk
+*.snm
+*.nav
+*.fls

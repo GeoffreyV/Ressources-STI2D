@@ -72,12 +72,12 @@ Energies, Puissances et Rendement \xxactivite%
 \begin{obj}
 Déterminer l’énergie et la puissance disponibles dans un système
 
-L’étude suivante concerne un smartphone. 
+L’étude suivante concerne un smartphone.
 
 Vous serez amené à
  calculer l’énergie présente dans la batterie de ce téléphone ainsi que les puissances et énergies nécessaires
  nécessaires pour différentes utilisations de celui-ci.
- 
+
 \end{obj}
 \section{Étude énergétique d'un iPhone X}
 \subsection{Quelques données}
@@ -95,33 +95,33 @@ Caractéristiques de la batterie :
 
 \begin{question}
   Quelle solution permet de remplir la fonction « Alimenter / Stocker » dans le cas de ce smartphone ?
-\end{question} 
+\end{question}
 \begin{solution}
-  La fonction alimenter/stocker est réalisée par la batterie du smartphone. 
+  La fonction alimenter/stocker est réalisée par la batterie du smartphone.
 \end{solution}
 
 \begin{question}
   Calculer l’énergie électrique $\omega_\text{bat}$que contient la batterie.
 \end{question}
 \begin{solution}
-  On connaît la tension de la batterie, ainsi que sa capacité. L'énergie 
+  On connaît la tension de la batterie, ainsi que sa capacité. L'énergie
   contenue dans la batterie est $$\omega_\text{bat} = U\times C = 3.81 \times \num{2717e-3}=\SI{10.35}{Wh} $$
 \end{solution}
 
 \begin{question}
-  A partir des données annoncées, calculer la puissance de ce Smartphone en 
+  A partir des données annoncées, calculer la puissance de ce Smartphone en
  utilisation
 \end{question}
 \begin{solution}
-La puissance moyenne est l'énergie consommé divisée par le temps qu'il a fallu pour consommer cette énergie : $P = \frac{\omega_\text{bat}}{t}$ 
+La puissance moyenne est l'énergie consommé divisée par le temps qu'il a fallu pour consommer cette énergie : $P = \frac{\omega_\text{bat}}{t}$
 $$P_{\text{utilisation}} = \frac{10.35}{275/60} = \SI{2.26}{W}$$
 \end{solution}
 
 \begin{question}
-  En déduire le courant consommé en utilisation. 
+  En déduire le courant consommé en utilisation.
 \end{question}
 \begin{solution}
-  Connaissant la relation liant la puissance, le courant et la tension 
+  Connaissant la relation liant la puissance, le courant et la tension
   $P=U\times I$, on déduit $I = \frac{P}{U}$.
   $$I_{\text{utilisation}} = \frac{2.26}{3.81} = \SI{593}{mA}$$
 \end{solution}
@@ -137,23 +137,23 @@ $$E_{\text{tel annuel}} = 365 \times 10.35 = \SI{3 777}{Wh} = \SI{3.8}{kWh}$$
 
 \begin{question}
   En supposant le rendement d'un chargeur de téléphone de $\eta = 0.95$, calculez l'énergie annuelle consommée sur le réseau par un téléphone en France.
-  
-  On rappelle que $E_s = \eta \times E_e$ avec $\eta$ le rendement, $E_s$ l'énergie en \textbf{sortie} d'un système et $E_e$ l'énergie en \textbf{entrée} d'un système. 
+
+  On rappelle que $E_s = \eta \times E_e$ avec $\eta$ le rendement, $E_s$ l'énergie en \textbf{sortie} d'un système et $E_e$ l'énergie en \textbf{entrée} d'un système.
 \end{question}
 \begin{solution}
   On cherche l'énergie $E_{\text{elec}}$ en entrée du chargeur (nécessaire à recharger le téléphone) en connaissant l'énergie en sortie (énergie consommée par le téléphone). On a donc $ E_{\text{elec}} = \frac{E_{\text{tel annuel}}}{\eta} = \SI{3971}{Wh}$
 \end{solution}
 
 \begin{question}
-Calculez l'énergie perdue (énergie non-utile) annuellement pour la recharge de téléphones portables. Sous quelle forme est perdue cette énergie ? 
+Calculez l'énergie perdue (énergie non-utile) annuellement pour la recharge de téléphones portables. Sous quelle forme est perdue cette énergie ?
 \end{question}
 \begin{solution}
   Cette énergie est perdue sous forme de chaleur. On perd $E_{\text{perdue}} = E_{\text{elec}} * (1-\eta) $
 \end{solution}
 
 \begin{question}
-  Les statistiques indiquent qu'en 2017, 73\% des français de plus de 12 ans possédaient un smartphone. En supposant que tous les français ait un portable équivalent à l'iPhone X en consommation d'énergie, Calculez l'énergie totale que représente la recharge des téléphone en France, en 2017. 
-  
+  Les statistiques indiquent qu'en 2017, 73\% des français de plus de 12 ans possédaient un smartphone. En supposant que tous les français ait un portable équivalent à l'iPhone X en consommation d'énergie, Calculez l'énergie totale que représente la recharge des téléphone en France, en 2017.
+
   \textit{On suppose que 59 Millions de Français avaient plus de 12 ans en 2017. }
 \end{question}
 \begin{solution}

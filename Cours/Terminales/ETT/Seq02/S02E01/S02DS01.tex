@@ -72,18 +72,18 @@ Energies, Puissances et Rendement \xxactivite%
 \begin{obj}
 Déterminer l’énergie et la puissance disponibles dans un système
 
-L’étude suivante concerne un smartphone. 
+L’étude suivante concerne un smartphone.
 
 Vous serez amené-e à
  calculer l’énergie présente dans la batterie de ce téléphone ainsi que les puissances et énergies nécessaires
  nécessaires pour différentes utilisations de celui-ci.
- 
+
 \end{obj}
 \section{Introduction}
 \begin{center}
     \includegraphics[height=0.1\textheight]{images/drone.png}
 \end{center}
-    
+
 
 \subsection{Présentation du système}
 L'AR.Drone de la société Parrot, a été le premier quadricoptère piloté par une tablette mobile connectée en Wi-Fi. L'AR.Drone n'est pas simplement un quadricoptère télécommande, c'est aussi le cœur d'une plate-forme de jeu a réalité augmentée multijoueur.
@@ -110,20 +110,20 @@ L'AR.Drone dispose aussi de plusieurs fonctionnalités d'auto-pilotage permettan
 
 \begin{question}
   Citez deux types d'énergie qui interviennent dans ce système.
-\end{question} 
-\begin{solution}
-  Les énergies intervenant dans ce système sont les énergies électriques et mécanique. 
-\end{solution}
-
-\begin{question}
-    Quel(s) composant(s) permet(ent) de convertir l'énergie dans ce système ? D'après le diagramme de définition des blocs (Figure~\ref{fig:bdd}), combien le système en compte-t-il ? 
 \end{question}
 \begin{solution}
-  Ce sont les moteurs (carte-moteur) qui permettent de convertir l'énergie électrique en énergie mécanique. On peut lire dans le bdd qu'il y a 4 cartes moteur. 
+  Les énergies intervenant dans ce système sont les énergies électriques et mécanique.
 \end{solution}
 
 \begin{question}
-    A l'aide de la liste de composants ci-dessous, complétez la chaîne d'énergie. 
+    Quel(s) composant(s) permet(ent) de convertir l'énergie dans ce système ? D'après le diagramme de définition des blocs (Figure~\ref{fig:bdd}), combien le système en compte-t-il ?
+\end{question}
+\begin{solution}
+  Ce sont les moteurs (carte-moteur) qui permettent de convertir l'énergie électrique en énergie mécanique. On peut lire dans le bdd qu'il y a 4 cartes moteur.
+\end{solution}
+
+\begin{question}
+    A l'aide de la liste de composants ci-dessous, complétez la chaîne d'énergie.
     \begin{itemize}
         \item Carte moteur
         \begin{itemize}
@@ -134,7 +134,7 @@ L'AR.Drone dispose aussi de plusieurs fonctionnalités d'auto-pilotage permettan
         \item Caméra
         \item Batterie Li-Ion
     \end{itemize}
-    
+
     \includegraphics[width=\textwidth]{images/chaineenergie.png}
 \end{question}
 \end{exercise}
@@ -156,7 +156,7 @@ Le dossier technique donne les caractéristiques suivantes pour la \textbf{batte
 \item[Temps de charge :] \SI{90}{min}
 \end{description}
 
-Le dossier technique donne les caractéristiques principales suivantes pour un \textbf{moteur} : 
+Le dossier technique donne les caractéristiques principales suivantes pour un \textbf{moteur} :
 \begin{description}
     \item[Couple moyen en utilisation : ] $C = \SI{2.5e-3}{Nm}$
     \item[Tension moyenne en utilisation : ] $U = \SI{10}{V}$
@@ -172,12 +172,12 @@ Rappel de conversion : $$\SI{1}{tr/min} = \frac{2\pi}{60}\si{rad/s}$$
   Calculer l’énergie électrique $E_\text{bat}$que contient la batterie. Donnez le résultat en Joules et en \si{Wh}
 \end{question}
 \begin{solution}
-  On connaît la tension de la batterie, ainsi que sa capacité. L'énergie 
+  On connaît la tension de la batterie, ainsi que sa capacité. L'énergie
   contenue dans la batterie est $$\omega_\text{bat} = U\times C = 11.1 \times \num{1000e-3}=\SI{11.1}{Wh} $$
 \end{solution}
 \begin{question}
     Calculez la puissance $P_\text{meca}$ en utilisation consommée par chacun des moteurs.
-    
+
     \textit{Rappel : En rotation, la puissance mécanique s'exprime $P = C\times \omega$ avec $C$ le couple déployé et $\omega$ la vitesse de rotation en $\si{rad/s}$.}
 \end{question}
 \begin{solution}
@@ -185,29 +185,45 @@ On connaît le couple développé et la vitesse de rotation en \si{tr/min}. On a
 \end{solution}
 
 \begin{question}
-  Connaissant le rendement du moteur, calculez la puissance électrique $P_\text{elec}$ consommée par un moteur. 
+  Connaissant le rendement du moteur, calculez la puissance électrique $P_\text{elec}$ consommée par un moteur.
 \end{question}
 \begin{solution}
   On a $P_\text{meca} = \alpha P_\text{elec} \Rightarrow P_\text{elec} = \frac{P_\text{meca}}{\alpha} = \frac{10.5}{0.7} = \SI{15}{W}$
 \end{solution}
 
 \begin{question}
-  Supposons à présent que le total des quatre moteurs consomme une puissance totale de $P_\text{tot} = \SI{60}{W}$.
-  
-  Calculez le courant total $I_\text{tot}$ alimentant les moteurs. 
+  Supposons à présent que le total des quatre moteurs consomment une puissance totale de $P_\text{tot} = \SI{60}{W}$.
+
+  Calculez le courant total $I_\text{tot}$ alimentant les moteurs.
 \end{question}
 \begin{solution}
   On a $P = U\times I \Rightarrow I = \frac{P}{U} = \frac{60}{10} = \SI{6}{A}$
 \end{solution}
 
 \begin{question}
-    En considérant que seuls les moteurs consomme de l'électricité, calculez l'autonomie en vol. 
+    En considérant que seuls les moteurs consomme de l'électricité, calculez l'autonomie en vol.
 \end{question}
 
 
 \begin{question}
     Le résultat précédent est-il satisfaisant vis-à-vis des exigences ? Justifiez.
 \end{question}
+\end{exercise}
+
+\section{Analyse de signaux}
+\begin{exercise}
+  \begin{question}
+    Donnez la période, l'amplitude crête à crête et la fréquence des deux signaux suivants :
+
+    A : \includegraphics[width=.5\textwidth]{images/sinus}
+
+    B : \includegraphics[width=.5\textwidth]{images/triangle}
+  \end{question}
+  \begin{question}
+    Donnez la période, l'amplitude crête à crête, la fréquence et le rapport cyclique du signal suivant :
+
+    A : \includegraphics[width=.5\textwidth]{images/carre}
+  \end{question}
 \end{exercise}
 
 \end{document}

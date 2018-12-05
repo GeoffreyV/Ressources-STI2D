@@ -79,9 +79,9 @@
 \usepackage{titletoc} % Required for manipulating the table of contents
 
 \setcounter{tocdepth}{2}     % Dans la table des matieres
-\setcounter{secnumdepth}{2}
+\setcounter{secnumdepth}{3}
 
-\contentsmargin{0cm} % Removes the default margin
+%\contentsmargin{0cm} % Removes the default margin
 
 % Part text styling
 \titlecontents{part}[0cm]
@@ -94,7 +94,7 @@
 \titlecontents{chapter}[1.25cm] % Indentation
 {\addvspace{12pt}\large\sffamily\bfseries} % Spacing and font options for chapters
 {\color{ocre!60}\contentslabel[\Large\thecontentslabel]{1.25cm}\color{ocre}} % Chapter number
-{\color{ocre}}  
+{\color{ocre}}
 {\color{ocre!60}\normalsize\;\titlerule*[.5pc]{.}\;\thecontentspage} % Page number
 
 % Section text styling
@@ -107,7 +107,7 @@
 
 % Subsection text styling
 \titlecontents{subsection}[1.25cm] % Indentation
-{\addvspace{1pt}\sffamily\small} % Spacing and font options for subsections
+{\addvspace{1pt}\sffamily} % Spacing and font options for subsections
 {\contentslabel[\thecontentslabel]{1.25cm}} % Subsection number
 {}
 {\ \titlerule*[.5pc]{.}\;\thecontentspage} % Page number
@@ -137,7 +137,7 @@
 \titlecontents{lchapter}[0em] % Indenting
 {\addvspace{15pt}\large\sffamily\bfseries} % Spacing and font options for chapters
 {\color{ocre}\contentslabel[\Large\thecontentslabel]{1.25cm}\color{ocre}} % Chapter number
-{}  
+{}
 {\color{ocre}\normalsize\sffamily\bfseries\;\titlerule*[.5pc]{.}\;\thecontentspage} % Page number
 
 % Section text styling
@@ -183,7 +183,7 @@
 \fancyfoot[C]{\rule{12cm}{.5pt}}
 \renewcommand{\footrulewidth}{0.2pt}
 \fancyfoot[C]{\footnotesize{\bfseries \thepage}}
-\fancyfoot[L]{ 
+\fancyfoot[L]{
 \begin{minipage}[c]{.2\linewidth}
 \noindent\footnotesize{{\xxauteur}}
 \end{minipage}}
@@ -192,10 +192,10 @@
 \fancyfoot[R]{\footnotesize{\xxpied}
 \ifthenelse{\isodd{\value{page}}}{
 \begin{tikzpicture}[overlay]
-\node[shape=rectangle, 
+\node[shape=rectangle,
       rounded corners = .25 cm,
 	  draw= ocre,
-	  line width=2pt, 
+	  line width=2pt,
 	  fill = ocre!10,
 	  minimum width  = 2.5cm,
 	  minimum height = 3cm,] at (\xxposongletx,\xxposonglety) {};
@@ -224,13 +224,13 @@
 \fancyfoot[C]{\rule{12cm}{.5pt}}
 \renewcommand{\footrulewidth}{0.2pt}
 \fancyfoot[C]{\footnotesize{\bfseries \thepage}}
-\fancyfoot[L]{ 
+\fancyfoot[L]{
 \begin{minipage}[c]{.2\linewidth}
 \noindent\footnotesize{{\xxauteur}}
 \end{minipage}}}
 
 %%%%%%%%%%%%%%%%%
-% Pour les TDs : 
+% Pour les TDs :
 %%%%%%%%%%%%%%%%%
 \usepackage{enumitem}
 \newlist{questions}{enumerate}{3}
@@ -256,7 +256,7 @@
 {0pt}% Space below
 {\normalfont}% % Body font
 {}% Indent amount
-{\small\bf\sffamily\color{ocre}}% % Theorem head font
+{\large\bf\sffamily\color{ocre}}% % Theorem head font
 {\;}% Punctuation after theorem head
 {0.25em}% Space after theorem head
 {\small\sffamily\color{ocre}\thmname{#1}\nobreakspace\thmnumber%{\@ifnotempty{#1}{}\@upn{#2}}% Theorem text (e.g. Theorem 2.1)
@@ -270,7 +270,7 @@
 {0pt}% Space below
 {\normalfont}% % Body font
 {}% Indent amount
-{\small\bf\sffamily\color{violet}}% % Theorem head font
+{\large\bf\sffamily\color{violet}}% % Theorem head font
 {\;}% Punctuation after theorem head
 {0.25em}% Space after theorem head
 {\small\sffamily\color{ocre}\thmname{#1}\nobreakspace\thmnumber%{\@ifnotempty{#1}{}\@upn{#2}}% Theorem text (e.g. Theorem 2.1)
@@ -284,7 +284,7 @@
 {5pt}% Space below
 {\normalfont}% Body font
 {} % Indent amount
-{\small\bf\sffamily}% Theorem head font
+{\Large\bf\sffamily}% Theorem head font
 {\;}% Punctuation after theorem head
 {0.25em}% Space after theorem head
 {\small\sffamily{\tiny\ensuremath{\blacksquare}}\nobreakspace\thmname{#1}\nobreakspace\thmnumber%{\@ifnotempty{#1}{}\@upn{#2}}% Theorem text (e.g. Theorem 2.1)
@@ -295,7 +295,7 @@
 {0pt}% Space below
 {\normalfont}% Body font
 {}% Indent amount
-{\small\bf\sffamily}% Theorem head font
+{\large\bf\sffamily}% Theorem head font
 {\;}% Punctuation after theorem head
 {0.25em}% Space after theorem head
 {\small\sffamily\thmname{#1}\nobreakspace%\thmnumber{\@ifnotempty{#1}{}\@upn{#2}}% Theorem text (e.g. Theorem 2.1)
@@ -307,7 +307,7 @@
 {5pt}% Space below
 {\normalfont}% % Body font
 {}% Indent amount
-{\small\bf\sffamily\color{ocre}}% % Theorem head font
+{\large\bf\sffamily\color{ocre}}% % Theorem head font
 {\;}% Punctuation after theorem head
 {0.25em}% Space after theorem head
 {\small\sffamily\color{ocre}\thmname{#1}\nobreakspace\thmnumber{\@ifnotempty{#1}{}\@upn{#2}}% Theorem text (e.g. Theorem 2.1)
@@ -316,7 +316,7 @@
 \makeatother
 
 % Environnement pour les titres de parties
-\newtheoremstyle{partiebox} 
+\newtheoremstyle{partiebox}
 {0pt}% Space above
 {0pt}% Space below
 {\normalfont}% Body font
@@ -329,7 +329,7 @@
 
 
 % Defines the theorem text style for each type of theorem to one of the three styles above
-\newcounter{dummy} 
+\newcounter{dummy}
 \numberwithin{dummy}{section}
 \theoremstyle{ocrenumbox}
 %\newtheorem{theoremeT}[dummy]{Théorème}
@@ -349,7 +349,7 @@
 \newtheorem{vocabulary}{Vocabulaire}[section]
 %\newtheorem{definitionT}{Definition}[section]
 
-\newtheorem{aretenirT}[section]{À retenir : }
+\newtheorem{aretenirT}{À retenir : }[section]
 
 \newtheorem{definitionT}{Définition}[section]
 \newtheorem{corollaryT}[dummy]{Corollaire}
@@ -397,7 +397,7 @@ rightmargin=0cm,
 innerbottommargin=5pt]{coBox}
 
 
-% Exercise box	  
+% Exercise box
 \newmdenv[skipabove=7pt,
 skipbelow=7pt,
 rightline=false,
@@ -412,7 +412,7 @@ innertopmargin=5pt,
 innerbottommargin=5pt,
 leftmargin=0cm,
 rightmargin=0cm,
-linewidth=4pt]{eBox}	
+linewidth=4pt]{eBox}
 
 % Definition box
 \newmdenv[skipabove=7pt,
@@ -542,15 +542,15 @@ innerbottommargin=5pt]{exBox}
 \newenvironment{resultat}{\begin{tBox}\begin{resultatT}}{\end{resultatT}\end{tBox}}
 \newenvironment{obj}{\begin{tBox}\begin{objectifT}}{\end{objectifT}\end{tBox}}
 \newenvironment{corrige}{\begin{coBox}\begin{correctionT}}{\end{correctionT}\end{coBox}}
-\newenvironment{exercise}{\begin{eBox}\begin{exerciseT}}{\hfill{\color{ocre}\tiny\ensuremath{\blacksquare}}\end{exerciseT}\end{eBox}}				
-\newenvironment{aretenir}{\begin{aBox}\begin{aretenirT}}{\end{aretenirT}\end{aBox}}	
-\newenvironment{definition}{\begin{dBox}\begin{definitionT}}{\end{definitionT}\end{dBox}}	
-\newenvironment{defi}{\begin{dBox}\begin{definitionT}}{\end{definitionT}\end{dBox}}	
-%\newenvironment{exemple}{\begin{exempleT}}{\hfill{\tiny\ensuremath{\blacksquare}}\end{exempleT}}		
+\newenvironment{exercise}{\begin{eBox}\begin{exerciseT}}{\hfill{\color{ocre}\tiny\ensuremath{\blacksquare}}\end{exerciseT}\end{eBox}}
+\newenvironment{aretenir}{\begin{aBox}\begin{aretenirT}}{\end{aretenirT}\end{aBox}}
+\newenvironment{definition}{\begin{dBox}\begin{definitionT}}{\end{definitionT}\end{dBox}}
+\newenvironment{defi}{\begin{dBox}\begin{definitionT}}{\end{definitionT}\end{dBox}}
+%\newenvironment{exemple}{\begin{exempleT}}{\hfill{\tiny\ensuremath{\blacksquare}}\end{exempleT}}
 \newenvironment{corollary}{\begin{cBox}\begin{corollaryT}}{\end{corollaryT}\end{cBox}}
-\newenvironment{hypo}{\begin{hyBox}\begin{hypoT}}{\end{hypoT}\end{hyBox}}	\newenvironment{exemple}{\begin{exBox}\begin{exempleT}}{\hfill{\tiny\ensuremath{\blacksquare}}\end{exempleT}\end{exBox}}	
-\newenvironment{titrepartie}{\begin{pBox}\begin{titrepartieT}}{\end{titrepartieT}\end{pBox}}	
-\newenvironment{titrechapitre}{\begin{chBox}\begin{titrechapitreT}}{\end{titrechapitreT}\end{chBox}}	
+\newenvironment{hypo}{\begin{hyBox}\begin{hypoT}}{\end{hypoT}\end{hyBox}}	\newenvironment{exemple}{\begin{exBox}\begin{exempleT}}{\hfill{\tiny\ensuremath{\blacksquare}}\end{exempleT}\end{exBox}}
+\newenvironment{titrepartie}{\begin{pBox}\begin{titrepartieT}}{\end{titrepartieT}\end{pBox}}
+\newenvironment{titrechapitre}{\begin{chBox}\begin{titrechapitreT}}{\end{titrechapitreT}\end{chBox}}
 %----------------------------------------------------------------------------------------
 %	REMARK ENVIRONMENT
 %----------------------------------------------------------------------------------------
@@ -586,23 +586,23 @@ innerbottommargin=5pt]{exBox}
 %----------------------------------------------------------------------------------------
 
 \makeatletter
-\renewcommand{\@seccntformat}[1]{\llap{\textcolor{ocre}{\csname the#1\endcsname}\hspace{1em}}}                    
+\renewcommand{\@seccntformat}[1]{\llap{\textcolor{ocre}{\csname the#1\endcsname}\hspace{1em}}}
 \renewcommand{\section}{\@startsection{section}{1}{\z@}
 {-4ex \@plus -1ex \@minus -.4ex}
 {1.5ex \@plus.2ex }
-{\normalfont\Large\sffamily\bfseries}}
+{\normalfont\LARGE\sffamily\bfseries}}
 \renewcommand{\subsection}{\@startsection {subsection}{2}{\z@}
 {-3ex \@plus -0.1ex \@minus -.4ex}
 {1ex \@plus.2ex }
-{\normalfont\large\sffamily\bfseries}}
+{\normalfont\Large\sffamily\bfseries}}
 \renewcommand{\subsubsection}{\@startsection {subsubsection}{3}{\z@}
 {-2ex \@plus -0.1ex \@minus -.2ex}
 {.5ex \@plus.2ex }
-{\normalfont\sffamily\bfseries}}                        
+{\normalfont\large\sffamily\bfseries}}
 \renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}
 {-2ex \@plus-.2ex \@minus .2ex}
 {.1ex}
-{\normalfont\small\sffamily\bfseries}}
+{\normalfont\sffamily\bfseries}}
 
 %----------------------------------------------------------------------------------------
 %	PART HEADINGS
@@ -673,7 +673,7 @@ addtohook={%
 }
 
 %----------------------------------------------------------------------------------------
-%	
+%
 %----------------------------------------------------------------------------------------
 
 \newcommand{\thechapterimage}{}%
@@ -694,14 +694,11 @@ addtohook={%
 
 
 
-\makeatletter             
+\makeatletter
 \renewcommand{\subparagraph}{\@startsection{subparagraph}{5}{\z@}%
                                     {-2ex \@plus-.2ex \@minus .2ex}%
-                                    {0ex}%               
+                                    {0ex}%
 {\normalfont\bfseries Question \hspace{.7cm} }}
 \makeatother
-\renewcommand{\thesubparagraph}{\arabic{subparagraph}} 
+\renewcommand{\thesubparagraph}{\arabic{subparagraph}}
 \makeatletter
-
-
-
