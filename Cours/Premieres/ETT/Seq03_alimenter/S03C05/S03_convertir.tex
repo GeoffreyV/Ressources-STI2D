@@ -64,59 +64,55 @@ Chaine d'énergie -- \xxactivite%
 %---------------------------------------------------------------------------
 
 \renewcommand{\RemplirTrou}{true}
-\title{Le bloc «alimenter» du robot mbot}
+\title{Le bloc «convertir» du robot mbot}
 \date{}
 \begin{document}
 \maketitle
 \chapterimage{}
 %\input{Cours/style/new_pagegarde}
 \begin{obj}
-  L'objectif de cette activité est de caractériser l'alimentation du robot \textbf{mbot}.
+  L'objectif de cette activité est de caractériser le moteur du robot \textbf{mbot}.
 \end{obj}
 \section{Introduction}
 Vous avez à votre disposition le manuel d'utilisation du robot \textit{mbot}. Ce document est le support pour les questions suivantes.
+
+La documentation nous informe que la tension nominale du moteur est de $U=\SI{6}{V}$ et que sa vitesse nominale de rotation est de $\Omega=\SI{200}{rpm}$.
+
+On rappelle que la vitesse de rotation de l'arbre d'un moteur à courant continu est proportionnel : $\Omega = K\times U$.
 \begin{question}
-  En vous aidant de la documentation, identifiez les deux options d'alimentation du robot \textit{mbot}.
+   Calculez sa vitesse de rotation pour une alimentation de $U_2=\SI{4}{V}$
 \end{question}
 \vspace{\stretch{1}}
-\section{Alimenter le robot à l'aide de piles}
 \begin{question}
-  A partir du support de piles, identifiez si ces piles sont branchées en série ou en parallèle.
+  Rappelez le principe de fonctionnement d'un moteur à courant continu.
 \end{question}
-    \vspace{\stretch{1}}
-\begin{question}
-  Représentez, sous la forme d'un schéma électrique le branchement des piles :
-\end{question}
-    \vspace{\stretch{3}}
-
-\begin{question}
-  Chaque emplacement peut contenir une pile AA. Quel est la tension d'une telle pile ? A l'aide des questions précédentes, en déduire la tension d'alimentation du robot.
-\end{question}
-    \vspace{\stretch{1}}
-
-\begin{question}
-  Quelle est la capacité d'une pile AA. A partir du branchement proposé dans les questions précédentes, en déduire la capacité du système d'alimentation du \textit{mbot}
-\end{question}
-        \vspace{\stretch{1}}
-
-\pagebreak
-\section{Alimentation à l'aide d'un accumulateur}
-Il est possible d'alimenter le robot \textit{mbot} à l'aide d'une batterie d'une tension $U=\SI{3,75}{V}$ et d'une capacité $C_a=\SI{1800}{mAh}$.
-\begin{question}
-  En considérant que cette batterie est chargée à l'aide d'un courant $I=\SI{500}{mA}$, calculez le temps nécessaire à une charge complète de la batterie.
-\end{question}
-
-La batterie est chargée à l'aide d'un chargeur branché sur le réseau.
-
+\vspace{\stretch{2}}
+\section{Commande par un signal carré}
 \begin{center}
-  \includegraphics[width=0.7\textwidth]{images/reseau_edf_signal}
+  \includegraphics[width=.6\textwidth]{images/carre75}
 \end{center}
+
 \begin{question}
-  Donnez le type de ce signal, sa fréquence et son amplitude.
+  Donnez la période, la fréquence, l'amplitude ainsi que le rapport cyclique du signal ci-dessus.
 \end{question}
- \vspace{\stretch{1}}
+    \vspace{\stretch{1}}
+      \pagebreak
 \begin{question}
-  Ce signal alimente un transformateur parfait de rapport de transformation $r=100$. Dessinez le signal en sortie de ce transformateur.
+  Calculez la valeur moyenne $U_\text{moy}$ de ce signal.
+
+  \textit{Rappel : Sur une période, calculez l'aire sous la courbe et divisez par la période.}
+
 \end{question}
-\vspace{\stretch{4}}
+    \vspace{\stretch{1}}
+
+\begin{question}
+  On considère alors que le moteur est alimenté par une tension continue $U_\text{moy}$. Quelle est sa vitesse de rotation ?
+\end{question}
+    \vspace{\stretch{1}}
+
+\begin{question}
+  Tracez la signal carré d'une amplitude de \SI{6}{V} et d'une fréquence de \SI{20}{kHz} qu'il faudrait alimenter pour alimenter le moteur avec une valeur moyenne de \SI{3}{V}
+\end{question}
+        \vspace{\stretch{3}}
+
 \end{document}

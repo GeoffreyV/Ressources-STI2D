@@ -33,7 +33,7 @@
 \def\xxpartie{Energie électrique et puissance d'un smartphone}
 
 \def\xxnumchapitre{Séance 3}
-\def\xxchapitre{\hspace{.12cm} Chaine d'énergie}
+\def\xxchapitre{\hspace{.12cm} Énergies, Puissances et rendement}
 
 \def\xxposongletx{2}
 \def\xxposonglettext{1.45}
@@ -64,59 +64,45 @@ Chaine d'énergie -- \xxactivite%
 %---------------------------------------------------------------------------
 
 \renewcommand{\RemplirTrou}{true}
-\title{Le bloc «alimenter» du robot mbot}
+\title{Le bloc « transmettre » du robot mbot}
 \date{}
 \begin{document}
 \maketitle
 \chapterimage{}
 %\input{Cours/style/new_pagegarde}
 \begin{obj}
-  L'objectif de cette activité est de caractériser l'alimentation du robot \textbf{mbot}.
+  On propose dans cette activité de caractériser le bloc de réduction des moteurs du \textit{mbot}
 \end{obj}
 \section{Introduction}
-Vous avez à votre disposition le manuel d'utilisation du robot \textit{mbot}. Ce document est le support pour les questions suivantes.
+
 \begin{question}
-  En vous aidant de la documentation, identifiez les deux options d'alimentation du robot \textit{mbot}.
+  Localisez un bloc moteur sur le robot \textit{mbot}. Combien en comporte-t-il ?
 \end{question}
 \vspace{\stretch{1}}
-\section{Alimenter le robot à l'aide de piles}
 \begin{question}
-  A partir du support de piles, identifiez si ces piles sont branchées en série ou en parallèle.
+  Quelle est la fonction du réducteur en sortie du moteur ?
 \end{question}
-    \vspace{\stretch{1}}
-\begin{question}
-  Représentez, sous la forme d'un schéma électrique le branchement des piles :
-\end{question}
-    \vspace{\stretch{3}}
+\vspace{\stretch{1}}
 
-\begin{question}
-  Chaque emplacement peut contenir une pile AA. Quel est la tension d'une telle pile ? A l'aide des questions précédentes, en déduire la tension d'alimentation du robot.
-\end{question}
-    \vspace{\stretch{1}}
-
-\begin{question}
-  Quelle est la capacité d'une pile AA. A partir du branchement proposé dans les questions précédentes, en déduire la capacité du système d'alimentation du \textit{mbot}
-\end{question}
-        \vspace{\stretch{1}}
-
-\pagebreak
-\section{Alimentation à l'aide d'un accumulateur}
-Il est possible d'alimenter le robot \textit{mbot} à l'aide d'une batterie d'une tension $U=\SI{3,75}{V}$ et d'une capacité $C_a=\SI{1800}{mAh}$.
-\begin{question}
-  En considérant que cette batterie est chargée à l'aide d'un courant $I=\SI{500}{mA}$, calculez le temps nécessaire à une charge complète de la batterie.
-\end{question}
-
-La batterie est chargée à l'aide d'un chargeur branché sur le réseau.
-
+Soit le schéma de réduction suivant :
 \begin{center}
-  \includegraphics[width=0.7\textwidth]{images/reseau_edf_signal}
+  \includegraphics[width=.4\textwidth]{images/engrenages_mbot}
 \end{center}
+On donne $Z_1 = 8$, $Z_2 = 32$, $Z_3 = 9$, $Z_4 = 40$, $Z_5 = 20$, $Z_6 = 29$, $Z_7 = 15$, $Z_8 = 30$
 \begin{question}
-  Donnez le type de ce signal, sa fréquence et son amplitude.
+Comptez le nombre de contacts extérieurs présents dans ce montage.
 \end{question}
- \vspace{\stretch{1}}
+    \vspace{\stretch{1}}
 \begin{question}
-  Ce signal alimente un transformateur parfait de rapport de transformation $r=100$. Dessinez le signal en sortie de ce transformateur.
+  Le sens de rotation en sortie sera-t-il le même que le sens de rotation en entrée ?
 \end{question}
-\vspace{\stretch{4}}
+    \vspace{\stretch{1}}
+\begin{question}
+  Calculez les rapports de réduction de chaque contact extérieurs.
+\end{question}
+\vspace{\stretch{2}}
+\begin{question}
+  Déduisez-en le rapport de réduction global du système.
+\end{question}
+\vspace{\stretch{1}}
 \end{document}
