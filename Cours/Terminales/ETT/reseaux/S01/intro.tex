@@ -1,0 +1,291 @@
+%!TeX spellcheck = fr-FR
+\documentclass[10pt,fleqn]{article} % Default font size and left-justified equations
+\usepackage[%
+    pdftitle={SLCI : Transformée de Laplace},
+    pdfauthor={Xavier Pessoles}]{hyperref}
+
+\usepackage{import}
+\usepackage{subcaption}
+\subimport{../../../../style/}{preambule.tex}
+%\fichetrue
+\fichefalse
+\proftrue
+%\proffalse
+%\tdtrue
+\tdfalse
+\courstrue
+%\coursfalse
+\subimport{../../../../style/}{new_style}
+\subimport{../../../../style/}{macros_SII}
+\subimport{../../../../style/}{preambule_trou.tex}
+
+\usepackage{siunitx}
+% -------------------------------------
+% Déclaration des titres
+% -------------------------------------
+
+\def\discipline{Enseignement \\Technologique \\ Transversal}
+\def\xxtete{Enseignement Technologique Transversal}
+
+\def\classe{1 STI2D}
+\def\xxnumpartie{Seq 3}
+\def\xxpartie{Alimenter un système en énergie}
+
+\def\xxnumchapitre{Séance 3}
+\def\xxchapitre{\hspace{.12cm} Transmettre l'énergie}
+
+\def\xxposongletx{2}
+\def\xxposonglettext{1.45}
+\def\xxposonglety{23}
+\def\xxonglet{Seq. 3 -- Se. 6}
+
+\def\xxactivite{Cours}
+\def\xxauteur{\textsl{Geoffrey Vaquette}}
+
+\def\xxcompetences{%
+\textsl{%
+\textbf{Prérequis :}
+\begin{itemize}[label=\ding{112},font=\color{ocre}]
+\item Analyse fonctionnelle de la chaîne d'énergie
+\end{itemize}
+\textbf{Savoirs et compétences :}
+\begin{itemize}[label=\ding{112},font=\color{ocre}]
+\item CO2.1	Identifier les flux et la forme de l'énergie, caractériser ses transformations et/ou modulations et estimer l'efficacité globale d'un système.
+\end{itemize}
+%
+}}
+
+\def\xxfigures{
+\begin{center}
+% \includegraphics[width=2cm]{images/onduleur} \\
+% \includegraphics[width=2cm]{images/robinet} \\
+%\includegraphics[width=2cm]{images/prise.png} \\
+\end{center}
+}%figues de la page de garde
+\def\xxpied{%
+Transmettre l'énergie \xxactivite%
+}
+
+%---------------------------------------------------------------------------
+\renewcommand{\RemplirTrou}{false}
+\begin{document}
+\chapterimage{img/reseau_redondances}
+\subimport{../../../../style/}{new_pagegarde}
+% \begin{figure}[h]
+%   \includegraphics[width=\textwidth]{img/reseau_redondances}
+%   \caption{La fonction « Transmettre » dans la chaîne d'énergie}
+%   \label{fig:chaine}
+% \end{figure}
+
+\section{Pourquoi et comment communiquer ?}
+De tout temps, les humains ont ressenti et ressentent le besoin de communiquer.
+Les méthodes dont nous nous servons pour partager idées et informations changent et évoluent sans cesse. Si le réseau humain se limitait autrefois à des conversations en face à face, aujourd'hui les découvertes en matière de supports étendent sans cesse la portée de nos communications. De la presse écrite à la télévision, chaque innovation a développé et amélioré nos moyens de communication.
+
+\section{Caractéristiques d'un réseau}
+\label{sec:caracteristiques}
+Pour être totalement fonctionnels et répondre aux besoins des utilisateurs, les réseaux doivent respecter quelques caractéristiques que nous décrivons dans cette section.
+
+
+\subsection{Tolérence aux pannes}
+La fréquence d'utilisation et la taille des réseaux soumettent les services disponibles en réseau à diverses pannes matérielles et/ou logicielles.
+\begin{defi}
+  Un réseau tolérant aux pannes est un réseau qui limite l'impact des pannes du matériel et des logiciels et qui peut être rétabli rapidement quand des pannes se produisent.
+\end{defi}
+\begin{exemple}
+  Pour pallier à des pannes de laison entre deux organes du réseau, on peut mettre en place une redondance entre la source et la destination. Cela signifie qu'il y aura plusieurs chemins possibles pour joindre la destination depuis la source.
+  En cas de défaillance d'une liaison (ou chemin) entre deux hôtes, des processus s'assurent que les messages sont routés (dirigés) sur un chemin différent et arrivent à bon port.
+  \begin{center}
+    \includegraphics[width=.7\textwidth]{img/reseau_redondances}
+  \end{center}
+\end{exemple}
+
+\subsection{Evolutivité}
+Le nombre croissant d'utilisateurs d'internet, l'évolution imprévisible d'une entreprise ou d'un organisme ou encore l'arrivée de matériel spécifique impose une évolution du réseau afin qu'il puisse répondre au nouveau besoin.
+\begin{definition}
+  Un réseau évolutif est en mesure de s'étendre rapidement afin de prendre en charge de nouveaux utilisateurs et applications sans que cela n'affecte les performances du service fourni aux utilisateurs existants.
+\end{definition}
+
+\subsection{Qualité de services}
+Les transmissions exigent des niveaux de qualités différents selon l'information qui circule. Par exemple, une transmission audio et vidéo exige un service ininterrompu et une qualité supérieure à l'envoi d'un simple mail.
+\begin{aretenir}
+  Sur un réseau, un niveau de priorité est défini pour chaque service en fonction de la qualité requise. Ainsi, plus un service exige une qualité importante, plus ses paquets seront prioritaires devant d'autre services.
+  \begin{center}
+    \includegraphics[width=.8\textwidth]{img/reseau_priorites}
+  \end{center}
+\end{aretenir}
+
+\subsection{Sécurité}
+En matière de sécurité des réseaux, deux points doivent être pris en considération pour éviter des conséquences graves : la sécurité de l'infrastructure réseau et la sécurité du contenu.
+En effet, les données qui transitent sur un réseau peuvent être plus ou moins sensibles (données bancaires par exemple) et doivent donc pouvoir être transmises en garantissant une certaine sécurité.
+Le réseau peut également subir des attaques malveillantes visant à le rendre hors service.
+\begin{aretenir}~
+  \begin{itemize}
+    \item \textbf{Sécuriser l'infrastructure} réseau implique de sécuriser matériellement les périphériques qui assurent la connectivité du réseau et d'empêcher tout accès non autorisé au logiciel de gestion qu'ils hébergent.
+    \item \textbf{Sécuriser le contenu} consiste à protéger les informations contenues dans les paquets transmis sur le réseau ainsi que les informations stockées sur des périphériques reliés au réseau en les cryptant.
+  \end{itemize}
+\end{aretenir}
+\section{Elements d'un réseau}
+\begin{figure}[h]
+  \centering
+  \includegraphics[height=.3\textheight]{img/reseau_peripheriques}
+  \caption{Périphériques et supports de transmissions}
+\end{figure}
+
+\subsection{Les périphériques terminaux}
+\begin{defi}
+  Ce sont les périphériques qui envoient ou auxquels sont destinés les infomations transitant sur le réseau.
+\end{defi}
+\begin{exemple}~\\
+  \begin{minipage}[c]{.5\textwidth}
+    \begin{itemize}
+      \item \trou{Serveurs}
+      \item \trou{Ordinateurs}
+      \item \trou{Imprimantes}
+      \item \trou{Téléphones IP}
+    \end{itemize}
+  \end{minipage}
+  \begin{minipage}[c]{.5\textwidth}
+    \begin{itemize}
+      \item \trou{Smartphones}
+      \item \trou{Tablettes}
+      \item \trou{Télévisions}
+      \item \dots
+    \end{itemize}
+  \end{minipage}
+\end{exemple}
+\subsection{Les périphériques intermédiaires}
+\begin{defi}
+  Ces périphériques assurent le bon acheminement des paquets sur le réseau tout en garantissant le respect des caractéristiques explicités dans la section~\ref{sec:caracteristiques}
+\end{defi}
+\begin{exemple}~\\
+    \begin{itemize}
+      \item \trou{Commutateurs (utilisés pour interconnecter des réseaux locaux)}
+      \item \trou{Pare-feu (assure la sécurité du réseau)}
+      \item \trou{Routeur (contribue à orienter les messages transitant sur un réseau)}
+      \item \trou{Routeur sans fils (souvent présents dans les réseaux domiciles)}
+      \item \dots
+    \end{itemize}
+\end{exemple}
+\subsection{Les connexions}
+\begin{defi}
+  Les connexions sont le support même du transfert d'informations. Ces connexions peuvent être filaires, sans-fil, optiques ou tout support capable de transporter une information.
+\end{defi}
+Divers organismes de normalisation contribues à la définition des propriétés physiques, électriques et mécaniques des supports disponibles pour différentes communications de données.
+Ces spécifications garantissent que les câbles et connecteurs fonctionnent comme prévu dans des conditions précises.
+
+
+\section{Topologies des réseaux}
+Afin de permettre à des éléments de communiquer, il est indispensable de les connecter entre eux. Il existe une multitude de connexions possibles.
+\begin{defi}
+  La \textbf{topologie physique} désigne la configuration spatiale du réseau. C'est la façon dont les organes sont connectés \textbf{physiquement}.
+\end{defi}
+\begin{defi}
+  La \textbf{topologie logique} désigne quant à elle la manière dont les données transitent dans les câbles.
+\end{defi}
+
+\subsection{Quelques topologies physiques classiques}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=.7\textwidth]{img/reseau_topologies}
+  \caption{Trois exemples de topologies de réseau.}
+  \label{fig:res_topo}
+\end{figure}
+\subsubsection{Topologie en bus}
+Une topologie en bus est l'organisation la plus simple d'un réseau. En effet dans une topologie en bus tous les ordinateurs sont reliés à une même ligne de transmission par l'intermédiaire d'un câble, généralement coaxial. Le mot "bus" désigne la ligne physique qui relie les machines du réseau.
+
+Cette topologie a pour avantages d'être \trou{facile à mettre en oeuvre} et de fonctionner facilement, par contre elle est extrêmement \trou{vulnérable} étant donné que si l'une des connexions est défectueuse, c'est l'ensemble du réseau qui est affecté.
+
+Cette topologie est obsolète dans les réseaux de données mais couramment utilisé dans les réseaux de terrain (voitures ou automates par exemple).
+
+\subsubsection{Topologie en anneau}
+Dans un réseau en topologie en anneau, les ordinateurs sont reliés sur une bouble. Les ordinateurs doivent donc communiquer chacun à leur tour.
+
+En réalité les ordinateurs d'un réseau en topologie anneau ne sont pas reliés en boucle, mais sont reliés à un répartiteur (appelé MAU, Multistation Access Unit) qui va gérer la communication entre les ordinateurs qui lui sont reliés en impartissant à chacun d'entre-eux un temps de parole.
+
+\subsubsection{Topologie en étoile}
+Dans une topologie en étoile, les ordinateurs du réseau sont reliés à un système matériel appelé switch (commutateur). Il s'agit d'une boîte comprenant un certain nombre de jonctions auxquelles on peut connecter les câbles en provenance des ordinateurs. Celui-ci a pour rôle d'assurer la communication entre les différentes jonctions.
+C'est la topologie la plus utilisée aujourd'hui.
+
+Contrairement aux réseaux construits sur une topologie en bus, les réseaux suivant une topologie en étoile sont beaucoup moins vulnérables car on peut aisément retirer une des connexions en la débranchant du commutateur sans pour autant paralyser le reste du réseau.
+
+\section{Le modèle OSI}
+Au début des années 70, chaque constructeur a développé sa propre solution réseau autour d'architecture et de protocoles privés (SNA d'IBM, DECnet de DEC, DSA de Bull, TCP/IP du DoD,...) et il s'est vite avéré qu'il serait impossible d'interconnecter ces différents réseaux «propriétaires» si une norme internationale n'était pas établie. Cette norme établie par l'International Standard Organization (ISO) est la norme Open System Interconnection (OSI, interconnexion de systèmes ouverts).
+
+Un système ouvert est un ordinateur, un terminal, un réseau, n'importe quel équipement respectant cette norme et donc apte à échanger des informations avec d'autres équipements hétérogènes et issus de constructeurs différents.
+
+Le modèle de référence OSI est une représentation abstraite en couches servant de guide à la conception des protocoles réseau. Il divise le processus de réseau en sept couches logiques, chacune comportant des fonctionnalités uniques et se voyant attribuer des services et des protocoles spécifiques.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[height=.3\textheight]{img/reseau_OSI}
+  \caption{Les couches du modèle OSI}
+  \label{fig:res_osi}
+\end{figure}
+
+\section{Adressage et encapsulation}
+\paragraph{Nécessité d'un adressage}
+Lorsque deux organes sont connectés entre eux seuls, il est simple de savoir qui s'adresse à qui (il n'y a qu'un seul expéditeur et un seul destinataire possible selon le sens de communication).
+Par contre, lorsque plusieurs organes sont connectés sur le même réseau, il devient indispensable de savoir à qui s'adresse chaque paquet qui transite sur le réseau.
+\paragraph{}
+Le modèle OSI décrit des processus de codage, de mise en forme, de segmentation et d'encapsulation de données pour la transmission sur le réseau. Un flux de données envoyé depuis une source vers une destination peut être divisé en parties et entrelacé avec des messages transmis depuis d'autres hôtes vers d'autres destinations. À n'importe quel moment, des milliards de ces parties d'informations se déplacent sur un réseau. Il est essentiel que chaque donnée contienne les informations d'identification suffisantes afin d'arriver à bonne destination.
+
+Il existe plusieurs types d'adresses qui doivent être incluses pour livrer correctement les données depuis une application source exécutée sur un hôte à l'application de destination correcte exécutée sur un autre. En utilisant le modèle OSI comme guide, nous apercevons les différents identificateurs et adresses nécessaires à chaque couche.
+
+\subsection{Protocole TCP/IP et analogies utiles}
+On s'interesse dans cette partie aux couches 1 à 4 du réseau plus particulièrement. Ces couches permettent d'adressser et d'orienter un message vers la bonne application du bon destinataire. Les couches supérieures seront ici considérées comme un paquet de données.
+
+Tout au long de cette section, une analogie sera faite avec l'envoi d'un courrier à une personne dans une entreprise.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=.7\textwidth]{img/reseau_couches_adressage}
+  \caption{Principe de l'encapsulation des données}
+  \label{fig:res_encap_generique}
+\end{figure}
+
+\subsubsection{Les couches supérieures}
+Les couches supérieures (5 à 7) concernent les données, le message en tant que tel. Il s'agit donc du contenu qui doit arriver à bon port.
+\begin{remark}
+  Dans notre analogie, il s'agit ici du contenu de la lettre que nous souhaitons envoyer.
+\end{remark}
+
+\subsubsection{La couche de transport (TCP)}
+Cette couche détermine à quel service (port) s'adresse la lettre. Par exemple, par convention les données concernant les pages WEB sont envoyées sur le port 80 d'une machine.
+
+\begin{remark}
+  Dans notre analogie, il s'agit ici du service auquel nous nous adressons dans l'entreprise ou l'organisation (gestion des compte cantine des élèves par exemple).
+\end{remark}
+
+\subsubsection{La couche réseau (protocole IP)}
+Cette couche détermine ou doit être acheminée le paquet de données sur le réseau. L'adresse IP est un identifiant unique sur le réseau permettant d'orienter le paquet vers le destinataire du message.
+
+\begin{remark}
+  Dans notre analogie, il s'agit de l'adresse que l'on écrira sur l'enveloppe.
+\end{remark}
+
+\subsubsection{La couche Trame (adresse MAC)}
+L'adresse MAC identifie, de manière \textbf{unique} dans le monde, la machine destinatrice du message.
+
+\begin{remark}
+  Dans notre analogie, il s'agit de la personne précise s'occupant de la requête. On peut voir l'adresse IP comme l'identifiant de sécurité sociale, unique en France.
+\end{remark}
+
+\subsubsection{La couche physique}
+Il s'agit ici de la façon pour les données de transiter sur le réseau (bits de temporisation, synchronisation des signaux, \textit{etc.})
+
+\begin{remark}
+  Dans notre analogie, ce serait le service de courrier en lui même, avec son architecture d'acheminement (camions, centre de tri, \dots)
+\end{remark}
+
+\subsection{L'encapsulation des données}
+Toutes les informations présentées dans la partie précédentes sont indispensables au bon acheminement d'un paquet. De la même façon qu'un courrier est encapsulé dans une enveloppe sur laquelle sont écrites les informations d'adressage, les paquets internet sont encapsulé dans un message de la couche supérieur contenant les informations indispensables (voir Figure~\ref{fig:res_encapsulation}).
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=.7\textwidth]{img/reseau_encapsulation}
+  \caption{Exemple d'encapsulation de données}
+  \label{fig:res_encapsulation}
+\end{figure}
+
+
+\end{document}
