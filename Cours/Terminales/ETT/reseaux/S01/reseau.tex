@@ -28,30 +28,30 @@
 \def\xxtete{Enseignement Technologique Transversal}
 
 \def\classe{1 STI2D}
-\def\xxnumpartie{Seq 3}
-\def\xxpartie{Alimenter un système en énergie}
+\def\xxnumpartie{}
+\def\xxpartie{Communiquer en réseau}
 
 \def\xxnumchapitre{Séance 3}
-\def\xxchapitre{\hspace{.12cm} Transmettre l'énergie}
+\def\xxchapitre{\hspace{.12cm} Synthèse : la structure d'un réseau}
 
 \def\xxposongletx{2}
 \def\xxposonglettext{1.45}
 \def\xxposonglety{23}
-\def\xxonglet{Seq. 3 -- Se. 6}
+\def\xxonglet{Réseau}
 
-\def\xxactivite{Cours}
+\def\xxactivite{Synth.}
 \def\xxauteur{\textsl{Geoffrey Vaquette}}
 
 \def\xxcompetences{%
 \textsl{%
-\textbf{Prérequis :}
-\begin{itemize}[label=\ding{112},font=\color{ocre}]
-\item Analyse fonctionnelle de la chaîne d'énergie
-\end{itemize}
-\textbf{Savoirs et compétences :}
-\begin{itemize}[label=\ding{112},font=\color{ocre}]
-\item CO2.1	Identifier les flux et la forme de l'énergie, caractériser ses transformations et/ou modulations et estimer l'efficacité globale d'un système.
-\end{itemize}
+% \textbf{Prérequis :}
+% \begin{itemize}[label=\ding{112},font=\color{ocre}]
+% \item Analyse fonctionnelle de la chaîne d'énergie
+% \end{itemize}
+% \textbf{Savoirs et compétences :}
+% \begin{itemize}[label=\ding{112},font=\color{ocre}]
+% \item CO2.1	Identifier les flux et la forme de l'énergie, caractériser ses transformations et/ou modulations et estimer l'efficacité globale d'un système.
+% \end{itemize}
 %
 }}
 
@@ -63,13 +63,13 @@
 \end{center}
 }%figues de la page de garde
 \def\xxpied{%
-Transmettre l'énergie \xxactivite%
+La structure d'un réseau \xxactivite%
 }
 
 %---------------------------------------------------------------------------
 \renewcommand{\RemplirTrou}{false}
 \begin{document}
-\chapterimage{img/reseau_redondances}
+\chapterimage{img/reseau_bandeau}
 \subimport{../../../../style/}{new_pagegarde}
 % \begin{figure}[h]
 %   \includegraphics[width=\textwidth]{img/reseau_redondances}
@@ -100,9 +100,9 @@ La fréquence d'utilisation et la taille des réseaux soumettent les services di
 \end{exemple}
 
 \subsection{Evolutivité}
-Le nombre croissant d'utilisateurs d'internet, l'évolution imprévisible d'une entreprise ou d'un organisme ou encore l'arrivée de matériel spécifique impose une évolution du réseau afin qu'il puisse répondre au nouveau besoin.
+Le nombre croissant d'utilisateurs d'internet, l'évolution imprévisible d'une entreprise ou d'un organisme ou encore l'arrivée de matériel spécifique impose une évolution du réseau afin qu'il puisse répondre aux nouveaux besoins.
 \begin{definition}
-  Un réseau évolutif est en mesure de s'étendre rapidement afin de prendre en charge de nouveaux utilisateurs et applications sans que cela n'affecte les performances du service fourni aux utilisateurs existants.
+  Un réseau évolutif est en mesure de s'étendre rapidement afin de prendre en charge de nouveaux utilisateurs et de nouvelles applications sans que cela n'affecte les performances du service fourni aux utilisateurs existants.
 \end{definition}
 
 \subsection{Qualité de services}
@@ -120,8 +120,8 @@ En effet, les données qui transitent sur un réseau peuvent être plus ou moins
 Le réseau peut également subir des attaques malveillantes visant à le rendre hors service.
 \begin{aretenir}~
   \begin{itemize}
-    \item \textbf{Sécuriser l'infrastructure} réseau implique de sécuriser matériellement les périphériques qui assurent la connectivité du réseau et d'empêcher tout accès non autorisé au logiciel de gestion qu'ils hébergent.
-    \item \textbf{Sécuriser le contenu} consiste à protéger les informations contenues dans les paquets transmis sur le réseau ainsi que les informations stockées sur des périphériques reliés au réseau en les cryptant.
+    \item \textbf{Sécuriser l'infrastructure} réseau implique de \trou{sécuriser matériellement et logiquement les périphériques qui assurent la connectivité du réseau} et d'empêcher tout accès non autorisé au logiciel de gestion qu'ils hébergent.
+    \item \textbf{Sécuriser le contenu} consiste à protéger \trou{les informations contenues dans les paquets transmis sur le réseau} ainsi que les informations stockées sur des périphériques reliés au réseau en les cryptant.
   \end{itemize}
 \end{aretenir}
 \section{Elements d'un réseau}
@@ -133,7 +133,7 @@ Le réseau peut également subir des attaques malveillantes visant à le rendre 
 
 \subsection{Les périphériques terminaux}
 \begin{defi}
-  Ce sont les périphériques qui envoient ou auxquels sont destinés les infomations transitant sur le réseau.
+  Les périphériques terminaux sont ceux qui envoient ou auxquels sont destinés les infomations transitant sur le réseau.
 \end{defi}
 \begin{exemple}~\\
   \begin{minipage}[c]{.5\textwidth}
@@ -170,7 +170,7 @@ Le réseau peut également subir des attaques malveillantes visant à le rendre 
 \begin{defi}
   Les connexions sont le support même du transfert d'informations. Ces connexions peuvent être filaires, sans-fil, optiques ou tout support capable de transporter une information.
 \end{defi}
-Divers organismes de normalisation contribues à la définition des propriétés physiques, électriques et mécaniques des supports disponibles pour différentes communications de données.
+Divers organismes de normalisation contribuent à la définition des propriétés physiques, électriques et mécaniques des supports disponibles pour différentes communications de données.
 Ces spécifications garantissent que les câbles et connecteurs fonctionnent comme prévu dans des conditions précises.
 
 
@@ -244,20 +244,20 @@ Tout au long de cette section, une analogie sera faite avec l'envoi d'un courrie
 \end{figure}
 
 \subsubsection{Les couches supérieures}
-Les couches supérieures (5 à 7) concernent les données, le message en tant que tel. Il s'agit donc du contenu qui doit arriver à bon port.
+Les couches supérieures (5 à 7) concernent les données, le message en tant que tel. Il s'agit donc \trou{du contenu qui doit arriver à bon port.}
 \begin{remark}
   Dans notre analogie, il s'agit ici du contenu de la lettre que nous souhaitons envoyer.
 \end{remark}
 
 \subsubsection{La couche de transport (TCP)}
-Cette couche détermine à quel service (port) s'adresse la lettre. Par exemple, par convention les données concernant les pages WEB sont envoyées sur le port 80 d'une machine.
+Cette couche détermine à quel service (port) \trou{s'adressent les données}. Par exemple, par convention les données concernant les pages WEB sont envoyées sur le port 80 d'une machine.
 
 \begin{remark}
   Dans notre analogie, il s'agit ici du service auquel nous nous adressons dans l'entreprise ou l'organisation (gestion des compte cantine des élèves par exemple).
 \end{remark}
 
 \subsubsection{La couche réseau (protocole IP)}
-Cette couche détermine ou doit être acheminée le paquet de données sur le réseau. L'adresse IP est un identifiant unique sur le réseau permettant d'orienter le paquet vers le destinataire du message.
+Cette couche détermine \trou{où doit être acheminée le paquet de données sur le réseau}. L'adresse IP est un identifiant unique sur le réseau permettant d'orienter le paquet vers le destinataire du message.
 
 \begin{remark}
   Dans notre analogie, il s'agit de l'adresse que l'on écrira sur l'enveloppe.
