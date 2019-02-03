@@ -1,0 +1,196 @@
+\documentclass[a4paper,12pt]{article}
+
+% Les packages classiques
+\usepackage[utf8]{inputenc} % Required for including letters with accents
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage{lmodern}
+\usepackage{geometry}
+\usepackage[frenchb]{babel}
+\usepackage{graphicx}
+\usepackage{siunitx}
+\usepackage{xstring}
+%\usepackage{tikz}
+\usepackage[siunitx,european]{circuitikz}
+
+% On importe le code de MonPreambuleDST.tex qui contient la d�finition des
+% commandes qui vont permettre entre autres d'afficher le bar�me.
+\input{MonPreambuleDST.tex}
+
+% Mise en page des marges etc.
+\geometry{top=2cm,bottom=2cm,hscale=0.8,headheight=15pt}
+
+% Pas d'indentation en d�but de paragraphe
+\setlength{\parindent}{0pt}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Voici les commandes mises � disposition pour l'utilisation de MonPreambuleDST.tex %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%---- Commande 1
+\EnteteDst[5cm]{1 STI 2}{20 janvier 2019}
+% Comme son nom l'indique, cette commande r�gle l'en-t�te du DST.
+% L'argument optionnel entre crochet repr�sente la longeur des
+% pointill�s juste apr�s "Nom". On peut �crire directement :
+% \EnteteDst{Terminale S2}{10 octobre 2010}
+% Dans ce cas l'argument optionnel vaudra 6cm par d�faut.
+
+%---- Commande 2
+\BaremeDetailtrue
+% Ne pas mettre cette ligne, revient � �crire \BaremeDetailfalse qui fait en
+% sorte que seul le total du bar�me s'affiche (pas le d�tail du bar�me
+% question par question). En revanche, si on laisse \BaremeDetailtrue comme
+% c'est le cas ici, on aura le d�tail du bar�me.
+
+%---- Commande 3
+\BaremeEspaceMarge{6pt}
+% R�gle la distance entre le bar�me affich� sur une question et
+% la marge de gauche. Si par exemple on met "0pt", le bar�me sera
+% au ras de la marge � gauche, avec "6pt" comme ici l'affichage
+% sera d�cal� de 6pt par rapport � la marge de gauche. Si vous
+% n'utilisez pas cette commande le d�calage sera de 5pt par
+% d�faut.
+
+%---- Commande 4 : la commande \EXO
+% La commande \EXO n'a de sens que si elle est entre \begin{document}
+% et \end{document}, donc on ne la met pas ici dans le pr�ambule. Voici
+% sa syntaxe :
+%       \EXO          -->  affichera "Exercice i" avec i le num�ro de l'exercice
+%                          et on aura le total du bar�me de l'exercice � droite.
+%       \EXO*         -->  Identique � ci-dessus, sauf qu'on aura pas le total
+%                          � droite
+%       \EXO[blabla]  -->  affichera "Exercice iblabla". Voir exemples dans ce
+%                          document plus loin pour comprendre l'int�r�t. Le total sera
+%                          pr�sent.
+%       \EXO*[blabla] -->  affichera "Exercice iblabla". Le total ne sera pas pr�sent.
+
+%---- Commande 5 : la commande \brm
+% La commande \brm n'a de sens que si elle est entre \begin{document}
+% et \end{document}, donc on ne la met pas ici dans le pr�ambule.
+% Elle doit se trouver en d�but de paragraphe ou en d�but d'un \item
+% (une question d'un exercice). Par exemple, ceci "\item\brm{2} Combien vaut 2+2 ?"
+% affichera "2 pts" dans la marge � gauche en face de la question.
+
+%---- Commande 6
+\tailleEXO{sub}
+% Pour dire que la taille des titres des exercices doit �tre identique
+% � celle de \subsection{}. On peut mettre \tailleEXO{subsub} aussi
+% et dans ce cas la taille sera celle de \subsubsection{}.
+% Si on ne fait pas intervenir cette commande, la taille sera
+% celle de \section{} par d�faut.
+
+%---- Commande 7 : la commande \MesConsignes
+% La commande \MesConsignes n'a de sens que si elle est entre
+% \begin{document} et \end{document}, donc on ne la met pas ici dans
+% le pr�ambule. Elle affiche les consignes que l'on met g�n�ralement
+% en dessous du titre du contr�le. Pour modifier son contenu � votre
+% go�t, il faudra le modifier dans le fichier MonPreambuleDST.tex.
+
+\begin{document}
+
+%% L�, c'est le titre du contr�le.
+\begin{center}
+    \bfseries\Large Devoir sur table (2 heures)
+\end{center}
+\MesConsignes %%% <------------------ L�, on met les consignes.
+\bigskip
+
+
+\EXO[ : Etude d'une boîte de transmission] %%% <------------ On affiche "Exercice 1" en titre
+
+
+%%% Les questions trouvent naturellement leur place dans l'environnement
+%%% {enumerate}. Juste apr�s \item (pour commencer une question), il suffit
+%%% de mettre \brm{2} si on estime que la question vaut 2 points. La commande
+%%% \EXO juste au dessus affichera le bar�me total de l'exercice. Attention,
+%%% il faut 2 compilation pour avoir un total � jour.
+%
+\begin{figure}[h]
+  \centering
+  \shorthandoff{:!}
+  \begin{circuitikz}
+\draw (0,0) to[R=2<\ohm>, l =$R_2$] (3,0) -- (3,2) to[V<=84<\volt>] (0,2) -- (0,0);
+\end{circuitikz}
+\shorthandon{:!}
+  \caption{}
+  \label{fig:res_a_completer}
+\end{figure}
+%
+\begin{enumerate}
+\item\brm{1} Sur la Figure~\ref{fig:res_a_completer},
+\item Dans cette question, nous allons déterminer le rapport de transmission du sous-ensemble $B$
+\begin{enumerate}
+  \item\brm{1}
+  \item\brm{1} Donner les repères des roues \textbf{menées}.
+  \item\brm{1} Exprimer littéralement le rapport de transmission $r_{6/3} = \frac{N_6}{N_3}$ en fonction des caractéristiques adéquates.
+  \item\brm{0,5} Calculer le rapport de transmission $r_{6/3}$
+\end{enumerate}
+\item\brm{1,5} Exprimer litéralement puis calculer le rapport de transmission du sous-ensemble $C$ : $r_{8/7} $.
+\item\brm{0,5} Donner le nombre de contacts extérieurs entre les roues $8$ et $3$.
+\item\brm{0,5} En déduire le sens de rotation de 8 par rapport à 3 (inverse ou identique).
+\item\brm{1} Exprimer litéralement le rappor de transmission global $r_{8/1}$ en fonction de $r_{2/1}$, $r_{6/3}$ et $r_{8/7}$.
+\item\brm{1} Dans cette question, on considèrera $r_{8/1} = 200$. Exprimer litéralement la vitesse de rotation de l'arbre de sortie $N_8$ en fonction de $N_1 (=N_M)$ et $r_{8/1}$.
+\item\brm{0,5} Calculer la vitesse de rotation angulaire $\omega_8$ (en \si{rad/s}). On rappelle $\SI{1}{tr/min} = \SI{2\pi}{rad/s}$
+\item\brm{0,5} Exprimer litéralement puis calculer le couple $C_8$ disponible sur l'arbre de sortie en fonction de la puissance $P$ et de la vitesse de rotation $\omega_8$.
+\end{enumerate}
+
+\EXO[ : Etude du moteur d'un TGV]
+Le  TGV  Méditerranée  fonctionne  avec  un  moteur  à  courant  continu  alimenté  sous  une  tension  de \SI{1100}{V} et  un courant de \SI{480}{A}.
+
+La puissance mécanique utile $P_U$ développée par ce moteur en régime nominal est de $P= \SI{490}{kW}$.
+
+En plus des pertes par effet Joule $P_J$, il apparaît d’autres pertes appelées pertes internes dues essentiellement aux frottements et notées $P_M$.
+On admettra ici que $P_J = P_M$.
+
+\begin{enumerate}
+  \item\brm{2} Donner l'expression litérale puis calculer la puissance électrique $P_E$ fournie au moteur.
+  \item\brm{2} Faites un bilan des puissances pour ce moteur
+  \item\brm{2} En utilisant la loi d'Ohm et la loi des mailles, déterminer la résistance interne du moteur.
+  \item\brm{1}Déterminez la puissance électromagnétique du moteur.
+  \item\brm{1}Déterminez la force électromotrice (tension) du moteur.
+  \item\brm{2}On considère que lors du trajet Paris/Marseille le TGV Méditerranée fonctionne en régime nominal pendant une durée de 3 heures. Calculez l’énergie consommée par le moteur durant ce trajet, en exprimant votre résultat en Watt heure puis en Joule.
+
+\end{enumerate}
+% \EXO[ : question ouverte] %%% <-------- Avec les crochets, on peut afficher un titre � l'exerice.
+%                           %%% <-------- Ici, �a donnera "Exercice 2 : question ouverte".
+%
+% %%% La commande \brm peut �tre utilis�e en dehors de l'environnement
+% %%% {enumerate}, mais elle DOIT intervenir en d�but de paragraphe,
+% %%% comme c'est le cas ci-dessous.
+%
+% \brm{1,5} Aimez-vous le chocolat ? Justifiez soigneusement la r�ponse.
+%
+%
+% \vfill
+% \begin{center}
+\large\bfseries
+% Attention, apr�s toute modification du bar�me, il faut compiler
+% deux fois avant que le total soit mis � jour.
+% \end{center}
+% \vfill\vfill\vfill
+%
+% \newpage
+%
+%
+% \EXO*[ : pas de total avec *]  %%% <------- Avec * juste apr�s \EXO le total n'est pas affich�.
+%
+% Pour cet exercice et le suivant, on a d�cid� de ne \textbf{pas mettre le total}.
+% Voir le fichier source pour avoir des explications.
+%
+% \begin{enumerate}
+% \item\brm{1} Quelle est la couleur du cheval blanc d'Henri IV ?
+% \item\brm{3,25} Quelle est la diff�rence entre un pigeon ?
+% \item\brm{1,75} Quel �ge avait Rimbaud ?
+% \end{enumerate}
+%
+%
+% \EXO*
+%
+% \begin{enumerate}
+% \item\brm{1} Quelle est la couleur du cheval blanc d'Henri IV ?
+% \item\brm{3,25} Quelle est la diff�rence entre un pigeon ?
+% \item\brm{1,75} Quel �ge avait Rimbaud ?
+% \end{enumerate}
+
+
+\end{document}

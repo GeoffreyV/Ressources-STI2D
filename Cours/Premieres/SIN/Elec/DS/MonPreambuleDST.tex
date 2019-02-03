@@ -1,0 +1,116 @@
+%% La partie du code technique est due � 100% � Jean-C�me Charpentier.
+
+
+
+% Les packages n�cessaires pour faire fonctionner les macros qui suivent
+\usepackage{xlop}
+\usepackage{ifthen}
+\usepackage{calc}
+\usepackage{xcolor}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% A adapter en fonction de ses go�ts %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\MesConsignes}{%
+    \begin{center}%
+        \begin{minipage}{0.7\textwidth}%
+            \footnotesize\slshape%
+             Le soin et la rédaction seront pris en compte dans la
+             notation. \textbf{Faites des phrases claires et précises}.
+             Le barème est approximatif.
+        \end{minipage}%
+    \end{center}%
+}
+
+
+
+\newcommand{\EnteteDst}[3][6cm]{%
+    % #1 = largeur des pointill�s devant "Nom". Argument optionnel, par d�faut #1 = 6cm
+    % #2 = classe
+    % #3 = date
+    \pagestyle{fancy}%
+    \lhead{\ifthenelse{\thepage=1}{Nom : \makebox[#1]{\dotfill} \qquad #2}{#2}}%
+    \rhead{#3}%
+    \cfoot{\thepage/\pageref{LastPage}}%
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Grand merci � Jean-C�me Charpentier pour la suite... qui me d�passe. %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\opset{decimalsepsymbol={,}}  % option du package xlop
+\newlength{\fulllinewidth}
+\AtBeginDocument{\setlength{\fulllinewidth}{\linewidth}}
+\newlength{\brouillon}
+
+\newif\ifBaremeDetail
+\BaremeDetailfalse
+
+\newcommand*\FranPt[1]{%
+   \ifBaremeDetail
+     #1 pt%
+     \ifdim#1pt<2pt % singulier lorsque < 2 et pas pluriel lorsque > 1
+     \else
+       s%
+     \fi
+   \fi
+}
+
+\makeatletter
+
+\newcommand*{\taille@Exo}{}
+\newcommand*{\tailleEXO}[1]{\renewcommand*{\taille@Exo}{#1}}
+\newcommand{\BaremeEspace@Marge}{5pt}
+\newcommand{\BaremeEspaceMarge}[1]{\renewcommand{\BaremeEspace@Marge}{#1}}
+
+
+\newcommand*{\brm}[1]{%
+   % (\BaremeEspace@Marge == 0pt) => au ras de la marge gauche
+   % (\BaremeEspace@Marge >0pt) => plus � l'int�rieur de la marge gauche
+   \immediate\write\@auxout{%
+     \string\opadd*{#1}%
+                   {total\the\c@section-\the\c@exo}%
+                   {total\the\c@section-\the\c@exo}%
+   }%
+   \setlength{\brouillon}{\BaremeEspace@Marge-\linewidth+\fulllinewidth}%
+   \makebox[0pt][r]{\color{gray}\FranPt{#1}\hspace*{\brouillon}}%
+   \ignorespaces%
+}
+
+\newcounter{exo}[section]
+% D�commenter pour une num�rotation type section.exo
+%\renewcommand\theexo{\thesection.\arabic{exo}}
+\newcommand\EXO{%
+   \refstepcounter{exo}%
+   \immediate\write\@auxout{%
+     \string\opcopy{0}{total\the\c@section-\the\c@exo}%
+   }%
+   \@ifstar\exercice@\exercice@@
+}
+
+\newcommand\exercice@@[1][]{%
+   \csname \taille@Exo section\endcsname*{Exercice \theexo #1%
+   \hfill \total{\the\c@section-\the\c@exo}}
+}
+
+\newcommand\exercice@[1][]{%
+   \csname \taille@Exo section\endcsname*{Exercice \theexo #1}
+
+}
+
+\newcommand\total[1]{%
+   \@ifundefined{Op@total#1}{recompilez}%
+   {%
+     \opunzero{total#1}% on ne sait jamais
+     \opprint{total#1}~%
+     \opcmp{total#1}{2}%
+     \ifopge points\else point\fi
+   }%
+}
+
+\makeatother
