@@ -11,7 +11,7 @@
 \usepackage{xstring}
 %\usepackage{tikz}
 \usepackage[siunitx,european]{circuitikz}
-
+% http://sti2d.branly.free.fr/itec/cours/05-modelisation/05b-modelisation.pdf
 % On importe le code de MonPreambuleDST.tex qui contient la d�finition des
 % commandes qui vont permettre entre autres d'afficher le bar�me.
 \input{MonPreambuleDST.tex}
@@ -28,7 +28,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %---- Commande 1
-\EnteteDst[5cm]{1 STI 2}{20 janvier 2019}
+\EnteteDst[7cm]{1 STI 1}{4 Février 2019}
 % Comme son nom l'indique, cette commande r�gle l'en-t�te du DST.
 % L'argument optionnel entre crochet repr�sente la longeur des
 % pointill�s juste apr�s "Nom". On peut �crire directement :
@@ -90,13 +90,13 @@
 
 %% L�, c'est le titre du contr�le.
 \begin{center}
-    \bfseries\Large Devoir sur table (2 heures)
+    \bfseries\Large Devoir sur table (55 min)
 \end{center}
 \MesConsignes %%% <------------------ L�, on met les consignes.
 \bigskip
 
 
-\EXO[ : Etude d'une boîte de transmission] %%% <------------ On affiche "Exercice 1" en titre
+\EXO[ : Conventions et loi d'Ohm] %%% <------------ On affiche "Exercice 1" en titre
 
 
 %%% Les questions trouvent naturellement leur place dans l'environnement
@@ -109,47 +109,79 @@
   \centering
   \shorthandoff{:!}
   \begin{circuitikz}
-\draw (0,0) to[R=2<\ohm>, l =$R_2$] (3,0) -- (3,2) to[V<=84<\volt>] (0,2) -- (0,0);
+\draw (0,3) to[battery, v_<=12<\volt>] (0,0) -- (3,0) to[R=2<\ohm>, l =$R$] (3,3) -- (0,3);
 \end{circuitikz}
 \shorthandon{:!}
   \caption{}
   \label{fig:res_a_completer}
 \end{figure}
 %
+
 \begin{enumerate}
-\item\brm{1} Sur la Figure~\ref{fig:res_a_completer},
-\item Dans cette question, nous allons déterminer le rapport de transmission du sous-ensemble $B$
-\begin{enumerate}
-  \item\brm{1}
-  \item\brm{1} Donner les repères des roues \textbf{menées}.
-  \item\brm{1} Exprimer littéralement le rapport de transmission $r_{6/3} = \frac{N_6}{N_3}$ en fonction des caractéristiques adéquates.
-  \item\brm{0,5} Calculer le rapport de transmission $r_{6/3}$
-\end{enumerate}
-\item\brm{1,5} Exprimer litéralement puis calculer le rapport de transmission du sous-ensemble $C$ : $r_{8/7} $.
-\item\brm{0,5} Donner le nombre de contacts extérieurs entre les roues $8$ et $3$.
-\item\brm{0,5} En déduire le sens de rotation de 8 par rapport à 3 (inverse ou identique).
-\item\brm{1} Exprimer litéralement le rappor de transmission global $r_{8/1}$ en fonction de $r_{2/1}$, $r_{6/3}$ et $r_{8/7}$.
-\item\brm{1} Dans cette question, on considèrera $r_{8/1} = 200$. Exprimer litéralement la vitesse de rotation de l'arbre de sortie $N_8$ en fonction de $N_1 (=N_M)$ et $r_{8/1}$.
-\item\brm{0,5} Calculer la vitesse de rotation angulaire $\omega_8$ (en \si{rad/s}). On rappelle $\SI{1}{tr/min} = \SI{2\pi}{rad/s}$
-\item\brm{0,5} Exprimer litéralement puis calculer le couple $C_8$ disponible sur l'arbre de sortie en fonction de la puissance $P$ et de la vitesse de rotation $\omega_8$.
+\item\brm{1} Sur la Figure~\ref{fig:res_a_completer}, tracer \textbf{en justifiant} la flèche représentant le sens du courant conventionnel. 
+\item\brm{0.5} Dans quel sens circulent les électrons ? 
+\item\brm{1} En appelant $U$ la tension aux bornes de $R$, appliquer la loi d'Ohm à la résistance $R$. 
+\item\brm{1} A partir de la flèche de courant que vous avez dessiné à la question 1, tracez la flèche de la tension $U$ aux bornes de $R$. 
+
 \end{enumerate}
 
-\EXO[ : Etude du moteur d'un TGV]
-Le  TGV  Méditerranée  fonctionne  avec  un  moteur  à  courant  continu  alimenté  sous  une  tension  de \SI{1100}{V} et  un courant de \SI{480}{A}.
+\EXO[ : Association de résistances]
+\shorthandoff{;:!?}
+\begin{figure}[!hbtp]
+\centering
+  \begin{circuitikz}
+\draw(0,0) -- (3,0) to[R=2<\ohm>, l =$R_4$,*-,a=\SI{30}{\ohm}] (3,2) to[R, l =$R_3$,a=\SI{30}{\ohm}] (3,4) to[R=, l =$R_2$,-*,a=\SI{300}{\ohm}] (3,6) to[R=20<\ohm>, l =$R_1$,a=\SI{1}{k\ohm}] (0,6);
+\draw (3,0) -- (6,0) to [R, l =$R_5$,a=\SI{150}{\ohm}] (6,6) -- (3,6);
+\end{circuitikz}
+\begin{circuitikz}
+\draw  (0,0) -- (3,0) to[R=2<\ohm>, l =$R_{234}$,*-*,a=?] (3,6) to[R=20<\ohm>, l =$R_1$,a=\SI{1}{k\ohm}] (0,6);
+\draw (3,0) -- (5,0) to [R, l =$R_5$,a=\SI{150}{\ohm}] (5,6) -- (3,6);
+\end{circuitikz}
+\caption{Circuit de résistances}
+%\label{}
+\end{figure}
+\shorthandon{;:!?}
 
-La puissance mécanique utile $P_U$ développée par ce moteur en régime nominal est de $P= \SI{490}{kW}$.
-
-En plus des pertes par effet Joule $P_J$, il apparaît d’autres pertes appelées pertes internes dues essentiellement aux frottements et notées $P_M$.
-On admettra ici que $P_J = P_M$.
 
 \begin{enumerate}
-  \item\brm{2} Donner l'expression litérale puis calculer la puissance électrique $P_E$ fournie au moteur.
-  \item\brm{2} Faites un bilan des puissances pour ce moteur
-  \item\brm{2} En utilisant la loi d'Ohm et la loi des mailles, déterminer la résistance interne du moteur.
-  \item\brm{1}Déterminez la puissance électromagnétique du moteur.
-  \item\brm{1}Déterminez la force électromotrice (tension) du moteur.
-  \item\brm{2}On considère que lors du trajet Paris/Marseille le TGV Méditerranée fonctionne en régime nominal pendant une durée de 3 heures. Calculez l’énergie consommée par le moteur durant ce trajet, en exprimant votre résultat en Watt heure puis en Joule.
+  \item\brm{2} Calculez la valeur de la résistance $R_{234}$, résistance  équivalente aux résistances $R_2$, $R_3$ et $R_4$ branchées en série.
+  \item\brm{2} Calculez la valeur de la résistance $R_{2345}$, résistance  équivalente aux résistances $R_{234}$ et $R_5$ branchées en parallèle.
+  \item\brm{1} Dessinez le nouveau schéma faisant apparaître $R_1$ et $R_2345$.
+  \item\brm{0.5} $R_1$ et $R_{2345}$ sont-elles branchées en série ou en parallèle ?
+  \item\brm{1}Déterminez la résistance $R_{tot}$ la résistance équivalente à $R_1$ et $R_{2345}$
+\end{enumerate}
 
+\EXO[ : Loi des mailles et loi des noeuds]
+\begin{figure}[h]
+  \centering
+  \shorthandoff{:!}
+  \begin{circuitikz}
+  \ctikzset{voltage/distance from node=.5}
+\draw (0,4) to[battery, v_<=12<\volt>] (0,0) to[R, l =$R_3$, v=$U_3$,-*] (4,0) to[R=, l =$R_2$,  v=$U_2$, i^<=$i_2$] (4,4) to[R=, l =$R_1$,  v=$U_1$,*-,i<=$i_1$] (0,4);
+\draw (4,0) -- (8,0) to[R=, l =$R_5$,  v=$U_5$] (8,4) to[R=, l =$R_4$,  v=$U_4$, i^<=$i_3$] (4,4);
+\draw(4,4.4)node{A};
+\end{circuitikz}
+\shorthandon{:!}
+  \caption{}
+  \label{fig:res_a_completer}
+\end{figure}
+On donne $U_1 = \SI{2}{V}, U_2 = \SI{6}{V}, U_5 = \SI{4}{V}$ et $i_1=\SI{500}{mA}, i_2=\SI{300}{mA}$
+\begin{enumerate}
+    \item\brm{2} En appliquant la loi des mailles, déterminer la tension $U_2$.
+    \item\brm{2} En appliquant la loi des mailles, déterminer la tension $U_4$.
+    \item\brm{2} En appliquant la loi des noeuds au point A, déterminer le courant $i_3$.
+    \item\brm{2} Déterminer la valeur de $R_1$.
+\end{enumerate}
+
+\EXO[ : Puissance, rendement et loi de Joule]
+\begin{enumerate}
+    \item\brm{1} Une ampoule basse consommation indique consommer une puissance de \SI{10}{W} lorsqu'elle est alimentée par une tension de \SI{230}{V}. Quel courant traverse cette ampoule ? 
+    \item\brm{1} Un radiateur électrique d'une puissance de \SI{1200}{W} absorbe un courant de \SI{5}{A}. Quelle est la résistance de ce radiateur.
+    \item\brm{1}  Un moteur électrique absorbe un courant de \SI{7}{A}, sous une tension de \SI{420}{V}.
+    \begin{enumerate}
+        \item Calculer la puissance de ce moteur.
+        \item Sachant qu'il a un rendement de 85\%, quelle puissance est disponible en sortie du moteur ? 
+    \end{enumerate} 
 \end{enumerate}
 % \EXO[ : question ouverte] %%% <-------- Avec les crochets, on peut afficher un titre � l'exerice.
 %                           %%% <-------- Ici, �a donnera "Exercice 2 : question ouverte".
