@@ -1,0 +1,77 @@
+\subsection{Vitesse et vecteur vitesse}
+Une trajectoire ne suffit pas pour déterminer le mouvement d'un point dans un repère. En effet, cette trajectoire peut-être faite de manière rapide ou lente. La rapidité ou la lenteur est représentée par la vitesse du point.
+
+\UPSTIaRetenir{
+La vitesse d'un point est représentée par
+\begin{itemize}
+  \item de direction tangente à la trajectoire du UPSTIpointilles
+  \item de même sens que la trajectoire du point
+  \item de norme égale au déplacement divisé par la durée du déplacement
+\end{itemize}
+
+  La vitesse moyenne d'un point $M$ se déplaçant de $M(t_1)$ à $M(t_2)$ est de \UPSTIcadreMath{\norme{\vVitesse{M}{}{}} = \frac{M(t_1)M(t_2)}{t_2-t_1}}.
+
+  En écrivant $d$ la distance $d = M(t_1)M(t_2)$ et avec $\Delta t = t_2-t_1$, on a \UPSTIcadreMath{\norme{\vVitesse{M}{}{}} = \frac{M(t_1)M(t_2)}{t_2-t_1} =  \huge{\frac{d}{\Delta t}}}
+
+  La vitesse s'exprime en \si{m/s}.
+}
+
+\begin{figure}
+  \centering
+  \input{trajectoire_1}
+  \caption{La vitesse d'un point est tangeante à la trajectoire}
+  \label{fig:exemple}
+\end{figure}
+
+\UPSTIattention{La vitesse d'un point est un \textbf{vecteur}. Elle a donc une composante sur \vx{}, sur\vy{} et sur \vz{}.}
+
+
+\begin{UPSTIactivite}
+  \begin{center}
+    \input{fig_activite_vitesse}
+  \end{center}
+  \UPSTIquestion{Tracer l'allure des vecteurs vitesses des points A, B et C}
+\end{UPSTIactivite}
+
+
+\subsection{Accélération - Variation de vitesse}
+Nous venons de voir que la vitesse moyenne représente la variation de la position sur un intervalle de temps. De la même façon, l'accélération modélise la variation de vitesse sur un intervalle de temps.
+
+\UPSTIaRetenir{
+L'accélération correspond à la variation de vitesse entre deux instants :
+\UPSTIcadreMath{a = \frac{v(t_2)-v(t_1)}{t_2-t_1}=\frac{\Delta v}{\Delta t}}, avec $v(t_i)$ la norme de la vitesse à l'instant $t_i$.
+
+L'accélération s'exprime en $m/s^2$.
+}
+
+\UPSTIaRetenir{
+Lorsque la vitesse est constante, l'accélération est nulle.
+}
+
+\begin{UPSTIactivite}
+  \resetNumQuestion
+  \begin{center}
+    \input{fig_vit_acc}
+  \end{center}
+
+  \UPSTIquestion{Sur le graph, identifier trois phase de mouvement différentes.}
+
+  \UPSTIquestion{Calculer l'accélération moyenne entre $t=\SI{0}{s}$ et $t=\SI{1}{s}$. }
+
+  \UPSTIeleveOnly{\UPSTIpointilles}
+
+  \UPSTIcorrection{$a=\frac{\Delta v}{\Delta t} = \frac{2}{1} = \SI{2}{m/s^2}$}
+
+  \UPSTIquestion{Calculer l'accélération moyenne entre $t=\SI{1}{s}$ et $t=\SI{6}{s}$. }
+
+  \UPSTIeleveOnly{\UPSTIpointilles}
+
+  \UPSTIcorrection{$a=\frac{\Delta v}{\Delta t} = \frac{0}{1} = \SI{0}{m/s^2}$}
+
+  \UPSTIquestion{Calculer l'accélération moyenne entre $t=\SI{6}{s}$ et $t=\SI{9}{s}$. }
+
+  \UPSTIeleveOnly{\UPSTIpointilles}
+
+  \UPSTIcorrection{$a=\frac{\Delta v}{\Delta t} = \frac{2}{3} = \SI{-0,66}{m/s^2}$}
+  \resetNumQuestion
+\end{UPSTIactivite}

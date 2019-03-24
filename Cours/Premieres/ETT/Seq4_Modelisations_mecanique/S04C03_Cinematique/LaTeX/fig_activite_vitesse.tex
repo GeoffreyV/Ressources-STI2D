@@ -1,0 +1,18 @@
+\begin{tikzpicture}
+  \draw [very thin, gray] (0,0) grid (12,6);
+  \path(0 ,0)coordinate(A);
+  \path(3 ,2)coordinate(B);
+  \path(10 ,4)coordinate(C);
+  \path(0 ,2)coordinate(ctrl1);
+  \path(2 ,1)coordinate(ctrl2);
+  \path(4 ,3)coordinate(ctrl3);
+  \path(10 ,2)coordinate(ctrl4);
+  \path(10, 6)coordinate(ctrl5);
+  \draw(A)  .. controls(ctrl1)and(ctrl2)  ..  (B) .. controls(ctrl3)and(ctrl4) .. (C);%
+  \UPSTIprofOnly{\draw[->,red,very thick] (B) -- (ctrl3) node[near end, above left] {\vVitesse{B}{}{0}};}
+  \draw[red] (B) node{$\bullet$} node[above]{B};
+  \UPSTIprofOnly{\draw[->,blue,very thick] (A) -- (ctrl1) node[near end, right] {\vVitesse{A}{}{0}};}
+  \draw[blue] (A) node{$\bullet$} node[below]{A};
+  \UPSTIprofOnly{\draw[->,darkspringgreen,very thick] (C) -- (ctrl5) node[near end, right] {\vVitesse{C}{}{0}};}
+  \draw[darkspringgreen] (C) node{$\bullet$} node[right]{C};
+\end{tikzpicture}

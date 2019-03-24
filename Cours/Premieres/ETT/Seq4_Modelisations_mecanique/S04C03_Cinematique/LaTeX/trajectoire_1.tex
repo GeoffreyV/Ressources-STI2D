@@ -1,0 +1,14 @@
+\begin{tikzpicture}
+  \path(0 ,0)coordinate(A);
+  \path(3 ,3)coordinate(B);
+  \path(8 ,0)coordinate(C);
+  \path(1 ,1)coordinate(ctrl1);
+  \path(0 ,3)coordinate(ctrl2);
+  \path(6 ,3)coordinate(ctrl3);
+  \path(6 ,0)coordinate(ctrl4);
+  \draw(A)  .. controls(ctrl1)and(ctrl2)  ..  (B) .. controls(ctrl3)and(ctrl4) .. (C);%
+  \draw[->,red,very thick] (B) -- (ctrl3) node[near end, above] {\vVitesse{B}{}{0}};;
+  \draw[red] (B) node{$\bullet$} node[above]{B};
+  \draw[->,blue,very thick] (A) -- (ctrl1) node[near end, below right] {\vVitesse{A}{}{0}};
+  \draw[blue] (A) node{$\bullet$} node[below]{A};
+\end{tikzpicture}
