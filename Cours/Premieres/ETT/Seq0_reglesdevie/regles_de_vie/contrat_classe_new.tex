@@ -1,0 +1,202 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% E.Pinault-Bigeard - e.pinault-bigeard@upsti.fr
+% http://s2i.pinault-bigeard.com
+% CC BY-NC-SA 2.0 FR - http://creativecommons.org/licenses/by-nc-sa/2.0/fr/
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[11pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Package UPSTI_Document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{subcaption}
+\usepackage{UPSTI_Document}
+
+%---------------------------------%
+% Paramètres du package
+%---------------------------------%
+
+% Version du document (pour la compilation)
+% 1: Document prof
+% 2: Document élève
+% 3: Document à publier
+\newcommand{\UPSTIidVersionDocument}{2}
+
+% Variante
+%\newcommand{\UPSTIvariante}{2}
+
+% Classe
+% 1: PTSI				6: PSI*			11: TSI2		16: Spé
+% 2: PT	(par défaut)	7: MPSI			12: ATS
+% 3: PT*				8: MP			13: PC
+% 4: PCSI				9: MP*			14: PC*
+% 5: PSI				10: TSI1		15: Sup
+%\newcommand{\UPSTIidClasse}{2}
+
+% Affichage personnalisé de la classe
+\newcommand{\UPSTIclasse}{Première STI2D}
+
+% Matière
+% 1: S2I (par défaut)    2: IPT     3: TIPE
+%\newcommand{\UPSTIidMatiere}{9}
+
+% Type de document
+% 0: Custom*				7: Fiche Méthode			14: Document Réponses
+% 1: Cours (par défaut)		8: Fiche Synthèse    		15: Programme de colle
+% 2: TD     				9: Formulaire
+% 3: TP						10: Memo
+% 4: Colle					11: Dossier Technique
+% 5: DS						12: Dossier Ressource
+% 6: DM						13: Concours Blanc
+% * Si on met la valeur 0, il faut décommenter la ligne suivante:
+%\newcommand{\UPSTItypeDocument}{Custom}
+\newcommand{\UPSTIidTypeDocument}{1}
+
+% Titre dans l'en-tête
+\newcommand{\UPSTItitreEnTete}{Règles de revient ETT}
+%\newcommand{\UPSTItitreEnTetePages}{UPSTItitreEnTetePages}
+%\newcommand{\UPSTIsousTitreEnTete}{UPSTIsousTitreEnTete}
+
+% Titre
+\newcommand{\UPSTItitrePreambule}{Droits et devoir en ETT }
+\newcommand{\UPSTItitre}{}
+
+% Durée de l'activité (pour DS, DM et TP)
+%\newcommand{\UPSTIduree}{3h}
+
+% Note de bas de première page
+%\newcommand{\UPSTInoteBasDePremierePage}{Note de bas de 1ère page}
+
+% Numéro (ajoute " n°1" après DS ou DM)
+%\newcommand{\UPSTInumero}{1}
+
+% Numéro chapitre
+%\newcommand{\UPSTInumeroChapitre}{4}
+
+% En-tête customisé
+%\newcommand{\UPSTIenTetePrincipalCustom}{UPSTIenTetePrincipalCustom}
+
+% Message sous le titre
+%\newcommand{\UPSTImessage}{Message sous le titre}
+
+% Référence au programme
+%\newcommand{\UPSTIprogramme}{\EPBComp \EPBCompP{B1-02}, \EPBCompP{B2-49}, \EPBCompS{B2-50}, \EPBCompS{B2-51}, \EPBCompP{C1-07}, \EPBCompP{C1-08}}
+
+% Si l'auteur n'est pas l'auteur par défaut
+%\renewcommand{\UPSTIauteur}{UPSTI}
+
+% Si le document est réalisé au nom de l'équipe
+%\newcommand{\UPSTIdocumentCollegial}{1}
+
+% Source
+%\newcommand{\UPSTIsource}{UPSTI}
+
+% Version du document
+\newcommand{\UPSTInumeroVersion}{0.2}
+
+%-----------------------------------------------
+\UPSTIcompileVars		% "Compile" les variables
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Avant d'entrer en classe
+% Portable rangé
+% Couvre chefs
+% Oreillette
+%
+% Casque moto non visible
+% Sac au sol
+% Enlever son manteau
+%
+% En entrant :
+% Bonjour
+%
+% On ne boit pas ni ne mange en classe
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Début du document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\UPSTIbuildPage
+\title{Contrat et règles en classe de STI2D}
+\date{Année 2018 - 2019}
+
+Pour l'année 2018-2019, chaque élève, ainsi que le professeur s'engage à respecter les règles suivantes :
+\section{Respect}
+\subsection{Droits}
+\begin{itemize}
+    \item Chaque élève a le droit au respect des autres élèves ainsi que du professeur.
+    \item Le professeur a le droit au respect de chacun des élèves.
+\end{itemize}
+
+\subsection{Devoirs}
+\begin{itemize}
+    \item Chaque individu de la classe s'adresse la parole correctement, poliment, sans vulgarité ni agressivité à l'égard de quiconque.
+    \item Lorsqu'un élève s'adresse au professeur et/ou au reste de la classe, tout le monde l'écoute sans l'interrompre.
+    \item Lorsque le professeur s'adresse aux élèves, tous les élèves l'écoute.
+    %\begin{itemize}
+      \item Cela implique l'absence de tout écouteur, casque dans la salle de classe.
+      \item Cela implique l'extinction des téléphone portables dès l'entrée en cours.
+    %\end{itemize}
+\end{itemize}
+
+\section{Travail en classe}
+\subsection{Droits}
+\begin{itemize}
+    \item Tout élève a le droit d'écouter et de participer aux cours, aux TDs, aux TPs.
+    \item Tout élève a le droit de poser une question pour demander une clarification d'une notion de cours ou d'une question qu'il n'aurait pas comprise.
+    \item Le professeur a le droit d'interroger un élève pour vérifier qu'une notion a bien été comprise.
+    \item Le professeur a le droit d'être écouté lorsqu'il s'adresse à la classe.
+    \item Les élèves ont le droit de connaître les modalités d'évaluation ainsi que les résultats des évaluations.
+\end{itemize}
+\subsection{Devoirs}
+\begin{itemize}
+    \item Pour garantir une répartition de la parole, les élèves lèvent la main s'ils veulent la parole. C'est l'enseignant qui distribue  la parole.
+    \item Pour que tout le monde puisse écouter ce qui est dit et travaille dans le calme, un élève qui n'a pas la parole n'est pas autorisé à parler, ni bavarder avec un camarade de classe.
+    \item Le professeur doit répartir la parole de façon équitable, tout en garantissant la bonne avancée du cours.
+    \item Afin de pouvoir suivre le cours, les élèves ont le devoir de prendre des notes et de recopier le cours, les exercices et les corrigés donnés par le professeur.
+    \item L'utilisation du téléphone portable n'est, a-priori, pas autorisée. Si l'élève doit, pour une raison urgente, l'utiliser il doit en demander l'autorisation préalable au professeur.
+    \item Le professeur s'engage à tout faire pour corriger les devoirs rendus avant la séance suivante et s'engage à le rendre au plus tard sous 15 jours.
+\end{itemize}
+
+\section{Assiduité}
+\subsection{Droits}
+\begin{itemize}
+    \item Les élèves et le professeur ont le droit de sortir à la dernière sonnerie de la séance de cours.
+    \item Les élèves et le professeurs ont le droit de commencer le cours à l'heure, sans perturbation extérieure.
+\end{itemize}
+
+\subsection{Devoirs}
+\begin{itemize}
+    \item Afin de débuter le cours le plus rapidement possible, les élèves doivent entrer dans le calme, s'asseoir à leur place et sortir leurs affaires de cours dès que le professeur les invite à entrer en classe.
+    \item Pour ne pas perturber le cours, les élèves ne sont plus autorisés à entrer en classe une fois la porte fermée.
+    \item En cas d'absence, l'élève doit rattraper le cours sur pronote ou auprès d'un autre élève AVANT la séance suivante.
+    \item Le professeur doit mettre sur pronote les documents distribués et utilisés en classe, afin que les élèves puissent y avoir accès.
+\end{itemize}
+
+\section{Matériel}
+\subsection{Droits}
+\begin{itemize}
+    \item Tout élève a le droit d'avoir les supports de cours, TD et TP de la séance.
+    \item Toute personne a le droit au respect de ses affaires tant qu'il n'en fait pas un usage non autorisé.
+    \item L'élève a le choix de l'organisation de ses documents, tant qu'ils sont facilement et rapidement accessibles à tout moment.
+    \item Le professeur peut exiger qu'un ou plusieurs élèves apportent leur classeur (ou cahier ou porte-vues) contenant tous les documents de l'année, pour vérifier son organisation et la présence de tous les documents.
+    \item S'il considère que la façon de trier et d'organiser les documents d'un élève n'est pas satisfaisante, le professeur est en droit d'exiger une autre organisation.
+\end{itemize}
+\subsection{Devoirs}
+\begin{itemize}
+    \item Tout élève doit avoir avec lui de quoi écrire (feuille et stylo) ainsi que l'ensemble des documents de la séquence en cours.
+    \item Les élèves doivent conserver, de manière organisée et facilement accessible, la totalité des documents utilisés en cours, jusqu'à la fin de l'année scolaire (et idéalement jusqu'au baccalauréat).
+    \item Pour prévenir toute perte de document, l'utilisation d'une pochette pour conserver les documents, n'est pas autorisée.
+
+\end{itemize}
+
+\section{Punition et sanctions}
+Tout manquement par un élève à l'un des devoirs cités dans ce document ou dans le règlement intérieur du lycée l'expose à une punition ou une sanction.
+
+Ces punitions ou sanctions peuvent prendre la forme d'une observation dans le carnet de correspondance à faire signer par le référent légal de l'élève, d'heures de retenues avec travail supplémentaire, d'exclusion de cours et/ou de privation d'un droit cité dans ce document.
+
+\subsection{Punitions et sanctions types}
+\begin{itemize}
+    \item Les bavardages, les amusements en cours seront sanctionnés après un premier avertissement oral.
+    \item Le téléphone portable sera systématiquement confisqué s'il est visible en cours. Il sera mené à l'administration dès la deuxième confiscation du trimestre.
+    \item L'absence du matériel nécessaire à la prise de note ou l'absence d'un travail donné à la maison sera sanctionnée la première fois par une observation dans le carnet de correspondance. La deuxième fois, l'élève pourra être exclu du cours et/ou se voir attribuer une heure de retenue avec travail supplémentaire.
+    \item Tout aliment sera confisqué et entrainera l'exclusion du ou des élèves concernés.
+\end{itemize}
+
+\end{document}
