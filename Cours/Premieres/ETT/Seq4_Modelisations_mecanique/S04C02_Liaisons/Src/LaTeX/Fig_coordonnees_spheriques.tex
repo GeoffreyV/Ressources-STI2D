@@ -1,0 +1,19 @@
+\tikzstyle{fleche}=[->,>=latex]
+\draw[fleche] (0,0) node[left,yshift=1mm] {$O$} -- (3,0);
+\draw[fleche] (0,0) -- (0,3);
+\draw[fleche] (0,0) -- ++(-145:2.1);
+\draw[fleche] (0,0) -- (0.8,0) node[above] {$\vey$};
+\draw[fleche] (0,0) -- (0,0.8) node[left] {$\vez$};
+\draw[fleche] (0,0) -- ++(-145:0.56)node[left,yshift=1mm] {$\vex$};
+\draw[dashed] (0,0) -- ++(-20:2.) node[inner sep = 0, outer sep = 0,node distance=0] (H) {} node[below] {$H$} -- ++(0,2.5) node[inner sep = 0, outer sep = 0,node distance=0] (M) {} node[left,yshift=2mm] {$M$};
+\draw[fleche, ultra thick, UPSTIcustomColor1] (0,0) -- (M)  node[pos=0.7, left] {\normalcolor $r$};
+\node[inner sep=0,outer sep=0] (a1) at (-145:0.8) {};
+\draw[fleche] (a1) edge[bend right] (-20:0.8);
+\node[inner sep=0,outer sep=0] (a2) at (90:1.) {};
+\draw[fleche] (a2) edge[bend left] (44:0.8);
+\draw (68:1.2) node {$\varphi$};
+\draw (0,-0.8) node {$\theta$};
+\draw[fleche] (M) -- ++(-40:0.6) node[right,yshift=-1mm,xshift=-1mm] {$\vec e_\varphi$};
+\draw[fleche] (M) -- ++(20:0.6) node[right] {$\vec e_\theta$};
+\draw[fleche] (H) -- ++(20:0.6) node[right] {$\vec e_\theta$};
+\draw[fleche] (M) -- ++(44:0.6) node[above,yshift=-1mm] {$\vec e_r$};

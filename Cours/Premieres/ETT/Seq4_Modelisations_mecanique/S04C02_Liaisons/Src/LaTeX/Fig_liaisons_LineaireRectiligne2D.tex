@@ -1,0 +1,26 @@
+% 2D côté
+\begin{scope}[xshift=0cm, yshift=1.7cm, scale=1]
+\draw [UPSTIcustomColor1, thick] (-0.25,0) --++(0.5,0);
+\draw [UPSTIcustomColor1, thick] (0,0) --++(0,-0.4) node[left] {2};
+\draw [very thick] (0,0) -- (0.15,0.35) -- (-0.15,0.35) -- (0,0);
+\draw [ultra thick] (0,0.35) --++(0,0.5) node[below left, xshift=1mm] {1}; 
+\draw [->, >=latex] (0.35,0) --++(0.4,0) node[below] {$\vv y$};
+\draw [->, >=latex] (0,0.65) --++(0,0.5) node[left] {$\vv z$};
+\draw (0.5,0.75) circle (0.1) node[above] {$\vv x$};
+\draw [fill=black] (0.5,0.75) circle (0.02);
+\node at (0,0) [shift={(0.15,-0.15)}] {$A$};
+\end{scope}
+
+% 2D face
+\begin{scope}[xshift=0cm, yshift=0cm, scale=1]
+\draw [UPSTIcustomColor1, thick] (-0.5,0) --++(1,0);
+\draw [UPSTIcustomColor1, thick] (0,0) --++(0,-0.5) node[left] {2};
+\draw [very thick] (-0.25,0.025) --++(0.5,0) --++(0.1,0.35) --++(-0.7,0) --cycle;
+\draw [->, >=latex] (-0.55,0) --++(-0.45,0) node[above] {$\vv x$};
+\draw [->, >=latex] (0,0.4) --++(0,0.7) node[left,yshift=-3mm] {$\vv z$};
+\draw (-1,-0.5) circle (0.1) node[right] {$\vv y$};
+\draw [fill=black] (-1,-0.5) circle (0.02);
+\draw [very thick] (0,0.37) --++(0.25,0.5) node[right] {1};
+\node at (0,0) [shift={(0.15,-0.15)}] {$A$};
+\draw [fill=black] (0,0.37) --++(0.1,0) --++(0,0.2) --cycle;
+\end{scope}

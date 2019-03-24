@@ -1,0 +1,14 @@
+% 2D face
+\begin{scope}[xshift=0cm, yshift=0cm, scale=1]
+\draw [UPSTIcustomColor1, thick] (0,0.2) -- (0,0.6) node[below right] {2};
+\draw [very thick] (0,0) -- (-0.7,0) node[below right] {1};
+\draw [UPSTIcustomColor1, thick, fill=white] (0,0) circle (0.2);
+\draw [UPSTIcustomColor1, fill=UPSTIcustomColor1] (0,0.3) --++(0,-0.1) arc (90:110:0.2) -- (0,0.3);
+\draw [->,>=latex] (0.25,0) --(0.7,0) node[below] {$\vv x$};
+\draw [->,>=latex] (0,0.65) --(0,1) node[right] {$\vv y$};
+\draw (-0.8,0.8) circle (0.1) node [right] {$\vv z$};
+\draw [fill=black](-0.8,0.8) circle (0.02);
+%\node at (0.2,-0.25) [] {$A$};
+\draw [ultra thin] (-0.05,0) --++(0.1,0);
+\draw [ultra thin] (0,-0.05) --++(0,0.1);
+\end{scope}

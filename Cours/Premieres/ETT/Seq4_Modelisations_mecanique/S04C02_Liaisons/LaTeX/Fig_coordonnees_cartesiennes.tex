@@ -1,0 +1,11 @@
+\tikzstyle{fleche}=[->,>=latex]
+\draw[fleche] (0,0) node[left,yshift=1mm] {$O$} -- (3,0);
+\draw[fleche] (0,0) -- (0,3);
+\draw[fleche] (0,0) -- ++(-145:2.1);
+\draw[fleche] (0,0) -- (0.8,0) node[above] {$\vey$};
+\draw[fleche] (0,0) -- (0,0.8) node[left] {$\vez$};
+\draw[fleche] (0,0) -- ++(-145:0.56)node[left,yshift=1mm] {$\vex$};
+\draw[dashed] (2.5,0) node[above left] {$y$} -- (2.5,2.5) -- (0,2.5) node[left] {$z$} -- ++(-145:1.75) -- ++(2.5,0) node[inner sep = 0, outer sep = 0,node distance=0] (M) {}  node[right] {$M$} -- ++(35:1.75);
+\draw[dashed] (2.5,0) -- ++(-145:1.75) -- ++(-2.5,0) node[above right,yshift=1mm] {$x$} -- ++(0,2.5);
+\draw[dashed] (M) -- ++(0,-2.5);
+\draw[fleche, ultra thick, UPSTIcustomColor1] (0,0) -- (M);

@@ -1,0 +1,13 @@
+\draw [very thick] (0.9,0.35) --++(0.2,0.085) node [below] {1};
+\draw [rotate=20, UPSTIcustomColor1, thick] (0,0) circle (0.1 and 0.2);
+\draw [rotate=20, UPSTIcustomColor1, thick, fill=white, shift={(0.9,-0.17)}] (0,0) arc (-90:90:0.1 and 0.2);
+\foreach \x in {0.1,0.2, ...,0.8} \draw [rotate=22, very thick, shift={(\x,-0.2)}] (0,0) arc (-90:90:0.1 and 0.2);
+\draw [UPSTIcustomColor1, thick] (-0.06,0.19) --++(0.84,0.34);
+\draw [UPSTIcustomColor1, thick] (0.06,-0.19) --++(0.84,0.34);
+\draw [UPSTIcustomColor1, thick] (0.35,0.325) --++(0.3,0.6) node [right] {2};
+\draw [UPSTIcustomColor1, fill=UPSTIcustomColor1, thick] (0.35,0.325) --++(0.07,0.03) --++(0,0.1) -- (0.35,0.325);
+\draw [->,>=latex] (0.35,0.325) --++(0,1) node[left] {$\vv z$};
+\draw [->,>=latex] (0.5,0.1) --++(0.5,-0.2) node[below left] {$\vv y$};
+\draw [->,>=latex] (0,0) --++(-0.6,-0.257) node[below right] {$\vv x$};
+\draw [very thick] (0,0) --++(-0.3,-0.129) coordinate(A);
+\draw [fill=black] (A) circle (0.05) node[above] {$A$};

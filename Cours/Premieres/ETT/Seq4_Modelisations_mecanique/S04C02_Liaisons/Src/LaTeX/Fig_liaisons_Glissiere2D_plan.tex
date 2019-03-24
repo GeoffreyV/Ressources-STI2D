@@ -1,0 +1,13 @@
+% 2D côté
+\begin{scope}[xshift=0.35cm, yshift=1.5cm, scale=1]
+\draw [very thick] (0.25,0) node[below] {1} -- (-1,0); 
+\draw [->,>=latex] (.4,0) --(.8,0) node[above left] {$\vv x$};
+%\draw [fill=black] (-1,0) circle (0.05) node[below] {$M$};
+\draw [UPSTIcustomColor1, fill=UPSTIcustomColor1, thick] (-0.35,0.2) --++(0.1,0) --++(0,0.1) -- (-0.35,0.2);
+\draw [UPSTIcustomColor1, fill=white, thick] (-0.7,0.2) rectangle (0,-0.2);
+\draw [UPSTIcustomColor1, thick] (-0.35, 0.2) --++(0.3,0.3) node[right] {2};
+\draw [->,>=latex] (-0.35,0.3) --(-0.35,0.9) node[right] {$\vv y$};
+\draw (-1.2,0.8) circle (0.1) node [right] {$\vv z$};
+\draw [fill=black](-1.2,0.8) circle (0.02);
+\draw [UPSTIcustomColor1, fill=UPSTIcustomColor1] (-0.35,0.2) --++(0.1,0) --++(0,0.1) -- (-0.35,0.2);
+\end{scope}

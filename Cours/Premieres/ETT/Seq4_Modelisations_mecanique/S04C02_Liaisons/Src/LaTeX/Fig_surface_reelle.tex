@@ -1,0 +1,17 @@
+\begin{scope}[xshift=0cm, xscale=0.75]
+\node at (2,1.25) {Réel};
+\draw [thick] (0,0) --(0,-1) -- (4,-1) -- (4,0);
+\draw[thick, domain=0:4,samples=150] plot ({\x},{0.025*sin(4.5*314.1593*\x)});
+\draw [thick, color=UPSTIcustomColor1] (3.5,0.08) -- (3.5,1) -- (0.5,1) -- (0.5,0.08);
+\draw[thick, color=UPSTIcustomColor1, domain=0.5:3.5,samples=50] plot ({\x},{0.09+0.025*sin(1*314.1593*\x)});
+\node [UPSTIcustomColor1] at (3.5,0.5) [left] {$S_1$};
+\node at (4,-0.5) [left] {$S_2$};
+\end{scope}
+
+\begin{scope}[xshift=4cm, xscale=0.75]
+\node at (2,1.25) {Modèle};
+\draw [thick] (0,0) rectangle (4,-1);
+\draw [thick, color=UPSTIcustomColor1] (0.5,0.03) rectangle (3.5,1);
+\node [UPSTIcustomColor1] at (3.5,0.5) [left] {$S_1$};
+\node at (4,-0.5) [left] {$S_2$};
+\end{scope}

@@ -1,0 +1,14 @@
+\tikzstyle{fleche}=[->,>=latex]
+\draw[fleche] (0,0) node[left,yshift=1mm] {$O$} -- (3,0);
+\draw[fleche] (0,0) -- (0,3);
+\draw[fleche] (0,0) -- ++(-145:2.1);
+\draw[fleche] (0,0) -- (0.8,0) node[above] {$\ve{y}$};
+\draw[fleche] (0,0) -- (0,0.8) node[left] {$\ve{z}$};
+\draw[fleche] (0,0) -- ++(-145:0.56)node[left,yshift=1mm] {$\ve{x}$};
+\draw[dashed] (0,0) -- ++(-20:2.) node[inner sep = 0, outer sep = 0,node distance=0] (H) {} node[below] {$H$} node[midway, below] {$r$} -- ++(0,2.5) node[inner sep = 0, outer sep = 0,node distance=0] (M) {} node[right] {$M$} -- ++(160:2.) node[left] {$z$};
+\draw[fleche, ultra thick, UPSTIcustomColor1] (0,0) -- (M);
+\node[inner sep=0,outer sep=0] (a1) at (-145:0.8) {};
+\draw[fleche] (a1) edge[bend right] (-20:0.8);
+\draw (0,-0.8) node {$\theta$};
+\draw[fleche] (H) -- ++(-20:0.6) node[right,yshift=-1mm] {$\ve{r}$};
+\draw[fleche] (H) -- ++(20:0.6) node[right,yshift=1mm] {$\ve{\theta}$};

@@ -1,0 +1,43 @@
+\begin{scope}{xshift=0cm}
+\begin{scope}
+\path [clip] (0,1.45) -- (0,0.6) -- (3,0.6) -- (3,1.5) arc (90:110:3) arc (-70:-116.5:2.5);
+\foreach \x in {-5,-4.88,...,3} {\draw[gray!40] (\x cm,0cm) -- ++(45:5cm) ;};
+\end{scope}
+\draw [fill=none, thick] (0,1.45) -- (0,0.6) -- (3,0.6) -- (3,1.5) arc (90:110:3) arc (-70:-116.5:2.5);
+\begin{scope}
+\path [clip, rotate=180, xshift=-2.25cm] (0,1.45) -- (0,0.6) -- (3,0.6) -- (3,1.5) arc (90:110:3) arc (-70:-116.5:2.5);;
+\foreach \x in {-5,-4.88,...,3} {\draw[gray!40,rotate=180, xshift=-2.25cm] (\x cm,0cm) -- ++(45:5cm) ;};
+\end{scope}
+\draw [fill=none, thick, rotate=180, xshift=-2.25cm] (0,1.45) -- (0,0.6) -- (3,0.6) -- (3,1.5) arc (90:110:3) arc (-70:-116.5:2.5);;
+\draw [thick] (3,1) -- (3,-1);
+\draw [thick] (0,1) -- (0,-1);
+\draw [color=UPSTIcustomColor1, fill=white, thick,rotate=4, yshift=-0.8mm] (-0.3,-0.5) rectangle (3.3,0.5);
+\foreach \x in {-0.6,-0.2, ..., 3.6} \draw (\x, 0) -- ++(0.2,0);
+\foreach \x in {-0.6,-0.2, ..., 3.2} \draw (\x+0.29, 0) -- ++(0.02,0);
+\foreach \x in {-0.6,-0.2, ..., 3.6} \draw [color=UPSTIcustomColor1, rotate=2.5, yshift=-0.8] (\x, 0) -- ++(0.2,0);
+\foreach \x in {-0.6,-0.2, ..., 3.2} \draw [color=UPSTIcustomColor1, rotate=2.5, yshift=-0.8] (\x+0.29, 0) -- ++(0.02,0);
+\node at (3,1.5) [right] {$S_1$};
+\node at (3.6,-0.2) [below, color=UPSTIcustomColor1] {$S_2$};
+\node at (1.5,1.5) [above] {Réel};
+\end{scope}
+
+\begin{scope}[xshift=3.5cm]
+\begin{scope}
+\path [clip] (0,1.45) -- (0,0.5) -- (3,0.5) -- (3,1.5) arc (90:110:3) arc (-70:-116.5:2.5);
+\foreach \x in {-5,-4.88,...,3} {\draw[gray!40] (\x cm,0cm) -- ++(45:5cm) ;};
+\end{scope}
+\draw [fill=none, thick] (0,1.45) -- (0,0.5) -- (3,0.5) -- (3,1.5) arc (90:110:3) arc (-70:-116.5:2.5);
+\begin{scope}
+\path [clip, rotate=180, xshift=-2.25cm] (0,1.45) -- (0,0.5) -- (3,0.5) -- (3,1.5) arc (90:110:3) arc (-70:-116.5:2.5);
+\foreach \x in {-5,-4.88,...,3} {\draw[gray!40,rotate=180, xshift=-2.25cm] (\x cm,0cm) -- ++(45:5cm) ;};
+\end{scope}
+\draw [fill=none, thick, rotate=180, xshift=-2.25cm] (0,1.45) -- (0,0.5) -- (3,0.5) -- (3,1.5) arc (90:110:3) arc (-70:-116.5:2.5);
+\draw [thick] (3,1) -- (3,-1);
+\draw [color=UPSTIcustomColor1, fill=white, thick] (-0.3,-0.49) rectangle (3.3,0.49);
+\foreach \x in {-0.6,-0.2, ..., 3.6} \draw (\x, 0) -- ++(0.2,0);
+\foreach \x in {-0.6,-0.2, ..., 3.2} \draw (\x+0.29, 0) -- ++(0.02,0);
+\node at (3,1.5) [right] {$S_1$};
+\node at (3.6,-0.2) [below, color=UPSTIcustomColor1] {$S_2$};
+\node at (1.5,1.5) [above] {Modèle};
+\end{scope}
+

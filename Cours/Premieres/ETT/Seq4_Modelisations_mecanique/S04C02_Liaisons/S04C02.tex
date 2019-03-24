@@ -1,14 +1,21 @@
-\documentclass[10pt,fleqn,draft]{article} % Default font size and left-justified equations
-\usepackage[%
-    pdftitle={Contacts et mobilités},
-    pdfauthor={Geoffrey Vaquette}]{hyperref}
-    \usepackage{import}
+\documentclass[10pt,fleqn]{article} % Default font size and left-justified equations
+\RequirePackage{UPSTI_Document}
+\newcommand{\UPSTIidVersionDocument}{3}
+
+\usepackage{longtable}
+%\usepackage[%
+  %  pdftitle={Contacts et mobilités},
+%    pdfauthor={Geoffrey Vaquette}]{hyperref}
+\usepackage{import}
 \subimport{../../../../style/}{preambule.tex}
 \usepackage{subcaption}
 
+% \newcommand\bmmax{5}
+% \usepackage{bm}
+
 %\fichetrue
 \fichefalse
-\proftrue
+\proffalse
 %\proffalse
 %\tdtrue
 \tdfalse
@@ -31,12 +38,12 @@
 \def\xxpartie{Modéliser les interactions entre solides}
 
 \def\xxnumchapitre{Séance 1}
-\def\xxchapitre{\hspace{.12cm} Contacts et mobilités}
+\def\xxchapitre{\hspace{.12cm} Modélisation des liaisons}
 
 \def\xxposongletx{2}
 \def\xxposonglettext{1.45}
 \def\xxposonglety{23}
-\def\xxonglet{Seq. 4 -- Se. 1}
+\def\xxonglet{Seq. 4 -- Se. 2}
 
 \def\xxactivite{Cours}
 \def\xxauteur{\textsl{Geoffrey Vaquette}}
@@ -60,8 +67,7 @@
 
 \def\xxfigures{
 \begin{center}
-\includegraphics[width=3cm]{images/lineique_ponctuel} \\
-\includegraphics[width=3cm]{images/2lineique_1ponctuel} \\
+\includegraphics[width=3cm]{images/equivalence} \\
 % \includegraphics[width=2cm]{images/prise.png} \\
 \end{center}
 }%figues de la page de garde
@@ -71,11 +77,13 @@ La fonction alimenter/stocker \xxactivite%
 
 %---------------------------------------------------------------------------
 
-\renewcommand{\RemplirTrou}{true}
+\renewcommand{\RemplirTrou}{false}
+
+
 \begin{document}
 \chapterimage{images/bandeau.jpg}
 \subimport{../../../../style/}{new_pagegarde}
-\section*{Introduction}
+\section{Hypothèses}
 \paragraph{Solides parfaits}
 \begin{itemize}
     \item Géométrie parfaite.
@@ -117,155 +125,340 @@ Tout mouvement  relatif  entre  solides  liés  pourra  être  obtenu  par  une 
 
 \begin{defi}
 \textbf{Degrés de liaison:}
-C'est le nombre de déplacements élémentaires interdits par 
+C'est le nombre de déplacements élémentaires interdits par
 une liaison.
 
  \textbf{ Degrés  de  liberté  d'une  liaison:}
-  
-\trou{C'est  le  nombre  de  déplacements  élémentaires 
+
+\trou{C'est  le  nombre  de  déplacements  élémentaires
 indépendants autorisés par cette liaison.}
 
-La somme des degrés de liberté et des degrés de liaison est égale à : \trou{6}. 
-En effet, les degrés non bloqués sont tous des degrés de liberté et inversement. 
+La somme des degrés de liberté et des degrés de liaison est égale à : \trou{6}.
+En effet, les degrés non bloqués sont tous des degrés de liberté et inversement.
 \end{defi}
-rpcinematik
+\pagebreak
+\begin{figure}[h]
+  \includegraphics[width=.33\textwidth]{images/fig1} \includegraphics[width=.6\textwidth]{images/fig2}
+  \caption{}
+  \label{fig:plan}
+\end{figure}
 
 \begin{exemple}
-  A partir de cette image et des indications, on peut déterminer les nombres de \begin{itemize}
+  A partir de la Figure~\ref{fig:plan} et des indications, on peut déterminer les nombres de \begin{itemize}
         \item degrés de liaison : \trou{5}
         \item degrés de liberté : \trou{1}
         \item Somme : \trou{5+1=6}
   \end{itemize}
 \end{exemple}
+\pagebreak
+\begin{footnotesize}
+\begin{longtable}{>{\centering}m{2.3cm} >{\centering}m{2.6cm} >{\centering}m{2.3cm} >{\centering}m{2.2cm}>{\centering}m{2.2cm}>{\centering}p{1.9cm}} \toprule
+\bf Nom & \bf Caractéristique & \bf Degrés de liberté & \bf Schéma spatial (3D)& \bf Schéma(s) plan(s) (2D)& \centering \bf Mobilités \tabularnewline
+\midrule
+\endhead
+
+%------------------------------------------------------------------------------------
+% Encastrement
+%------------------------------------------------------------------------------------
+\trou{Encastre\-ment}
+&
+& 0 ddl
+& & &
+\mobilites{0}{0}{0}{0}{0}{0}
+\tabularnewline
+\midrule
 
 
-\section{Différents types de contacts}
-\begin{aretenir}
-  À l'aide des différentes formes de la Figure~\ref{fig:volumes}, on peut définir trois types de contacts : les contacts \trou{surfaciques}, \trou{linéiques} et \trou{ponctuels}.
-\end{aretenir}
+%------------------------------------------------------------------------------------
+% Glissière
+%------------------------------------------------------------------------------------
+\trou{Glissière}\vspace{1em}
 
-\begin{remark}
-  Pour mettre en évidence ces contacts, on peut imaginer plonger une des pièces dans de la peinture, mettre en contact les deux pièces puis observer la trace laissée sur la pièce non peinte.
-\end{remark}
+\includegraphics[width=15 mm] {Src/Images/glissiere-NB}\vspace{0.5em}
+& Direction \vx{}
+& 1 ddl
+&
+\begin{tikzpicture}[scale=0.89]
+\input{Src/LaTeX/Fig_liaisons_Glissiere3D}
+\end{tikzpicture}
+&
+\begin{tikzpicture}[scale=0.9]
+\input{Src/LaTeX/Fig_liaisons_Glissiere2D}
+\end{tikzpicture}
+&
+\mobilites{0}{0}{0}{1}{0}{0}
+\tabularnewline
+\midrule
 
-Un exemple de chaque type de contact est donné sur la Figure~\ref{fig:type_contact}.
 
-\begin{figure}[h]
-  \begin{subfigure}[b]{0.3\textwidth}
-    \centering
-    \includegraphics[width=0.9\textwidth,height=.2\textheight,keepaspectratio]{images/plan-plan}
-    \caption{\trou{Contact surfacique}}
-  \end{subfigure}\hfill
-  \begin{subfigure}[b]{0.3\textwidth}
-    \centering
-    \includegraphics[width=0.9\textwidth,height=.2\textheight,keepaspectratio]{images/cylindre-plan}
-    \caption{\trou{Contact linéique}}
-  \end{subfigure}\hfill
-  \begin{subfigure}[b]{0.3\textwidth}
-    \centering
-    \includegraphics[width=0.9\textwidth,height=.2\textheight,keepaspectratio]{images/sphere-plan}
-    \caption{\trou{Contact ponctuel}}
-  \end{subfigure}\hfill
-  \caption{Un exemple de chaque type de contact}
-  \label{fig:type_contact}
+%------------------------------------------------------------------------------------
+% Pivot
+%------------------------------------------------------------------------------------
+\trou{Pivot}\vspace{1em}
+
+\includegraphics[width=15 mm] {Src/Images/pivot-NB}\vspace{0.5em}
+& Axe \axe{A}{\vx{}}
+& 1 ddl
+&
+\begin{tikzpicture}[scale=0.89]
+\input{Src/LaTeX/Fig_liaisons_Pivot3D}
+\end{tikzpicture}
+&
+\begin{tikzpicture}[scale=0.9]
+\input{Src/LaTeX/Fig_liaisons_Pivot2D}
+\end{tikzpicture}
+&
+\mobilites{1}{0}{0}{0}{0}{0}
+\tabularnewline
+\midrule
+
+
+%------------------------------------------------------------------------------------
+% Hélicoïdale
+%------------------------------------------------------------------------------------
+\trou{Hélicoïdale}\vspace{1em}
+\includegraphics[width=15 mm] {Src/Images/helicoidale-NB}%\vspace{0.5em}
+& Axe \axe{A}{\vx{}}
+& 1 ddl
+&
+\begin{tikzpicture}[scale=0.89]
+\input{Src/LaTeX/Fig_liaisons_Helicoidale3D}
+\end{tikzpicture}
+&
+\begin{tikzpicture}[scale=0.9]
+\input{Src/LaTeX/Fig_liaisons_Helicoidale2D}
+\end{tikzpicture}
+&
+\mobilites{1}{0}{0}{1}{0}{0}
+\tabularnewline
+\midrule
+
+
+%------------------------------------------------------------------------------------
+% Pivot glissant
+%------------------------------------------------------------------------------------
+\trou{Pivot glissant}\vspace{1em}
+
+\includegraphics[width=15 mm] {Src/Images/pivot-glissant-NB}%\vspace{0.5em}
+& Axe \axe{A}{\vx{}}
+& 2 ddl
+&
+\begin{tikzpicture}[scale=0.89]
+\input{Src/LaTeX/Fig_liaisons_PivotGlissant3D}
+\end{tikzpicture}
+&
+\begin{tikzpicture}[scale=0.9]
+\input{Src/LaTeX/Fig_liaisons_PivotGlissant2D}
+\end{tikzpicture}
+&
+\mobilites{1}{0}{0}{1}{0}{0}
+\tabularnewline
+\midrule
+
+
+%------------------------------------------------------------------------------------
+% Appui plan
+%------------------------------------------------------------------------------------
+\trou{Appui plan}\vspace{1em}
+
+\includegraphics[width=15 mm] {Src/Images/appui-plan-NB}\vspace{0.5em}
+& Normale au plan $ \vz{}$
+& 3 ddl
+&
+\begin{tikzpicture}[scale=0.8]
+\input{Src/LaTeX/Fig_liaisons_AppuiPlan3D}
+\end{tikzpicture}
+&
+\begin{tikzpicture}[scale=0.9]
+\input{Src/LaTeX/Fig_liaisons_AppuiPlan2D}
+\end{tikzpicture}
+&
+\mobilites{0}{0}{1}{1}{1}{0}
+\tabularnewline
+\midrule
+
+%------------------------------------------------------------------------------------
+% Sphérique
+%------------------------------------------------------------------------------------
+\trou{Sphérique}\vspace{1em}
+
+\includegraphics[width=15 mm] {Src/Images/spherique-NB}\vspace{0.5em}
+& Centre de la sphère $A$
+& 3 ddl
+&
+\begin{tikzpicture}[scale=0.89]
+\input{Src/LaTeX/Fig_liaisons_Spherique3D}
+\end{tikzpicture}
+&
+\begin{tikzpicture}[scale=0.9]
+\input{Src/LaTeX/Fig_liaisons_Spherique2D}
+\end{tikzpicture}
+&
+\mobilites{1}{1}{1}{0}{0}{0}
+\tabularnewline
+\midrule
+
+%------------------------------------------------------------------------------------
+% Sphère cylindre
+%------------------------------------------------------------------------------------
+\trou{Sphère cylindre}\vspace{1em}
+
+\includegraphics[width=15 mm] {Src/Images/sphere-cylindre-NB}%\vspace{0.5em}
+& Centre de la sphère $A$
+
+Direction $\vx{}$
+& 4 ddl
+&
+\begin{tikzpicture}[scale=0.89]
+\input{Src/LaTeX/Fig_liaisons_SphereCylindre3D}
+\end{tikzpicture}
+&
+\begin{tikzpicture}[scale=0.9]
+\input{Src/LaTeX/Fig_liaisons_SphereCylindre2D}
+\end{tikzpicture}
+&
+\mobilites{1}{1}{1}{1}{0}{0}
+\tabularnewline
+\midrule
+
+
+%------------------------------------------------------------------------------------
+% Sphère plan
+%------------------------------------------------------------------------------------
+\trou{Sphère plan}\vspace{1em}
+
+\includegraphics[width=15 mm] {Src/Images/sphere-plan-NB}\vspace{0.5em}
+& Point de contact $A$
+
+Normale au plan $\vz{}$
+& 5 ddl
+&
+\begin{tikzpicture}[scale=0.89]
+\input{Src/LaTeX/Fig_liaisons_SpherePlan3D}
+\end{tikzpicture}
+&
+\begin{tikzpicture}[scale=0.9]
+\input{Src/LaTeX/Fig_liaisons_SpherePlan2D}
+\end{tikzpicture}
+&\mobilites{1}{1}{1}{1}{1}{0}
+\tabularnewline
+\midrule
+
+
+%------------------------------------------------------------------------------------
+% Sphérique à doigt
+%------------------------------------------------------------------------------------
+\trou{Sphérique à doigt}\vspace{1em}
+
+\includegraphics[width=15 mm] {Src/Images/spherique-doigt-NB}\vspace{0.5em}
+& Centre de la sphère $A$
+
+Normale au plan $\vx{}$
+
+Direction du doigt $\vz{}$
+& 2 ddl
+&
+\begin{tikzpicture}[scale=0.89]
+\input{Src/LaTeX/Fig_liaisons_SpheriqueDoigt3D}
+\end{tikzpicture}
+&
+\begin{tikzpicture}[scale=0.9]
+\input{Src/LaTeX/Fig_liaisons_SpheriqueDoigt2D}
+\end{tikzpicture}
+&
+\mobilites{1}{0}{1}{0}{0}{0}
+\tabularnewline
+\midrule
+
+
+%------------------------------------------------------------------------------------
+% Linéaire rectiligne
+%------------------------------------------------------------------------------------
+\trou{Linéaire rectiligne} (ou cylindre plan)\vspace{1em}
+
+\includegraphics[width=15 mm] {Src/Images/lineaire-rectiligne-NB}\vspace{0.5em}
+& Droite de contact \axe{A}{\vx{}}
+
+Normale au plan \vz{}
+& 4 ddl
+&
+\begin{tikzpicture}[scale=0.89]
+\input{Src/LaTeX/Fig_liaisons_LineaireRectiligne3D}
+\end{tikzpicture}
+&
+\begin{tikzpicture}[scale=0.89]
+\input{Src/LaTeX/Fig_liaisons_LineaireRectiligne2D}
+\end{tikzpicture}
+&
+\mobilites{1}{0}{1}{1}{1}{0}
+\tabularnewline
+\bottomrule
+
+\caption{Tableau des liaisons normalisées}
+\label{Cinemat_cours_tabliaison}
+\end{longtable}
+\end{footnotesize}
+
+\section{Schématisation cinématique}
+Une classe d’équivalence est un groupe de pièces n’ayant aucun \trou{degré de liberté} (ou aucun mouvement relatif) entre elles. On dit aussi sous-ensemble cinématiquement lié.
+La recherche des classes d'équivalence passe par la localisation de toutes les liaisons encastrement (liaisons complètes) réalisées à l'intérieur du mécanisme pour la phase de fonctionnement étudiée.
+
+\section{Graph des liaisons}
+Le graphe des liaisons est un graphe utilisé pour décrire les \trou{liaisons} entre les éléments ou pièces d'un dispositif, mécanisme ou système.Le graphe se compose de cercles (ou ellipses) dans lesquels sont inscrits les noms ou les repères des composants du système étudié.
+À chaque fois qu'il existe un lien ou une liaison entre deux classes d’équivalence, les cercles correspondants sont reliés l'un à l'autre par un trait et la nature de la liaison est indiquée à proximité (pivot...).
+
+\begin{figure}[!ht]
+\centering
+\begin{grapheLiaisons}[scale=0.45]
+\glBati{1,0.5}{P0}{0}[1/0.45]
+\glPiece{4,5}{P1}{1}
+\glPiece{10,2}{P2}{2}
+\glLiaison[bend left]{P0}{P1}[Sphère cylindre\\ axe \axe{C}{\vx{}}][above=0.8em,left]
+\glLiaison[bend right]{P0}{P1}[Sphérique\\ centre $B$][right=0.5em]
+\glLiaison[bend left]{P1}{P2}[Sphère plan\\ normale \axe{D}{\vx2}][above=0.8em,right]
+\glLiaison[bend left]{P2}{P0}[Pivot axe \axe{A}{\vz{}}][below]
+\end{grapheLiaisons}
+\caption{Exemple de graphe de liaisons d'un mécanisme}
+\label{graphe_liaisons_ex}
 \end{figure}
-\subsection{Les contacts surfaciques}
 
-\begin{defi}
-  On dit qu'un contact est surfacique lorsque la zone de contact entre deux pièces est une surface non nulle (on peut calculer l'air de cette surface).
-\end{defi}
-
-\begin{warn}
-  Une surface n'est pas forcément plane (plate).
+\begin{warn} Attention :
+  \begin{itemize}
+  \item une liaison existe chaque fois que deux classes d'équivalence ont des surfaces directement en contact ;
+  \item on fait toujours l'hypothèse que les liaisons sont géométriquement parfaites ;
+  \end{itemize}
 \end{warn}
 
-Dans ce cours, nous retiendrons trois types de contacts surfaciques, représentés sur la Figure~\ref{fig:surfacique}
+\section{Schéma cinématique}
 
-\begin{figure}[h]
-  \begin{subfigure}[b]{0.3\textwidth}
-    \centering
-    \includegraphics[width=0.9\textwidth,height=.15\textheight,keepaspectratio]{images/surface_plan}
-    \caption{Plan sur plan}
-  \end{subfigure}\hfill
-  \begin{subfigure}[b]{0.3\textwidth}
-    \centering
-    \includegraphics[width=0.9\textwidth,height=.15\textheight,keepaspectratio]{images/surface_cylindre}
-    \caption{Cylindre sur plan}
-  \end{subfigure}\hfill
-  \begin{subfigure}[b]{0.3\textwidth}
-    \centering
-    \includegraphics[width=0.9\textwidth,height=.15\textheight,keepaspectratio]{images/surface_sphere}
-    \caption{Sphère dans sphère}
-  \end{subfigure}\hfill
-  \caption{Trois types de contacts surfaciques}
-  \label{fig:surfacique}
-\end{figure}
+À chaque liaison est associé un symbole normalisé, en fonction du plan de représentation du schéma, il suffit de placer chaque symbole au point de liaison en respectant l'orientation et le contenant / contenu.
 
-\subsection{Contacts linéiques}
-\begin{defi}
-  On dit qu'un contact est linéique lorsque la zone de contact entre deux pièces est une ligne. Cette ligne peut être \trou{rectiligne} (une droite) ou \trou{annulaire} (circulaire).
-\end{defi}
+On relie, ensuite chaque classe d'équivalence par des segments, en essayant de respecter la forme globale des groupes de pièces.
 
-\begin{figure}[h]
-  \begin{subfigure}[b]{0.5\textwidth}
-    \centering
-    \includegraphics[width=0.9\textwidth,height=.2\textheight,keepaspectratio]{images/lineaire_rectiligne}
-    \caption{Contact linéaire \trou{rectiligne}}
-  \end{subfigure}\hfill
-  \begin{subfigure}[b]{0.5\textwidth}
-    \centering
-    \includegraphics[width=0.9\textwidth,height=.2\textheight,keepaspectratio]{images/lineaire_annulaire}
-    \caption{Contact linéaire \trou{annulaire}}
-  \end{subfigure}\hfill
-  \caption{Contacts linéiques}
-  \label{fig:surfacique}
-\end{figure}
-
-  \subsection{Les contacts ponctuels}
-  \begin{defi}
-    On dit qu'un contact est ponctuel lorsque la zone de contact entre deux pièces est un point.
-  \end{defi}
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.9\textwidth,height=.2\textheight,keepaspectratio]{images/ponctuel}
-  \caption{Contact ponctuel}
-  \label{fig:ponctuel}
+  \includegraphics[width=0.4\textwidth]{images/equivalence}
+  \caption{Système}
+  \label{}
 \end{figure}
-\pagebreak
-\section{Exemples de contacts entre pièces}
-\begin{exemple}
-  Prenons l'exemple de la pièce en Figure~\ref{fig:exemple1}, la pièce rouge a deux contacts avec la pièce bleu. Ces contacts sont :
 
-  \begin{itemize}
-    \item Un contact \trou{linéique rectiligne}
-    \item Un contact \trou{ponctuel}
-  \end{itemize}
-\end{exemple}
+Sur la figure~\ref{fig:complete}, dessiner les liaisons afin de parvenir au schéma cinématique.
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.9\textwidth,height=.2\textheight,keepaspectratio]{images/lineique_ponctuel}
-  \caption{Exemple 1}
-  \label{fig:exemple1}
+  \includegraphics[width=0.4\textwidth]{images/equivalence_transparent}
+  \caption{A compéter avec le schéma cinématique}
+  \label{fig:complete}
 \end{figure}
 
-\begin{exemple}
-  Prenons l'exemple de la pièce en Figure~\ref{fig:exemple2}, la pièce rouge a \trou{trois} contacts avec la pièce bleu. Ces contacts sont :
-
-  \begin{itemize}
-    \item \trou{Deux contacts linéiques rectilignes}
-    \item \trou{Un contact ponctuel}
-  \end{itemize}
-\end{exemple}
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=0.9\textwidth,height=.2\textheight,keepaspectratio]{images/2lineique_1ponctuel}
-  \caption{Exemple 2}
-  \label{fig:exemple2}
+\begin{figure}
+  \includegraphics[width=\textwidth]{images/schema_plan}
+  \caption{Schéma cinématique plan}
+  \label{}
 \end{figure}
 
-\begin{remark}
-  Les exercices utilisés durant cette séance sont tirés du site suivant. Vous trouverez sur cette page des exercices pour vous entrainer à reconnaître les contacts entre pièces.\\
-  \url{http://www.ecligne.net/mecanique/1_modelisation/1_les_contacts/sommaire.html}
-\end{remark}
-
+\begin{figure}
+  \includegraphics[width=\textwidth]{images/schema_plan}
+  \caption{Schéma cinématique spatial}
+  \label{}
+\end{figure}
 \end{document}

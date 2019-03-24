@@ -1,0 +1,59 @@
+%\draw (-2,-1.5) rectangle (11,2.5);
+
+% Contact ponctuel
+\begin{scope}[xshift=0cm, yshift=0.25cm, scale=1.1]
+\tikzstyle{fleche}=[->,>=latex]
+\draw[thick, domain=-1:1,samples=200] plot ({\x},{0.1-(\x)^2});
+\draw[thick] (-1,-0.9) arc (180:360:1cm and 0.25cm);
+\draw[thick, dotted] (-1,-0.9) arc (-180:0:1cm and 0.25cm) node[right] {$(1)$};
+\draw[thick, UPSTIcustomColor1, domain=-1:1,samples=200] plot ({\x},{(\x)^2}) node[right] {$(2)$};
+\draw[thick, UPSTIcustomColor1] (0,1) circle (1 and 0.25);
+\draw [fleche] (0,0.05) --++(-150:1.5) node[above] {$\vv x$};
+\draw [fleche] (0,0.05) --++(-20:1.5) node[above] {$\vv y$};
+\draw [fleche] (0,0.05) node[below] {$A$} --++(0,1.5) node[left] {$\vv z$};
+\draw [fill=black] (0,0.05) circle (0.04 and 0.02);
+\end{scope}
+
+% Contact linéique
+\begin{scope}[xshift=3.5cm,yshift=-0.2cm,scale=0.6]
+\tikzstyle{fleche}=[->,>=latex]
+\begin{scope}
+\draw [rotate = 20, thick] (0,-1) circle (0.6 and 1) node[below] {$(1)$};
+\draw [rotate = 20, xshift=3cm, yshift=0cm, thick] (0,-1) arc (-90:55:0.5 and 1);
+\draw [rotate = 20, xshift=3cm, yshift=0cm, dashed] (0,1) arc (90:270:0.5 and 1);
+\draw [rotate = 20, xshift=3cm, yshift=0cm, dashed, thick] (0,1) arc (90:55:0.5 and 1);
+\draw [rotate = 30, dashed] (-0.15,0) -- (3.125,0.475);
+\draw [rotate = 30, thick] (-0.15,0) -- (0.1,0.025);
+\draw [rotate = 30, thick] (-0.15,-1.95) -- (2.9,-1.5);
+\end{scope}
+\begin{scope}[xshift=-0.25cm, yshift=1.9cm]
+\draw [rotate = 20, color=UPSTIcustomColor1, thick] (0,-1) circle (0.6 and 1) node[above] {$(2)$};;
+\draw [rotate = 20, color=UPSTIcustomColor1, xshift=2.95cm, yshift=0cm, thick] (0,-1) arc (-90:90:0.5 and 1);
+\draw [rotate = 20, color=UPSTIcustomColor1, xshift=2.95cm, yshift=0cm, dashed] (0,1) arc (90:270:0.5 and 1);
+\draw [rotate = 30, color=UPSTIcustomColor1, thick] (-0.15,0) -- (3.12,0.475);
+\draw [rotate = 30, color=UPSTIcustomColor1, thick] (-0.15,-1.95) -- (2.85,-1.5);
+\end{scope}
+\draw [fleche] (1.5,1.05) node[above left] {$A$} --++(0,2.75) node[left] {$\vv z$};
+\draw [fleche] (1.5,1.05)  --++(-142:3) node[below] {$\vv x$};
+\draw [fleche] (1.5,1.05)  --++(-15:1.25) node[right] {$\vv y$};
+\draw [ultra thick] (1.5,1.05) --++(38:1.5);
+\draw [ultra thick] (1.5,1.05) --++(38-180:1.65);
+\end{scope}
+
+% Contact surfacique
+\begin{scope}[xshift=6.5cm,yshift=-1.2cm,scale=0.8]
+\tikzstyle{fleche}=[->,>=latex]
+% S1
+\draw [thick] (0,0.5) --++(3,0) --++(40:3.2) --++(0,0.5) --++(-140:3.2) --++(-3,0) -- (0,0.5);
+\draw [thick](3,0.5) --++(0,0.5);
+\draw [thick](0,1) node[below right] {$(1)$} --++(40:3.2) --++(3,0);
+% S2 
+\draw [UPSTIcustomColor1, thick] (1.75,1.75) node[above right] {$(2)$}--++(1.5,0) --++(40:1) --++(0,0.5) --++(-140:1) --++(-1.5,0) --++(0,-0.5);
+\draw [UPSTIcustomColor1, thick] (3.25,1.75) --++(0,0.5);
+\draw [UPSTIcustomColor1, thick] (1.75,2.25) --++(40:1)  --++(1.5,0);
+% Repère
+\draw [fleche] (2.75,2.2) --++(-140:1.2) node[left] {$\vv x$};
+\draw [fleche] (2.75,2.2) --++(1.3,0) node[above right] {$\vv y$};
+\draw [fleche] (2.75,2.2) node[below] {$A$}--++(0,1.5) node[left] {$\vv z$};
+\end{scope}
+
